@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    {% for image in images %}
+        {{ image.image_title }}<br>
+        {{ image.created_by }}<br>
+        {{ image.camera }}<br>
+        {{ image.focal_length }}<br>
+        {{ image.iso }}<br>
+        {{ image.aperture }}<br>
+        {{ image.exposure }}<br>
+        {{ image.location }}<br>
+        {{ image.date }}<br>
+        {{ image.url }}<br>
+        {{ image.description }}<br>
+    {% endfor %}
+</body>
+</html>
