@@ -5,6 +5,12 @@
     padding: 0;
     border: 0;
     font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #171717;
+    color: white;
+}
+
+.drag-target {
+    width: 0 !important;
 }
 
 /* ---------------------------------------------------------------- NAVIGATION BAR */
