@@ -7,7 +7,7 @@
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-/* Navigation bar */
+/* ---------------------------------------------------------------- NAVIGATION BAR */
 .sign-up {
     background-color: #fff;
     color: #000000;
@@ -33,9 +33,23 @@ nav li a:hover {
 .brand-logo {
     text-transform: uppercase;
 }
+/* ---------------------------------------------------------------- END NAVIGATION BAR */
+/* ---------------------------------------------------------------- BANNER IMAGE */
+.banner-image {
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}
+/* ---------------------------------------------------------------- END BANNER IMAGE */
+/* ---------------------------------------------------------------- MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+    .banner-image {
+    height: 30vh;
+    }
+}
 
-/* Media queries */
-/* Navigation bar */
 @media screen and (max-width: 992px) {
     a.brand-logo {
         font-size: 18px;
@@ -46,13 +60,14 @@ nav li a:hover {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 417px) {
     a.brand-logo {
         width: 190px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .shutter-logo {
         font-size: 14px;
     }
 }
+/* ---------------------------------------------------------------- END MEDIA QUERIES */
