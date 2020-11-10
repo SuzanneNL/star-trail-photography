@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* Navigation bar */
+.sign-up {
+    background-color: #fff;
+    color: #000000;
+}
+
+.sign-up:hover {
+    background-color: #A2A2A0;
+    color: #fff;
+}
+
+nav li a {
+    text-transform: uppercase;
+}
+
+nav li a:hover {
+    color: #A2A2A0;
+}
+
+.shutter-logo {
+    padding: 0 5px 0;
+}
+
+.brand-logo {
+    text-transform: uppercase;
+}
+
+/* Media queries */
+/* Navigation bar */
+@media screen and (max-width: 992px) {
+    a.brand-logo {
+        font-size: 18px;
+    }
+
+    .shutter-logo {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    a.brand-logo {
+        width: 190px;
+        font-size: 18px;
+    }
+
+    .shutter-logo {
+        font-size: 14px;
+    }
+}

@@ -18,6 +18,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def index():
+    return render_template("index.html")
+
+
 @app.route("/get_images")
 def get_images():
     images = mongo.db.images.find()
