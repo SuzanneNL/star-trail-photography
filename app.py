@@ -17,15 +17,47 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
+# Gallery
 @app.route("/get_images")
 def get_images():
     images = mongo.db.images.find()
     return render_template("gallery.html", images=images)
+
+
+# Sign Up
+@app.route("/sign_up")
+def sign_up():
+    return render_template("sign_up.html")
+
+
+# Log In
+@app.route("/log_in")
+def log_in():
+    return render_template("log_in.html")
+
+
+# Log Out
+@app.route("/log_out")
+def log_out():
+    return redirect(url_for("log_in"))
+
+
+# Add image to gallery
+@app.route("/add_image")
+def add_image():
+    return render_template("add_image.html")
+
+
+# Edit image from gallery
+@app.route("/edit_image")
+def edit_image():
+    return render_template("edit_image.html")
 
 
 if __name__ == "__main__":
