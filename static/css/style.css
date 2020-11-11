@@ -49,6 +49,12 @@ nav li a:hover {
     background-size: cover;
 }
 /* ---------------------------------------------------------------- END BANNER IMAGE */
+
+.page-title {
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
 /*----------------------------------------------------------------- FOOTER*/
 
 footer {

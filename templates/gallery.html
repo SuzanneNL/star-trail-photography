@@ -1,21 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container page-title">
+    <div class="row">
+        <div class="col s12 m12">
+            <h1 class="center-align">Gallery</h1>
+            <hr>
+        </div>
+    </div>
+</div>
+
 {% for image in images %} 
 {% if loop.index % 2 != 0 %}
 <div class="container">
     <div class="row">
         <div class="col m6">
-            <p>{{ image.image_title }}</p>
-            <p>{{ image.created_by }}</p>
-            <p>{{ image.camera }}</p>
-            <p>{{ image.focal_length }}</p>
-            <p>{{ image.iso }}</p>
-            <p>{{ image.aperture }}</p>
-            <p>{{ image.exposure }}</p>
-            <p>{{ image.location }}</p>
-            <p>{{ image.date }}</p>
-            <p>{{ image.description }}</p>
+            <h6>{{ image.image_title }}</h6>
+            <p>By: {{ image.created_by }}</p>
+            <br>
+            <p>Camera: {{ image.camera }}</p>
+            <p>Focal length: {{ image.focal_length }}</p>
+            <p>ISO: {{ image.iso }}</p>
+            <p>Aperture: {{ image.aperture }}</p>
+            <p>Exposure: {{ image.exposure }}</p>
+            <p>Location: {{ image.location }}</p>
+            <p>Date: {{ image.date }}</p>
+            <p>Description: {{ image.description }}</p>
         </div>
         <div class="col m6">
             <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}" height=400>
@@ -27,16 +37,17 @@
             <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}" height=400>
         </div>
         <div class="col m6">
-            <p>{{ image.image_title }}</p>
-            <p>{{ image.created_by }}</p>
-            <p>{{ image.camera }}</p>
-            <p>{{ image.focal_length }}</p>
-            <p>{{ image.iso }}</p>
-            <p>{{ image.aperture }}</p>
-            <p>{{ image.exposure }}</p>
-            <p>{{ image.location }}</p>
-            <p>{{ image.date }}</p>
-            <p>{{ image.description }}</p>
+            <h6>{{ image.image_title }}</h6>
+            <p>By: {{ image.created_by }}</p>
+            <br>
+            <p>Camera: {{ image.camera }}</p>
+            <p>Focal length: {{ image.focal_length }}</p>
+            <p>ISO: {{ image.iso }}</p>
+            <p>Aperture: {{ image.aperture }}</p>
+            <p>Exposure: {{ image.exposure }}</p>
+            <p>Location: {{ image.location }}</p>
+            <p>Date: {{ image.date }}</p>
+            <p>Description: {{ image.description }}</p>
         </div>
     </div>
 </div>
