@@ -64,6 +64,18 @@ nav li a:hover {
     .shutter-logo {
         font-size: 14px;
     }
+
+    .sidenav {
+        background-color: #171717;
+    }
+
+    .sidenav li>a {
+    color: #fff;
+    }
+
+    .sidenav li>a:hover {
+    background-color: #A2A2A0;
+    }
 }
 
 @media screen and (max-width: 417px) {
