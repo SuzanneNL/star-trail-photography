@@ -6,13 +6,7 @@
     <!--Material Design Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--FontAwesome CDN-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <!--Materialize CDN for CSS-->
     <link
       rel="stylesheet"
@@ -66,10 +60,41 @@
         </div>
     </div>
     <!----------------------------------------END BANNER---------------------------------------->
-
-
+    <!----------------------------------------BLOCK CONTENT---------------------------------------->
     {% block content %} {% endblock %}
-
+    <!----------------------------------------END BLOCK CONTENT---------------------------------------->
+    <!----------------------------------------FOOTER---------------------------------------->
+    <footer>
+        <br>
+        <p>© SuzanneNL</p>
+        <ul class="list-inline social-links">
+            <li class="list-inline-item">
+                <a target="_blank" href="http://www.facebook.com">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <span class="sr-only">Facebook</span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a target="_blank" href="http://instagram.com">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a target="_blank" href="http://youtube.com">                
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <span class="sr-only">Youtube</span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a target="_blank" href="https://github.com/SuzanneNL/star-trail-photography">
+                <i class="fa fa-github" aria-hidden="true"></i>
+                <span class="sr-only">GitHub</span>
+                </a>
+            </li>           
+        </ul>
+    </footer>
+    <!----------------------------------------END FOOTER---------------------------------------->
     <!--jQuery CDN-->
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"

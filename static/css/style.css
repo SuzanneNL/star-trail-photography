@@ -49,6 +49,45 @@ nav li a:hover {
     background-size: cover;
 }
 /* ---------------------------------------------------------------- END BANNER IMAGE */
+/*----------------------------------------------------------------- FOOTER*/
+
+footer {
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    left: 0;
+    bottom: 0;
+}
+
+footer>p {
+    margin: 5px 0;
+    color: #A2A2A0;
+}
+
+.social-links {
+    text-align: center;
+}
+
+.social-links li {
+    display: inline;
+}
+
+.social-links i {
+    font-size: 1.25rem;
+    padding: .5%;
+    color: #A2A2A0;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+.social-links li a i:hover {
+    text-decoration: none;
+    color: #fff; 
+}
+
+/*----------------------------------------------------------------- END FOOTER*/
 /* ---------------------------------------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
     .banner-image {
