@@ -1,18 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for image in images %}
-        {{ image.image_title }}<br>
-        {{ image.created_by }}<br>
-        {{ image.camera }}<br>
-        {{ image.focal_length }}<br>
-        {{ image.iso }}<br>
-        {{ image.aperture }}<br>
-        {{ image.exposure }}<br>
-        {{ image.location }}<br>
-        {{ image.date }}<br>
-        {{ image.url }}<br>
-        {{ image.description }}<br>
-    {% endfor %}
-
+{% for image in images %} 
+{% if loop.index % 2 != 0 %}
+<div class="container">
+    <div class="row">
+        <div class="col m6">
+            <p>{{ image.image_title }}</p>
+            <p>{{ image.created_by }}</p>
+            <p>{{ image.camera }}</p>
+            <p>{{ image.focal_length }}</p>
+            <p>{{ image.iso }}</p>
+            <p>{{ image.aperture }}</p>
+            <p>{{ image.exposure }}</p>
+            <p>{{ image.location }}</p>
+            <p>{{ image.date }}</p>
+            <p>{{ image.description }}</p>
+        </div>
+        <div class="col m6">
+            <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}" height=400>
+        </div>
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col m6">
+            <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}" height=400>
+        </div>
+        <div class="col m6">
+            <p>{{ image.image_title }}</p>
+            <p>{{ image.created_by }}</p>
+            <p>{{ image.camera }}</p>
+            <p>{{ image.focal_length }}</p>
+            <p>{{ image.iso }}</p>
+            <p>{{ image.aperture }}</p>
+            <p>{{ image.exposure }}</p>
+            <p>{{ image.location }}</p>
+            <p>{{ image.date }}</p>
+            <p>{{ image.description }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
 {% endblock %}
