@@ -14,12 +14,12 @@
 }
 
 /* ---------------------------------------------------------------- NAVIGATION BAR */
-.sign-up {
+.sign-up, .add-image {
     background-color: #fff;
     color: #000000;
 }
 
-.sign-up:hover {
+.sign-up:hover, .add-image:hover {
     background-color: #A2A2A0;
     color: #fff;
 }
@@ -49,12 +49,15 @@ nav li a:hover {
     background-size: cover;
 }
 /* ---------------------------------------------------------------- END BANNER IMAGE */
-
+/* ---------------------------------------------------------------- PAGE TITLES */
 .page-title {
     text-transform: uppercase;
     margin-top: 20px;
 }
+/* ---------------------------------------------------------------- END PAGE TITLES */
+/* ---------------------------------------------------------------- GALLERY */
 
+/* ---------------------------------------------------------------- END GALLERY */
 /*----------------------------------------------------------------- FOOTER*/
 
 footer {
