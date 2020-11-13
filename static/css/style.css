@@ -76,13 +76,13 @@ nav li a:hover {
     padding: 15px;
 }
 
-.sign-up-submit {
+.sign-up-submit, .log-in-submit {
     background-color: #fff;
     color: #000000;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.sign-up-submit:hover {
+.sign-up-submit:hover, .log-in-submit:hover {
     background-color: #A2A2A0;
     color: #fff;
 }
