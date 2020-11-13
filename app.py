@@ -96,6 +96,9 @@ def log_in():
 # Log Out
 @app.route("/log_out")
 def log_out():
+    # Remove the user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
     return redirect(url_for("log_in"))
 
 
