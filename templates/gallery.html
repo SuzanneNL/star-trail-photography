@@ -6,9 +6,11 @@
         <div class="col s12 m12">
             <h1 class="center-align">Gallery</h1>
             <hr>
+            {% if session.user %}
             <div class="center-align">
                 <a href="{{ url_for('add_image') }}" class="btn add-image">Add Your Image!</a>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>

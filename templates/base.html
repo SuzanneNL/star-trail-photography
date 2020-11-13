@@ -32,10 +32,12 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ url_for('get_images') }}">Gallery</a></li>
-                <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
-                <li><a href="{{ url_for('log_in') }}">Log In</a></li>
-                <li><a href="{{ url_for('sign_up') }}" class="btn sign-up">Sign Up</a></li>
-
+                {% if session.user %}
+                    <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('log_in') }}">Log In</a></li>
+                    <li><a href="{{ url_for('sign_up') }}" class="btn sign-up">Sign Up</a></li>
+                {% endif %}
             </ul>
             </div>
         </nav>
@@ -44,9 +46,12 @@
             <li><h5 class="center-align">Star Trail Photography</h5></li>
             <li><a href="/">Home</a></li>
             <li><a href="{{ url_for('get_images') }}">Gallery</a></li>
-            <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
-            <li><a href="{{ url_for('log_in') }}">Log In</a></li>
-            <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('log_in') }}">Log In</a></li>
+                <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+            {% endif %}
         </ul>
     </header>
     <!----------------------------------------BANNER---------------------------------------->
