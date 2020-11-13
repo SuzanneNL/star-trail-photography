@@ -61,6 +61,10 @@ nav li a:hover {
     height: auto;
     object-fit: cover;
 }
+
+.mobile-gallery {
+    display: none;
+}
 /* ---------------------------------------------------------------- END GALLERY */
 /* ---------------------------------------------------------------- LOG IN */
 .join-now {
@@ -110,6 +114,14 @@ footer>p {
 @media screen and (max-width: 1024px) {
     .banner-image {
     height: 30vh;
+    }
+
+    .mobile-gallery {
+    display: block;
+    }
+
+    .desktop-gallery {
+    display: none;
     }
 }
 
