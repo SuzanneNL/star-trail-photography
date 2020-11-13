@@ -27,7 +27,7 @@ def index():
 # Gallery
 @app.route("/get_images")
 def get_images():
-    images = mongo.db.images.find()
+    images = list(mongo.db.images.find())
     return render_template("gallery.html", images=images)
 
 
