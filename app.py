@@ -34,6 +34,30 @@ def get_images():
 # Sign Up
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
+    if request.method == "POST":
+        # First check if the provided username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        # If the username already exists,
+        # a flash message appears
+        # and the user is redirected to the sign up page.
+        if existing_user:
+            flash("That username is taken. Please try another.")
+            return redirect(url_for("sign_up"))
+        # create a dictionary, containing username and a password hash
+        # that's generated from the password provided by the user.
+
+        sign_up = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        # insert dictionary sign_up to the Users collection.
+        mongo.db.users.insert_one(sign_up)
+
+        # put users into 'session' cookie and flash message
+        # to let the new user know that registration was successful.
+        session["user"] = request.form.get("username").lower()
+        flash("Thank you for signing up! Welcome!")
     return render_template("sign_up.html")
 
 
