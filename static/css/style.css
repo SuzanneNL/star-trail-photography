@@ -49,6 +49,11 @@ nav li a:hover {
     background-size: cover;
 }
 /* ---------------------------------------------------------------- END BANNER IMAGE */
+/* ---------------------------------------------------------------- FLASH MESSAGES */
+.flash-messages h3 {
+    line-height: 2;
+}
+/* ---------------------------------------------------------------- END FLASH MESSAGES */
 /* ---------------------------------------------------------------- PAGE TITLES */
 .page-title {
     text-transform: uppercase;

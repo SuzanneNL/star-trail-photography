@@ -59,8 +59,24 @@
         </div>
     </div>
     <!----------------------------------------END BANNER---------------------------------------->
+    <!----------------------------------------FLASH MESSAGES---------------------------------------->
+    <section>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flash-messages">
+                        <h5 class="center-align">{{ message }}</h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+    <!----------------------------------------END FLASH MESSAGES---------------------------------------->
     <!----------------------------------------BLOCK CONTENT---------------------------------------->
-    {% block content %} {% endblock %}
+    <main class="container">
+        {% block content %} 
+        {% endblock %}
+    </main>
     <!----------------------------------------END BLOCK CONTENT---------------------------------------->
     <!----------------------------------------FOOTER---------------------------------------->
     <footer>
