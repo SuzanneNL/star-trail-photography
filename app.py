@@ -62,8 +62,34 @@ def sign_up():
 
 
 # Log In
-@app.route("/log_in")
+@app.route("/log_in", methods=["POST", "GET"])
 def log_in():
+    if request.method == "POST":
+        # First check if the provided username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        # If the username exists,
+        if existing_user:
+            # then check if the hased password matches the password the user
+            # provided
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+            # if the hashed password doesn't match the provided password,
+            # a flash message appears and the user is redirected
+            # to the log in page.
+            else:
+                flash("Incorrect username and/or password. Please try again.")
+                return redirect(url_for("log_in"))
+
+        # if username doesn't exist, a flash message appears
+        # and the user is redirected to the log in page.
+        else:
+            flash("Incorrect username and/or password. Please try again.")
+            return redirect(url_for("log_in"))
+
     return render_template("log_in.html")
 
 
