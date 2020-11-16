@@ -36,6 +36,14 @@
             <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
         </div>
     </div>
+    <div class="row">
+        <div class="col m12">
+            <div class="left-align">
+                <a href="" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <a href="" class="btn-small delete"><i class="material-icons prefix icon-delete">delete_forever</i></a>
+            </div>
+        </div>
+    </div>
     {% else %}
     <div class="row">
         <div class="col m6">
@@ -53,6 +61,14 @@
             <p>Location: {{ image.location }}</p>
             <p>Date: {{ image.date }}</p>
             <p>Description: {{ image.description }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m12">
+            <div class="right-align">
+                <a href="" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <a href="" class="btn-small delete"><i class="material-icons prefix icon-delete">delete_forever</i></a>
+            </div>
         </div>
     </div>
 </div>

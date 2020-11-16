@@ -74,6 +74,23 @@ nav li a:hover {
 .mobile-gallery {
     display: none;
 }
+
+.edit, .delete {
+    background-color: #A2A2A0;
+}
+
+.edit:hover, .delete:hover {
+    background-color: #A2A2A0;
+}
+
+.icon-edit, .icon-delete {
+    background-color: #A2A2A0;
+    color: #fff;
+}
+
+.icon-edit:hover, .icon-delete:hover {
+    color: #000000;
+}
 /* ---------------------------------------------------------------- END GALLERY */
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
 .join-now {
