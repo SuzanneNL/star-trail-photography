@@ -126,9 +126,10 @@ def add_image():
 
 
 # Edit image from gallery
-@app.route("/edit_image")
-def edit_image():
-    return render_template("edit_image.html")
+@app.route("/edit_image/<image_id>", methods=["GET", "POST"])
+def edit_image(image_id):
+    image = mongo.db.images.find_one({"_id": ObjectId(image_id)})
+    return render_template("edit_image.html", image=image)
 
 
 if __name__ == "__main__":
