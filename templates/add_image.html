@@ -11,57 +11,68 @@
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_image') }}">
             <div class="row">
+                <!----------------------------------------URL TO IMAGE---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">link</i>
                     <input id="url" name="url" type="text" class="validate" required>
                     <label for="url">URL to your image</label>
                 </div>
+                <!----------------------------------------TITLE---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">create</i>
                     <input id="image_title" name="image_title" minlength="5" maxlength="100" type="text" class="validate" required>
                     <label for="image_title">Title</label>
                 </div>
+                <!----------------------------------------CAMERA---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">photo_camera</i>
                     <input id="camera" name="camera" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="camera">Camera</label>
                 </div>
+                <!----------------------------------------FOCAL LENGTH---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">visibility</i>
                     <input id="focal_length" name="focal_length" minlength="3" maxlength="10" type="text" class="validate" required>
                     <label for="focal_length">Focal Length</label>
                 </div>
+                <!----------------------------------------ISO---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">settings_brightness</i>
                     <input id="iso" name="iso" minlength="2" maxlength="5" type="text" class="validate" required>
                     <label for="iso">ISO</label>
                 </div>
+                <!----------------------------------------APERTURE---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">camera</i>
                     <input id="aperture" name="aperture" minlength="4" maxlength="4" type="text" class="validate" required>
                     <label for="aperture">Aperture</label>
                 </div>
+                <!----------------------------------------EXPOSURE---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">shutter_speed</i>
                     <input id="exposure" name="exposure" minlength="2" maxlength="20" type="text" class="validate" required>
                     <label for="exposure">Exposure</label>
                 </div>
+                <!----------------------------------------LOCATION---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">place</i>
                     <input id="location" name="location" minlength="4" maxlength="100" type="text" class="validate" required>
                     <label for="location">Location</label>
                 </div>
+                <!----------------------------------------DATE PICKER---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">today</i>
                     <input id="date" name="date" type="text" class="datepicker validate" required>
                     <label for="date">Date</label>
                 </div>
+                <!----------------------------------------DESCRIPTION---------------------------------------->
                 <div class="input-field col s12">
                     <i class="material-icons prefix">description</i>
                     <textarea id="description" name="description" maxlength="650" class="materialize-textarea validate"></textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
+            <!----------------------------------------SUBMIT BUTTON---------------------------------------->
             <div class="center-align">
                 <button type="submit" class="btn-large add-image-submit">Submit</button>
             </div>
