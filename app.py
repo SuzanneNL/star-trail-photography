@@ -103,8 +103,25 @@ def log_out():
 
 
 # Add image to gallery
-@app.route("/add_image")
+@app.route("/add_image", methods=["GET", "POST"])
 def add_image():
+    if request.method == "POST":
+        image = {
+            "url": request.form.get("url"),
+            "image_title": request.form.get("image_title"),
+            "camera": request.form.get("camera"),
+            "focal_length": request.form.get("focal_length"),
+            "iso": request.form.get("iso"),
+            "aperture": request.form.get("aperture"),
+            "exposure": request.form.get("exposure"),
+            "location": request.form.get("location"),
+            "date": request.form.get("date"),
+            "description": request.form.get("description"),
+            "created_by": session["user"]
+        }
+        mongo.db.images.insert_one(image)
+        flash("Thank you. Your image has been added to the gallery!")
+        return redirect(url_for("get_images"))
     return render_template("add_image.html")
 
 
