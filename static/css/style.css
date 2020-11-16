@@ -119,7 +119,7 @@ nav li a:hover {
     width: 80px;
 }
 
-.add-image-form {
+.add-image-form, .edit-image-form {
     width: 80%;
 }
 
