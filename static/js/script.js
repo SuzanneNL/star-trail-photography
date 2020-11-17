@@ -1,11 +1,16 @@
-  $(document).ready(function(){
-    $('.sidenav').sidenav({edge: "right"});
-    $('.datepicker').datepicker({
-        format: "dd mmmm, yyyy",
-        maxDate: new Date(),
-        showClearBtn: true,
-        i18n: {
-            done: "Select"
-        }
-    });
-  });
+var currentYear = (new Date).getFullYear();
+
+$(document).ready(function(){
+$('.sidenav').sidenav({edge: "right"});
+$("#year").text( (new Date).getFullYear() );
+$('.datepicker').datepicker({
+    format: "dd mmmm, yyyy",
+    changeYear: true,
+    maxYear: currentYear,
+    maxDate: new Date(),
+    showClearBtn: true,
+    i18n: {
+        done: "Select"
+    }
+});
+});
