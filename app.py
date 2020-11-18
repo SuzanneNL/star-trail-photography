@@ -128,6 +128,24 @@ def add_image():
 # Edit image from gallery
 @app.route("/edit_image/<image_id>", methods=["GET", "POST"])
 def edit_image(image_id):
+    if request.method == "POST":
+        submit = {
+            "url": request.form.get("url"),
+            "image_title": request.form.get("image_title"),
+            "camera": request.form.get("camera"),
+            "focal_length": request.form.get("focal_length"),
+            "iso": request.form.get("iso"),
+            "aperture": request.form.get("aperture"),
+            "exposure": request.form.get("exposure"),
+            "location": request.form.get("location"),
+            "date": request.form.get("date"),
+            "description": request.form.get("description"),
+            "created_by": session["user"]
+        }
+        mongo.db.images.update({"_id": ObjectId(image_id)}, submit)
+        flash("Your image has successfully been updated!")
+        return redirect(url_for("get_images"))
+
     image = mongo.db.images.find_one({"_id": ObjectId(image_id)})
     return render_template("edit_image.html", image=image)
 
