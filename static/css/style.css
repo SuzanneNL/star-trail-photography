@@ -92,6 +92,18 @@ nav li a:hover {
     color: #000000;
 }
 /* ---------------------------------------------------------------- END GALLERY */
+
+
+.modal-close span {
+    cursor: pointer;
+}
+
+/*.modal-hidden {
+    display: none;
+}*/
+
+
+
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
 .join-now {
     padding: 15px;

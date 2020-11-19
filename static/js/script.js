@@ -2,6 +2,7 @@ var currentYear = (new Date).getFullYear();
 
 $(document).ready(function(){
 $('.sidenav').sidenav({edge: "right"});
+$('.modal').modal();
 $("#year").text( (new Date).getFullYear() );
 $('.datepicker').datepicker({
     format: "dd mmmm, yyyy",
