@@ -188,6 +188,10 @@ footer>p {
     .desktop-gallery {
     display: none;
     }
+
+    .modal {
+        width: 400px;
+    }  
 }
 
 @media screen and (max-width: 992px) {
@@ -220,6 +224,14 @@ footer>p {
 
     .shutter-logo {
         font-size: 14px;
+    }
+
+    .modal {
+        width: 270px;
+    }
+    
+    .modal-content h4 {
+        font-size: 12px;        
     }
 }
 /* ---------------------------------------------------------------- END MEDIA QUERIES */
