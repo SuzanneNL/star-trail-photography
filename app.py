@@ -150,6 +150,13 @@ def edit_image(image_id):
     return render_template("edit_image.html", image=image)
 
 
+@app.route("/delete_image/<image_id>")
+def delete_image(image_id):
+    mongo.db.images.remove({"_id": ObjectId(image_id)})
+    flash("Your image has been removed")
+    return redirect(url_for("get_images"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
