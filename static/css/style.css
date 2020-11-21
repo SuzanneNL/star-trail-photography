@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans+Condensed:wght@700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #171717;
     color: white;
 }
@@ -16,7 +16,12 @@
 .container {
     width: 95%;
 }
-
+/* ---------------------------------------------------------------- OPEN SANS*/
+.image-submit, .add-image, .add-image-submit, .edit-image-submit, .edit-image-cancel,
+.log-in-submit, .sign-up-submit, .modal-close, a.brand-logo, #mobile-demo a, .menu-items a {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+/* ---------------------------------------------------------------- END OPEN SANS*/
 /* ---------------------------------------------------------------- NAVIGATION BAR */
 .sign-up, .add-image {
     background-color: #fff;
@@ -121,13 +126,13 @@ nav li a:hover {
     padding: 15px;
 }
 
-.sign-up-submit, .log-in-submit, .add-image-submit, .edit-image-cancel {
+.sign-up-submit, .log-in-submit, .add-image-submit, .edit-image-submit, .edit-image-cancel {
     background-color: #fff;
     color: #000000;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.sign-up-submit:hover, .log-in-submit:hover, .add-image-submit:hover, .edit-image-cancel:hover {
+.sign-up-submit:hover, .log-in-submit:hover, .add-image-submit:hover, .edit-image-submit:hover, .edit-image-cancel:hover {
     background-color: #A2A2A0;
     color: #fff;
 }
