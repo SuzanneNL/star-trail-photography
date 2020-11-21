@@ -58,23 +58,12 @@
 
 {% endfor %}
 <!----------------------------------------END MOBILE GALLERY---------------------------------------->
-
-
-
-
-
-
-
-
-
-
 <!----------------------------------------DESKTOP GALLERY---------------------------------------->
 {% for image in images %} 
 {% if loop.index % 2 != 0 %}
 <div class="container desktop-gallery">
     <div class="row">
         <div class="col m6">
-            <p>By: {{ image._id }}</p>
             <h6>{{ image.image_title }}</h6>
             <p>By: {{ image.created_by }}</p>
             <br>
@@ -116,7 +105,6 @@
             <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
         </div>
         <div class="col m6">
-            <p>By: {{ image._id }}</p>
             <h6>{{ image.image_title }}</h6>
             <p>By: {{ image.created_by }}</p>
             <br>
@@ -151,7 +139,6 @@
     <!----------------------------------------END DESKTOP MODAL 2---------------------------------------->
 </div>
 {% endif %}
-
 {% endfor %}
 <!----------------------------------------END DESKTOP GALLERY---------------------------------------->
 {% endblock %}
