@@ -105,6 +105,18 @@ nav li a:hover {
 
 
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
+.sign-up-head, .log-in-head {
+    margin-top: 25px;
+}
+
+#lock, #new-user {
+    font-size: 40px;
+    background-color: white;
+    color: #171717;
+    padding: 10px;
+    border-radius: 50%;
+}
+
 .join-now {
     padding: 15px;
 }
@@ -191,6 +203,11 @@ footer>p {
 
     .modal {
         width: 400px;
+    }
+
+    #lock, #new-user {
+    font-size: 30px;
+    padding: 8px;
     }  
 }
 
