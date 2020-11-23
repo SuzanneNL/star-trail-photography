@@ -84,29 +84,6 @@
 {% endfor %}
 <!----------------------------------------END MOBILE GALLERY---------------------------------------->
 <!----------------------------------------DESKTOP SEARCH BAR---------------------------------------->
-<div class="container mobile-search">
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <form action="{{ url_for('search') }}" method="post" >
-                    <div class="row valign-wrapper center-align">
-                        <div class="input-field col s12 m8">
-                            <i class="material-icons prefix" id="icon-search">search</i>
-                            <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                            <label for="query">Search Images</label>
-                        </div>
-                        <div class="col s12 m4">
-                            <a href="{{ url_for('get_images') }}" class="btn-small" id="reset"><i class="material-icons prefix icon-reset">cancel</i></a>
-                            <button type="submit" class="btn-small" id="search"><i class="material-icons prefix icon-search">search</i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!----------------------------------------END DESKTOP SEARCH BAR---------------------------------------->
-<!----------------------------------------DESKTOP GALLERY---------------------------------------->
 <div class="container desktop-search">
     <div class="row">
         <div class="col s12 m8 offset-m2">
@@ -128,6 +105,8 @@
         </div>
     </div>
 </div>
+<!----------------------------------------END DESKTOP SEARCH BAR---------------------------------------->
+<!----------------------------------------DESKTOP GALLERY---------------------------------------->
 {% for image in images %} 
 {% if loop.index % 2 != 0 %}
 <div class="container desktop-gallery">
