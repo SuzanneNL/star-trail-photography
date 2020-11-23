@@ -31,6 +31,13 @@ def get_images():
     return render_template("gallery.html", images=images)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    images = list(mongo.db.images.find({"$text": {"$search": query}}))
+    return render_template("gallery.html", images=images)
+
+
 # Sign Up
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():

@@ -76,7 +76,7 @@ nav li a:hover {
     object-fit: cover;
 }
 
-.mobile-gallery {
+.mobile-gallery, .mobile-search {
     display: none;
 }
 
@@ -88,14 +88,22 @@ nav li a:hover {
     background-color: #A2A2A0;
 }
 
-.icon-edit, .icon-delete {
+.icon-edit, .icon-delete, .reset, .search, .icon-reset, .icon-search, #reset, #search {
     background-color: #A2A2A0;
     color: #fff;
 }
 
-.icon-edit:hover, .icon-delete:hover {
+.icon-edit:hover, .icon-delete:hover, .reset:hover, .search:hover {
+    background-color: #A2A2A0;
     color: #000000;
 }
+
+.card-panel {
+    margin: 0 0 10px;
+    padding: 0;
+    background-color: #171717;
+}
+
 /* ---------------------------------------------------------------- END GALLERY */
 
 
@@ -198,11 +206,11 @@ footer>p {
     height: 30vh;
     }
 
-    .mobile-gallery {
+    .mobile-gallery, .mobile-search {
     display: block;
     }
 
-    .desktop-gallery {
+    .desktop-gallery, .desktop-search {
     display: none;
     }
 
@@ -235,6 +243,10 @@ footer>p {
 
     .sidenav li>a:hover {
     background-color: #A2A2A0;
+    }
+
+    .btn-small .icon-reset, .btn-small .icon-search {
+        font-size: 0.9rem;
     }
 }
 
