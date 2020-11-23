@@ -163,6 +163,7 @@ nav li a:hover {
 /* ---------------------------------------------------------------- END ADD IMAGE*/
 /*----------------------------------------------------------------- FOOTER*/
 
+
 footer {
     text-align: center;
     width: 100%;
@@ -171,9 +172,10 @@ footer {
     bottom: 0;
 }
 
-footer>p {
+#footer-text {
     margin: 5px 0;
     color: #A2A2A0;
+    font-size: 0.9rem;
 }
 
 .social-links {
@@ -185,9 +187,13 @@ footer>p {
 }
 
 .social-links i {
-    font-size: 1.25rem;
-    padding: .5%;
-    color: #A2A2A0;
+    font-size: 1.2rem;
+    color: #171717;
+    display: inline-block;
+    background-color:  #A2A2A0;;
+    border-radius: 60px;
+    padding: 0.3em 0.4em;
+    margin: 0.4rem;
 }
 
 .social-links a {
@@ -197,6 +203,14 @@ footer>p {
 .social-links li a i:hover {
     text-decoration: none;
     color: #fff; 
+}
+
+.footer-hr {
+    width: 85%;
+    border-top: 1px solid #A2A2A0;
+    margin: auto;
+    margin-top: 100px;
+    padding: 10px;
 }
 
 /*----------------------------------------------------------------- END FOOTER*/
@@ -266,6 +280,16 @@ footer>p {
     
     .modal-content h4 {
         font-size: 12px;        
+    }
+
+    #footer-text {
+    font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #footer-text {
+    font-size: 0.6rem;
     }
 }
 /* ---------------------------------------------------------------- END MEDIA QUERIES */
