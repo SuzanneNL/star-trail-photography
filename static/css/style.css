@@ -69,6 +69,25 @@ nav li a:hover {
     margin-top: 20px;
 }
 /* ---------------------------------------------------------------- END PAGE TITLES */
+/* ---------------------------------------------------------------- HOME */
+#bullet-points {
+  list-style: none; /* Remove default bullets */
+}
+
+#bullet-points li::before {
+  content: "\2022";
+  color: #fff; 
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -1em;
+}
+
+
+#bullet-points li {
+    padding-left: 20px;
+}
+/* ---------------------------------------------------------------- END HOME */
 /* ---------------------------------------------------------------- GALLERY */
 .img-responsive {
     max-width: 100%;
