@@ -71,7 +71,7 @@ nav li a:hover {
 /* ---------------------------------------------------------------- END PAGE TITLES */
 /* ---------------------------------------------------------------- HOME */
 #bullet-points {
-  list-style: none; /* Remove default bullets */
+  list-style: none;
 }
 
 #bullet-points li::before {
