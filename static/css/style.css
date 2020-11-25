@@ -135,7 +135,6 @@ nav li a:hover {
 #edit-delete-buttons {
     margin-bottom: 10px;
 }
-
 /* ---------------------------------------------------------------- END GALLERY */
 
 
@@ -317,11 +316,26 @@ footer {
     #footer-text {
     font-size: 0.8rem;
     }
+
+    .page-title h1, #home-page-title {
+        font-size: 1.8rem;
+        margin-top: 1.8rem;
 }
 
 @media screen and (max-width: 360px) {
     #footer-text {
     font-size: 0.6rem;
     }
+
+    .page-title h1, #home-page-title {
+        font-size: 1.7rem;
+        margin-top: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+        .page-title h1, #home-page-title {
+        font-size: 1.4rem;
+        margin-top: 1.4rem;
 }
 /* ---------------------------------------------------------------- END MEDIA QUERIES */
