@@ -39,8 +39,8 @@
 <!----------------------------------------END MOBILE SEARCH BAR---------------------------------------->
 <!----------------------------------------MOBILE GALLERY---------------------------------------->
 {% for image in images %} 
-<div class="container mobile-gallery">
-    <div class="row card-panel image-text-card">
+<div class="container mobile-gallery card-panel image-text-card">
+    <div class="row">
         <div class="col s12">
             <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
         </div>
@@ -60,7 +60,7 @@
     </div>
     {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
     <div class="row">
-        <div class="col s12">
+        <div class="col s12" id="edit-delete-buttons">
             <div class="center-align">
                 <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
                 <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>

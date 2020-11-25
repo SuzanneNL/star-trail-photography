@@ -131,6 +131,11 @@ nav li a:hover {
 .image-title {
     margin-top: 0;
 }
+
+#edit-delete-buttons {
+    margin-bottom: 10px;
+}
+
 /* ---------------------------------------------------------------- END GALLERY */
 
 
