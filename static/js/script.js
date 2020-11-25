@@ -3,6 +3,9 @@ var currentYear = (new Date).getFullYear();
 $(document).ready(function(){
 $('.sidenav').sidenav({edge: "right"});
 $('.modal').modal();
+$('.scrollspy').scrollSpy({
+    scrollOffset: 0
+    });
 $("#year").text( (new Date).getFullYear() );
 $('.datepicker').datepicker({
     format: "dd mmmm, yyyy",
