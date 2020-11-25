@@ -123,6 +123,14 @@ nav li a:hover {
     background-color: #171717;
 }
 
+.image-text-card {
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
+.image-title {
+    margin-top: 0;
+}
 /* ---------------------------------------------------------------- END GALLERY */
 
 
