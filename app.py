@@ -49,7 +49,7 @@ def sign_up():
         # a flash message appears
         # and the user is redirected to the sign up page.
         if existing_user:
-            flash("That username is taken. Please try another.")
+            flash("That username is taken. Please try another.", "error")
             return redirect(url_for("sign_up"))
         # create a dictionary, containing username and a password hash
         # that's generated from the password provided by the user.
@@ -64,7 +64,7 @@ def sign_up():
         # put users into 'session' cookie and flash message
         # to let the new user know that registration was successful.
         session["user"] = request.form.get("username").lower()
-        flash("Thank you for signing up! Welcome!")
+        flash("Thank you for signing up! Welcome!", "success")
     return render_template("sign_up.html")
 
 
@@ -83,18 +83,20 @@ def log_in():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                    flash("Welcome, {}!".format(request.form.get("username")), "success")
             # if the hashed password doesn't match the provided password,
             # a flash message appears and the user is redirected
             # to the log in page.
             else:
-                flash("Incorrect username and/or password. Please try again.")
+                flash("Incorrect username and/or password. Please try again.",
+                      "error")
                 return redirect(url_for("log_in"))
 
         # if username doesn't exist, a flash message appears
         # and the user is redirected to the log in page.
         else:
-            flash("Incorrect username and/or password. Please try again.")
+            flash("Incorrect username and/or password. Please try again.",
+                  "error")
             return redirect(url_for("log_in"))
 
     return render_template("log_in.html")
@@ -104,7 +106,7 @@ def log_in():
 @app.route("/log_out")
 def log_out():
     # Remove the user from session cookies
-    flash("You have been logged out")
+    flash("You have been logged out", "success")
     session.pop("user")
     return redirect(url_for("log_in"))
 
@@ -127,7 +129,8 @@ def add_image():
             "created_by": session["user"]
         }
         mongo.db.images.insert_one(image)
-        flash("Thank you. Your image has been added to the gallery!")
+        flash("Thank you. Your image has been added to the gallery!",
+              "success")
         return redirect(url_for("get_images"))
     return render_template("add_image.html")
 
@@ -150,7 +153,7 @@ def edit_image(image_id):
             "created_by": session["user"]
         }
         mongo.db.images.update({"_id": ObjectId(image_id)}, submit)
-        flash("Your image has successfully been updated!")
+        flash("Your image has successfully been updated!", "success")
         return redirect(url_for("get_images"))
 
     image = mongo.db.images.find_one({"_id": ObjectId(image_id)})
@@ -160,7 +163,7 @@ def edit_image(image_id):
 @app.route("/delete_image/<image_id>")
 def delete_image(image_id):
     mongo.db.images.remove({"_id": ObjectId(image_id)})
-    flash("Your image has been removed")
+    flash("Your image has been removed", "success")
     return redirect(url_for("get_images"))
 
 

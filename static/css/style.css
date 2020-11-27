@@ -59,8 +59,24 @@ nav li a:hover {
 }
 /* ---------------------------------------------------------------- END BANNER IMAGE */
 /* ---------------------------------------------------------------- FLASH MESSAGES */
-.flash-messages h3 {
+.flash-messages h5 {
     line-height: 2;
+}
+
+.alert-success h5, .success-icon {
+    background-color: #b2cb91;
+    color: 	#4e6f43;
+    padding: 10px;
+}
+
+.alert-error h5, .error-icon {
+    background-color: #ff9b9b;
+    color: #8b0000;
+    padding: 10px;
+}
+
+.error-icon, .success-icon {
+    font-size: 1.3rem;
 }
 /* ---------------------------------------------------------------- END FLASH MESSAGES */
 /* ---------------------------------------------------------------- PAGE TITLES */
@@ -320,6 +336,7 @@ footer {
     .page-title h1, #home-page-title {
         font-size: 1.8rem;
         margin-top: 1.8rem;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -337,5 +354,6 @@ footer {
         .page-title h1, #home-page-title {
         font-size: 1.4rem;
         margin-top: 1.4rem;
+        }
 }
 /* ---------------------------------------------------------------- END MEDIA QUERIES */

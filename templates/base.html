@@ -66,15 +66,24 @@
     <!----------------------------------------END BANNER---------------------------------------->
     <!----------------------------------------FLASH MESSAGES---------------------------------------->
     <section>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flash-messages">
-                        <h5 class="center-align">{{ message }}</h5>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+        <div class="row">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error' %}
+                            <div class="col s12 m6 offset-m3 alert alert-error center-align">
+                                <h5><i class="material-icons prefix error-icon">priority_high</i> {{ message }}</h5>
+                            </div>
+                        {% endif %}
+                        {% if category == 'success' %}
+                            <div class="col s12 m6 offset-m3 alert alert-success center-align">
+                                <h5><i class="material-icons prefix success-icon">check</i> {{ message }}</h5>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
     </section>
     <!----------------------------------------END FLASH MESSAGES---------------------------------------->
     <!----------------------------------------BLOCK CONTENT---------------------------------------->
