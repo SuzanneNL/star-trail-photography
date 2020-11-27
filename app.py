@@ -85,6 +85,7 @@ def log_in():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}!".format(request.form.get("username")), "success")
+                    return redirect(url_for("profile_page"))
             # if the hashed password doesn't match the provided password,
             # a flash message appears and the user is redirected
             # to the log in page.
