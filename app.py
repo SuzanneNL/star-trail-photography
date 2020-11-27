@@ -126,6 +126,24 @@ def profile_page():
     return redirect(url_for("login"))
 
 
+@app.route("/add_favorites/<image_id>", methods=["GET", "POST"])
+def add_favorites(image_id):
+    if session["user"]:
+        current_user = {'username': session['user'].lower()}
+        favorite_images = mongo.db.users.find_one(current_user)["favorites"]
+        if ObjectId(image_id) in favorite_images:
+            flash("You have added this images to your favorites already", "error")
+            return redirect(url_for("get_images"))
+        user_profile = mongo.db.users.find_one(
+            {'username': session['user'].lower()})
+        mongo.db.users.update_one(
+            user_profile, {"$push": {"favorites": ObjectId(
+                image_id)}})
+        flash("Image added to favorites", "success")
+        return redirect(url_for('get_images'))
+    return redirect(url_for('get_images'))
+
+
 # Add image to gallery
 @app.route("/add_image", methods=["GET", "POST"])
 def add_image():

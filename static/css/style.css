@@ -115,15 +115,15 @@ nav li a:hover {
     display: none;
 }
 
-.edit, .delete {
+.edit, .delete, .favorite {
     background-color: #A2A2A0;
 }
 
-.edit:hover, .delete:hover {
+.edit:hover, .delete:hover, .favorite:hover {
     background-color: #A2A2A0;
 }
 
-.icon-edit, .icon-delete, .reset, .search, .icon-reset, .icon-search, #reset, #search {
+.icon-edit, .icon-delete, .reset, .search, .icon-reset, .icon-search, #reset, #search, .icon-favorite {
     background-color: #A2A2A0;
     color: #fff;
 }
@@ -131,6 +131,11 @@ nav li a:hover {
 .icon-edit:hover, .icon-delete:hover, .reset:hover, .search:hover {
     background-color: #A2A2A0;
     color: #000000;
+}
+
+.icon-favorite:hover {
+    background-color: #A2A2A0;
+    color: yellow;
 }
 
 .card-panel {
