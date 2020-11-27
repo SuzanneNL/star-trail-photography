@@ -112,6 +112,19 @@ def log_out():
     return redirect(url_for("log_in"))
 
 
+# Personal profile page
+@app.route("/profile_page/", methods=["GET", "POST"])
+def profile_page():
+    images = list(mongo.db.images.find())
+
+    # no other user than the logged in user can see his profile page
+    if session["user"]:
+        return render_template(
+            "profile_page.html", username=session["user"], images=images)
+
+    return redirect(url_for("login"))
+
+
 # Add image to gallery
 @app.route("/add_image", methods=["GET", "POST"])
 def add_image():

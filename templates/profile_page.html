@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container page-title add-image-button">
+    <div class="row">
+        <div class="col s12 m12">
+            <h1 class="center-align">Profile</h1>
+            <h5 class="center-align">Your images</h5>   
+        </div>
+    </div>
+</div>
+<!----------------------------------------MOBILE SEARCH BAR---------------------------------------->
+<!----------------------------------------MOBILE GALLERY---------------------------------------->
+{% for image in images %}
+{% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
+<div class="container mobile-gallery card-panel image-text-card">
+    <div class="row">
+        <div class="col s12">
+            <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
+        </div>
+        <div class="col s12">
+            <h6>{{ image.image_title }}</h6>
+            <p><i>By: {{ image.created_by }}</i></p>
+            <br>
+            <p>Camera: {{ image.camera }}</p>
+            <p>Focal length: {{ image.focal_length }}</p>
+            <p>ISO: {{ image.iso }}</p>
+            <p>Aperture: {{ image.aperture }}</p>
+            <p>Exposure: {{ image.exposure }}</p>
+            <p>Location: {{ image.location }}</p>
+            <p>Date: {{ image.date }}</p>
+            <p>Description: {{ image.description }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12" id="edit-delete-buttons">
+            <div class="center-align">
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------MOBILE MODAL---------------------------------------->
+    <div id="mobile-modal{{loop.index}}" class="modal">
+        <div class="modal-content">
+            <h4>Are you sure you want to delete this image?</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+        </div>
+    </div>
+    <!----------------------------------------END MOBILE MODAL---------------------------------------->
+</div>
+{% endif %}
+{% endfor %}
+<!----------------------------------------END MOBILE GALLERY---------------------------------------->
+<!----------------------------------------DESKTOP GALLERY---------------------------------------->
+{% for image in images %}
+{% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
+{% if loop.index % 2 != 0 %}
+<div class="container desktop-gallery">
+    <div class="row card-panel image-text-card">
+        <div class="col m6">
+            <h6 class="image-title">{{ image.image_title }}</h6>
+            <p><i>By: {{ image.created_by }}</i></p>
+            <br>
+            <p>Camera: {{ image.camera }}</p>
+            <p>Focal length: {{ image.focal_length }}</p>
+            <p>ISO: {{ image.iso }}</p>
+            <p>Aperture: {{ image.aperture }}</p>
+            <p>Exposure: {{ image.exposure }}</p>
+            <p>Location: {{ image.location }}</p>
+            <p>Date: {{ image.date }}</p>
+            <p>Description: {{ image.description }}</p>
+        </div>
+        <div class="col m6">
+            <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col m12">
+            <div class="center-align">
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+            </div>
+        </div>
+        <!----------------------------------------DESKTOP MODAL 1---------------------------------------->
+        <div id="desktop-modal{{loop.index}}" class="modal">
+            <div class="modal-content">
+                <h4>Are you sure you want to delete this image?</h4>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close btn-flat">Cancel</a>
+                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+            </div>
+        </div>
+        <!----------------------------------------END DESKTOP MODAL 1---------------------------------------->
+    </div>
+    {% else %}
+    <div class="row card-panel image-text-card">
+        <div class="col m6">
+            <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
+        </div>
+        <div class="col m6">
+            <h6 class="image-title">{{ image.image_title }}</h6>
+            <p><i>By: {{ image.created_by }}</i></p>
+            <br>
+            <p>Camera: {{ image.camera }}</p>
+            <p>Focal length: {{ image.focal_length }}</p>
+            <p>ISO: {{ image.iso }}</p>
+            <p>Aperture: {{ image.aperture }}</p>
+            <p>Exposure: {{ image.exposure }}</p>
+            <p>Location: {{ image.location }}</p>
+            <p>Date: {{ image.date }}</p>
+            <p>Description: {{ image.description }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m12">
+            <div class="center-align">
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <button data-target="desktop-modal2{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------DESKTOP MODAL 2---------------------------------------->
+    <div id="desktop-modal2{{loop.index}}" class="modal">
+        <div class="modal-content">
+            <h4>Are you sure you want to delete this image?</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+        </div>
+    </div>
+    <!----------------------------------------END DESKTOP MODAL 2---------------------------------------->
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+<!----------------------------------------END DESKTOP GALLERY---------------------------------------->
+{% endblock %}

@@ -33,6 +33,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ url_for('get_images') }}">Gallery</a></li>
                 {% if session.user %}
+                    <li><a href="{{ url_for('profile_page') }}">Profile</a></li>
                     <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('log_in') }}">Log In</a></li>
@@ -47,6 +48,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="{{ url_for('get_images') }}">Gallery</a></li>
             {% if session.user %}
+                <li><a href="{{ url_for('profile_page') }}">Profile</a></li>
                 <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('log_in') }}">Log In</a></li>
