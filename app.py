@@ -66,7 +66,7 @@ def sign_up():
         # to let the new user know that registration was successful.
         session["user"] = request.form.get("username").lower()
         flash("Thank you for signing up! Welcome!", "success")
-    return render_template("sign_up.html")
+    return render_template("profile_page.html")
 
 
 # Log In
