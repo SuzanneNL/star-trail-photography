@@ -35,7 +35,8 @@ def get_images():
 def search():
     query = request.form.get("query")
     images = list(mongo.db.images.find({"$text": {"$search": query}}))
-    return render_template("gallery.html", images=images)
+    result = mongo.db.images.count({"$text": {"$search": query}})
+    return render_template("gallery.html", images=images, result=result)
 
 
 # Sign Up

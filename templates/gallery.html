@@ -35,9 +35,15 @@
             </div>
         </div>
     </div>
+    <div class="row valign-wrapper center-align" >
+        <div class="col s12 results">
+            Total images: {{images|length}}
+        </div>
+    </div>
 </div>
 <!----------------------------------------END MOBILE SEARCH BAR---------------------------------------->
 <!----------------------------------------MOBILE GALLERY---------------------------------------->
+{% if images|length > 0 %}
 {% for image in images %} 
 <div class="container mobile-gallery card-panel image-text-card">
     <div class="row">
@@ -82,6 +88,7 @@
 </div>
 
 {% endfor %}
+{% endif %}
 <!----------------------------------------END MOBILE GALLERY---------------------------------------->
 <!----------------------------------------DESKTOP SEARCH BAR---------------------------------------->
 <div class="container desktop-search">
@@ -104,9 +111,15 @@
             </div>
         </div>
     </div>
+    <div class="row valign-wrapper center-align" >
+        <div class="col m8 offset-m2 results">
+            Total images: {{images|length}}
+        </div>
+    </div>
 </div>
 <!----------------------------------------END DESKTOP SEARCH BAR---------------------------------------->
 <!----------------------------------------DESKTOP GALLERY---------------------------------------->
+{% if images|length > 0 %}
 {% for image in images %} 
 {% if loop.index % 2 != 0 %}
 <div class="container desktop-gallery">
@@ -192,5 +205,8 @@
 </div>
 {% endif %}
 {% endfor %}
+{% else %}
+    <h6 class="center-align no-results"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sorry, your search returned no results</h6>
+{% endif %}
 <!----------------------------------------END DESKTOP GALLERY---------------------------------------->
 {% endblock %}

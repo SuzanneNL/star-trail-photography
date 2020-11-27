@@ -151,6 +151,10 @@ nav li a:hover {
 #edit-delete-buttons {
     margin-bottom: 10px;
 }
+
+.no-results, .fa-exclamation-circle {
+    color: #ff9b9b;
+}
 /* ---------------------------------------------------------------- END GALLERY */
 
 
