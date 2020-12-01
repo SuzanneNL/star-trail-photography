@@ -68,9 +68,6 @@
     <div class="row">
         <div class="col s12" id="edit-delete-buttons">
             <div class="center-align">
-                {% if session.user %}
-                <a href="#!" class="btn-small favorite"><i class="material-icons prefix icon-favorite">star</i></a>
-                {% endif %}
                 <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
                 <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
@@ -144,13 +141,10 @@
             <img class="img-responsive" src="{{ image.url }}" alt="Photograph by {{ image.created_by }}">
         </div>
     </div>
+    {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
     <div class="row">
         <div class="col m12">
             <div class="center-align">
-                {% if session.user %}
-                <a href="{{ url_for('add_favorites', image_id=image._id) }}" class="btn-small favorite"><i class="material-icons prefix icon-favorite">star</i></a>
-                {% endif %}
-                {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
                 <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
                 <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
@@ -187,13 +181,10 @@
             <p>Description: {{ image.description }}</p>
         </div>
     </div>
+    {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
     <div class="row">
         <div class="col m12">
             <div class="center-align">
-                {% if session.user %}
-                <a href="{{ url_for('add_favorites', image_id=image._id) }}" class="btn-small favorite"><i class="material-icons prefix icon-favorite">star</i></a>
-                {% endif %}
-                {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
                 <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
                 <button data-target="desktop-modal2{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
