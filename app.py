@@ -115,7 +115,7 @@ def log_out():
 
 
 # Personal profile page
-@app.route("/profile_page/", methods=["GET", "POST"])
+@app.route("/profile_page", methods=["GET", "POST"])
 def profile_page():
     images = list(mongo.db.images.find())
 
@@ -125,6 +125,24 @@ def profile_page():
             "profile_page.html", username=session["user"], images=images)
 
     return redirect(url_for("login"))
+
+
+# Change password
+@app.route("/change_password/<username>", methods=["GET", "POST"])
+def change_password(username):
+    if request.method == "POST":
+        submit = {
+            "username": session["user"],
+            "password": generate_password_hash(request.form.get("password")),
+        }
+        mongo.db.users.update({"username": username.lower()}, submit)
+        flash("Your password has been updated!", "success")
+        return redirect(url_for("profile_page", username=session["user"]))
+
+    if session["user"]:
+        return render_template("change_password.html", username=username)
+
+    return redirect(url_for("log_in"))
 
 
 # Add image to gallery

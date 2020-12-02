@@ -18,17 +18,17 @@
 }
 /* ---------------------------------------------------------------- OPEN SANS*/
 .image-submit, .add-image, .add-image-submit, .edit-image-submit, .edit-image-cancel,
-.log-in-submit, .sign-up-submit, .modal-close, a.brand-logo, #mobile-demo a, .menu-items a {
+.log-in-submit, .sign-up-submit, .modal-close, a.brand-logo, #mobile-demo a, .menu-items a, .change-password {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 /* ---------------------------------------------------------------- END OPEN SANS*/
 /* ---------------------------------------------------------------- NAVIGATION BAR */
-.sign-up, .add-image {
+.sign-up, .add-image, .change-password {
     background-color: #fff;
     color: #000000;
 }
 
-.sign-up:hover, .add-image:hover {
+.sign-up:hover, .add-image:hover, .change-password:hover {
     background-color: #A2A2A0;
     color: #fff;
 }
@@ -212,6 +212,11 @@ nav li a:hover {
 }
 
 /* ---------------------------------------------------------------- END ADD IMAGE*/
+/* ---------------------------------------------------------------- PROFILE*/
+.your-images {
+    padding-top: 40px;
+}
+/* ---------------------------------------------------------------- END PROFILE*/
 /*----------------------------------------------------------------- FOOTER*/
 
 

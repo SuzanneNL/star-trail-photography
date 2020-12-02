@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container page-title add-image-button">
+<div class="container page-title change-password-button">
     <div class="row">
         <div class="col s12 m12">
             <h1 class="center-align">Profile</h1>
-            <h5 class="center-align">Your images</h5>   
+            <p class="center-align"><em>You are logged in as {{ username }}</em></p>
+            <br>
+            <div class="center-align">
+                <a href="{{ url_for('change_password', username=session['user']) }}" class="btn change-password">Change Password</a>
+            </div>
         </div>
     </div>
 </div>
-<!----------------------------------------MOBILE SEARCH BAR---------------------------------------->
 <!----------------------------------------MOBILE GALLERY---------------------------------------->
+<h4 class="center-align your-images">Your images</h4>  
 {% for image in images %}
 {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
 <div class="container mobile-gallery card-panel image-text-card">
