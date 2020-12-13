@@ -196,8 +196,13 @@ def edit_image(image_id):
 
 @app.route("/delete_image/<image_id>")
 def delete_image(image_id):
+    url = request.referrer
+    url_split = url.split('/')
+    current_page = url_split[-1]
     mongo.db.images.remove({"_id": ObjectId(image_id)})
     flash("Your image has been removed", "success")
+    if current_page == "profile_page":
+        return redirect(url_for("profile_page"))
     return redirect(url_for("get_images"))
 
 
