@@ -64,30 +64,31 @@ nav li a:hover {
     height: 60vh;
     background-position: center;
     background-size: cover;
+    margin-bottom: 10px;
 }
 
 /* ---------------------------------------------------------------- END BANNER IMAGE */
 
 /* ---------------------------------------------------------------- FLASH MESSAGES */
 
-.flash-messages h5 {
+.flash-messages p {
     line-height: 2;
 }
 
-.alert-success h5, .success-icon {
+.alert-success p, .success-icon {
     background-color: #b2cb91;
     color: 	#4e6f43;
-    padding: 10px;
+    padding: 5px;
 }
 
-.alert-error h5, .error-icon {
+.alert-error p, .error-icon {
     background-color: #ff9b9b;
     color: #8b0000;
-    padding: 10px;
+    padding: 5px;
 }
 
 .error-icon, .success-icon {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 /* ---------------------------------------------------------------- END FLASH MESSAGES */

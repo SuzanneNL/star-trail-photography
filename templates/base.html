@@ -74,12 +74,12 @@
                     {% for category, message in messages %}
                         {% if category == 'error' %}
                             <div class="col s12 m6 offset-m3 alert alert-error center-align">
-                                <h5><i class="material-icons prefix error-icon">priority_high</i> {{ message }}</h5>
+                                <p><i class="material-icons prefix error-icon">priority_high</i> {{ message }}</p>
                             </div>
                         {% endif %}
                         {% if category == 'success' %}
                             <div class="col s12 m6 offset-m3 alert alert-success center-align">
-                                <h5><i class="material-icons prefix success-icon">check</i> {{ message }}</h5>
+                                <p><i class="material-icons prefix success-icon">check</i> {{ message }}</p>
                             </div>
                         {% endif %}
                     {% endfor %}
