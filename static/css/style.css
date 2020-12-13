@@ -128,7 +128,8 @@ nav li a:hover {
 .img-responsive {
     max-width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .mobile-gallery, .mobile-search {
