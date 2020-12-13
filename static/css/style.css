@@ -16,13 +16,18 @@
 .container {
     width: 95%;
 }
+
 /* ---------------------------------------------------------------- OPEN SANS*/
+
 .image-submit, .add-image, .add-image-submit, .edit-image-submit, .edit-image-cancel,
 .log-in-submit, .sign-up-submit, .modal-close, a.brand-logo, #mobile-demo a, .menu-items a, .change-password {
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
 /* ---------------------------------------------------------------- END OPEN SANS*/
+
 /* ---------------------------------------------------------------- NAVIGATION BAR */
+
 .sign-up, .add-image, .change-password {
     background-color: #fff;
     color: #000000;
@@ -48,8 +53,11 @@ nav li a:hover {
 .brand-logo {
     text-transform: uppercase;
 }
+
 /* ---------------------------------------------------------------- END NAVIGATION BAR */
+
 /* ---------------------------------------------------------------- BANNER IMAGE */
+
 .banner-image {
     background-image: url(../images/banner.jpg);
     background-repeat: no-repeat;
@@ -57,8 +65,11 @@ nav li a:hover {
     background-position: center;
     background-size: cover;
 }
+
 /* ---------------------------------------------------------------- END BANNER IMAGE */
+
 /* ---------------------------------------------------------------- FLASH MESSAGES */
+
 .flash-messages h5 {
     line-height: 2;
 }
@@ -78,14 +89,20 @@ nav li a:hover {
 .error-icon, .success-icon {
     font-size: 1.3rem;
 }
+
 /* ---------------------------------------------------------------- END FLASH MESSAGES */
+
 /* ---------------------------------------------------------------- PAGE TITLES */
+
 .page-title {
     text-transform: uppercase;
     margin-top: 20px;
 }
+
 /* ---------------------------------------------------------------- END PAGE TITLES */
+
 /* ---------------------------------------------------------------- HOME */
+
 #bullet-points {
   list-style: none;
 }
@@ -99,12 +116,14 @@ nav li a:hover {
   margin-left: -1em;
 }
 
-
 #bullet-points li {
     padding-left: 20px;
 }
+
 /* ---------------------------------------------------------------- END HOME */
+
 /* ---------------------------------------------------------------- GALLERY */
+
 .img-responsive {
     max-width: 100%;
     height: auto;
@@ -159,20 +178,15 @@ nav li a:hover {
 .image-text-card {
     overflow: hidden;
 }
-/* ---------------------------------------------------------------- END GALLERY */
-
 
 .modal-close span {
     cursor: pointer;
 }
 
-/*.modal-hidden {
-    display: none;
-}*/
-
-
+/* ---------------------------------------------------------------- END GALLERY */
 
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
+
 .sign-up-head, .log-in-head {
     margin-top: 25px;
 }
@@ -201,6 +215,7 @@ nav li a:hover {
 }
 
 /* ---------------------------------------------------------------- END LOG IN & SIGN UP*/
+
 /* ---------------------------------------------------------------- ADD IMAGE*/
 
 .datepicker-date-display {
@@ -216,13 +231,16 @@ nav li a:hover {
 }
 
 /* ---------------------------------------------------------------- END ADD IMAGE*/
+
 /* ---------------------------------------------------------------- PROFILE*/
+
 .your-images {
     padding-top: 40px;
 }
-/* ---------------------------------------------------------------- END PROFILE*/
-/*----------------------------------------------------------------- FOOTER*/
 
+/* ---------------------------------------------------------------- END PROFILE*/
+
+/*----------------------------------------------------------------- FOOTER*/
 
 footer {
     text-align: center;
@@ -274,24 +292,22 @@ footer {
 }
 
 /*----------------------------------------------------------------- END FOOTER*/
+
 /* ---------------------------------------------------------------- MEDIA QUERIES */
+
 @media screen and (max-width: 1024px) {
     .banner-image {
     height: 30vh;
     }
-
     .mobile-gallery, .mobile-search {
     display: block;
     }
-
     .desktop-gallery, .desktop-search {
     display: none;
     }
-
     .modal {
         width: 400px;
     }
-
     #lock, #new-user {
     font-size: 30px;
     padding: 8px;
@@ -302,23 +318,18 @@ footer {
     a.brand-logo {
         font-size: 18px;
     }
-
     .shutter-logo {
         font-size: 14px;
     }
-
     .sidenav {
         background-color: #171717;
     }
-
     .sidenav li>a {
     color: #fff;
     }
-
     .sidenav li>a:hover {
     background-color: #A2A2A0;
     }
-
     .btn-small .icon-reset, .btn-small .icon-search {
         font-size: 0.9rem;
     }
@@ -329,23 +340,18 @@ footer {
         width: 190px;
         font-size: 16px;
     }
-
     .shutter-logo {
         font-size: 14px;
     }
-
     .modal {
         width: 270px;
     }
-    
     .modal-content h4 {
         font-size: 12px;        
     }
-
     #footer-text {
     font-size: 0.8rem;
     }
-
     .page-title h1, #home-page-title {
         font-size: 1.8rem;
         margin-top: 1.8rem;
@@ -356,7 +362,6 @@ footer {
     #footer-text {
     font-size: 0.6rem;
     }
-
     .page-title h1, #home-page-title {
         font-size: 1.7rem;
         margin-top: 1.7rem;
@@ -364,9 +369,10 @@ footer {
 }
 
 @media screen and (max-width: 280px) {
-        .page-title h1, #home-page-title {
-        font-size: 1.4rem;
-        margin-top: 1.4rem;
-        }
+    .page-title h1, #home-page-title {
+    font-size: 1.4rem;
+    margin-top: 1.4rem;
+    }
 }
+
 /* ---------------------------------------------------------------- END MEDIA QUERIES */
