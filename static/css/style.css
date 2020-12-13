@@ -155,6 +155,10 @@ nav li a:hover {
 .no-results, .fa-exclamation-circle {
     color: #ff9b9b;
 }
+
+.image-text-card {
+    overflow: hidden;
+}
 /* ---------------------------------------------------------------- END GALLERY */
 
 
