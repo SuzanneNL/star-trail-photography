@@ -84,8 +84,8 @@
     <div class="row">
         <div class="col m12">
             <div class="center-align">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <button data-target="desktop-modal{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
         </div>
         <!----------------------------------------DESKTOP MODAL 1---------------------------------------->
@@ -122,8 +122,8 @@
     <div class="row">
         <div class="col m12">
             <div class="center-align">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                <button data-target="desktop-modal2{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
+                <button data-target="desktop-modal2{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
         </div>
     </div>
