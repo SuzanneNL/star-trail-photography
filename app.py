@@ -172,7 +172,9 @@ def add_image():
 # Edit image from gallery
 @app.route("/edit_image/<image_id>", methods=["GET", "POST"])
 def edit_image(image_id):
+    previous_page = request.referrer
     if request.method == "POST":
+        previous_url = request.form.get("previous_url")
         submit = {
             "url": request.form.get("url"),
             "image_title": request.form.get("image_title"),
@@ -188,10 +190,11 @@ def edit_image(image_id):
         }
         mongo.db.images.update({"_id": ObjectId(image_id)}, submit)
         flash("Your image has successfully been updated!", "success")
-        return redirect(url_for("get_images"))
+        return redirect(previous_url)
 
     image = mongo.db.images.find_one({"_id": ObjectId(image_id)})
-    return render_template("edit_image.html", image=image)
+    return render_template("edit_image.html", image=image,
+                           previous_page=previous_page)
 
 
 @app.route("/delete_image/<image_id>")
