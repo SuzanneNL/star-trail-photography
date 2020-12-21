@@ -12,7 +12,7 @@ When I first started with star trail photography, I looked up several websites w
 
 The website performs CRUD operations. CRUD stands for create, read, update and delete records. This means that:
 - Users have the ability to view and search images in the gallery. 
-- Users can create an account and change their password.
+- Users can create an account and change their password. They can also delete their account.
 - When logged in, users have the ability to upload (create) images to the gallery. They can edit or delete their own images. Other users cannot access these images, except for the Administrator. 
 
 This was website was built using HTML, CSS (Materialize), Javascript (jQuery), Python (Flask, Jinja, PyMongo, Werkzeug) and uses MongoDB Atlas as a database. It can be viewed on pc monitors, laptops, tablets and mobile devices. It is hosted on Heroku and can be viewed [here]( http://star-trail-photography.herokuapp.com/).
@@ -49,7 +49,7 @@ This was website was built using HTML, CSS (Materialize), Javascript (jQuery), P
 The goal of this website is to inform those who are interested, about star trail photography with both text and example images, and also to be a platform where users can share their own images. 
 
 ### Scope
-An easy to navigate and responsive website that is informative and allows users to perform CRUD operations. Users can sign up and, once logged in, share their own photography. These users manage their own images, meaning they can edit and delete them when they want. Also, they can update their password. All users can view and search images in the gallery.  
+An easy to navigate and responsive website that is informative and allows users to perform CRUD operations. Users can sign up and, once logged in, share their own photography. These users manage their own images, meaning they can edit and delete them when they want. Also, they can update their password and even delete their account. All users can view and search images in the gallery.  
 
 ### Structure
 The website consists of a number of pages. Thanks to templating language Jinja, they all share the same base. This base consists of a navigation bar, a banner image, a section for flash images, a content block and a footer. 
@@ -61,7 +61,7 @@ The website consists of a number of pages. Thanks to templating language Jinja, 
 - A sign up page. 
 3. Visible for logged in users:**
 - A log out option in the navigation bar.
-- A profile page, where a user can click on a button that directs him to a page where he can then update his password. The profile page also shows all the images that were uploaded by the user. 
+- A profile page, where a user can click on a button that directs him to a page where he can then update his password. From here, he can also delete his account. Finally, the profile page shows all the images that were uploaded by the user. 
 - In the gallery, a logged in user sees an 'add your image' button, that directs the user to a form for uploading an image. 
 - Also in the gallery, the user sees two buttons under each of his own images. These buttons are also visible on the profile page. The pen button directs a user to a form where he can edit his image and save the changes (or cancel and go back to the previous page). The bin button makes a modal pop up, asking the user whether he really wants to delete this image. A user can cancel and go back to the page, or he can confirm, which results in the deletion of the image from the database and therefore from the gallery (and of course from his profile).  
 
@@ -79,7 +79,7 @@ As the creator of this website...
 - I want my website to inform users about how to take star trail photographs.
 - I want my website to have users sign up, and share and manage their photography.
 - I want let my registered users manage their own work and their account.
-- I want to protect the work of users by not giving rights to edit and delete images to others than themselves. They should also be the only ones to be able to change their password. 
+- I want to protect the work of users by not giving rights to edit and delete images to others than themselves. They should also be the only ones to be able to change their password or delete their accounts. 
 - I want to prevent random guest users to upload random images and information, so as not to pollute the gallery. 
 - I want users that upload their work to fill out the form with details. 
 - I want to warn users when they try to delete their work, as a form of defensive programming. 
@@ -101,6 +101,7 @@ As a logged in user...
 - I want to manage the work that I have uploaded.
 - I want to have a profile page where I can see only my work.
 - I want to be able to update my password. 
+- I want to be able to delete my profile.
 - I want to be able to log out.
 
 ### Design
@@ -134,13 +135,14 @@ Mock-ups for this website were created using Figma.
 
 ## FEATURES
 ### Existing features
-- **Sign up, login and logout functionality** - Signing up is very simple. Only two fields have to be filled in: username and password. The username and password have to meet certain requirements such as a minimum and maximum length and the use of certain characters. Before adding this new account to the database, the signup function checks if the name already exists in the database. If not, a user is registered successfully with a hashed password and logged in. He can change his password at any time. After logging in, a user can log out by clicking on Log Out in the navigation bar and the session cookie is deleted. He is then directed to the log in page. 
+- **Sign Up, Change Password and Delete Account functionality** - Signing up is very simple. Only two fields have to be filled in: username and password. The username and password have to meet certain requirements such as a minimum and maximum length and the use of certain characters. Before adding this new account to the database, the signup function checks if the name already exists in the database. If not, a user is registered successfully with a hashed password and logged in. He can change his password at any time. A user can delete his account as well. He is then logged out and directed to the Sign Up page. The user's account is deleted from the database. 
+- **Login and Logout Functionality** - After logging in with the information that was provided when signing up, the user is directed to his profile page. A user can log out by clicking on Log Out in the navigation bar. The session cookie is then deleted and the user is directed to the log in page. 
 - **Complete CRUD functionality for the gallery** - Users can view and search images in the gallery. Registered users can upload an image with details; this is then displayed in the gallery and on the profile page. Buttons for editing/deleting appear under the images he owns. He can change these images/details through a form that displays the current information. While adding or editing, he can always cancel and be directed back to the gallery/profile page. Also he can decide to delete an image as a whole, by clicking on the bin button. A modal pops up to warn the user he is about to delete his image. He can then confirm or cancel. 
 - **Responsive Materialize navigation bar** - The links in the navigation bar vary, based on whether a user is logged in or not. As a guest user, one sees Home, Gallery, Log In and Sign Up. Once signed up or logged in, Sign Up and Log In disappear. Instead, a user sees Profile and Log Out. 
 - **Instructions on star trail photography** - Instructions are present in the form of an article on the homepage. 
 - **Materialize scrollspy** - On the right side of the article, users see a scrollspy that can direct them to relevant paragraphs. The scrollspy is not visible on small screens. 
 - **Gallery with images and a search bar** - All users can search the gallery (search covers the fields title, user and description). The gallery is filled with images uploaded by registered users. 
-- **Profile page** - This shows the user his username, a button for editing his password and the images that he has uploaded with buttons for deleting and editing the images.
+- **Profile page** - This shows the user his username, a button for editing his password, a button for deleting his profile and the images that he has uploaded with buttons for deleting and editing the images.
 - **Materialize forms** - These forms are used for signing up, logging in, updating a password, adding an image and editing an image. The forms give feedback to the user. It can remind a user that a field is left empty or filled out incorrectly with a message and a red color, based on the requirements in the code. Green means the field has been filled out correctly. The forms also don't let a user use more characters than allowed, typing is disabled in that case. 
 - **Materialize datepicker** - In the forms for adding and editing an image, a datepicker appears when a user goes to the date field. A user can only select today and past dates (it goes back ten years). 
 - **Flash messages** - Flash messages give feedback to the user about his activity and appear right under the banner image after actions such as signing up, logging in or adding an image. Green flash messages mean the action was successful, red messages mean the action was unsuccessful. Flash messages will stay on the page until a user refreshes it or goes to a different page. 
@@ -150,7 +152,6 @@ Mock-ups for this website were created using Figma.
 - **Hide and show password** - Currently, the password is hidden both when signing up and logging in. My preference would be to hide the password by default for security reasons, but to allow a user to make the password visible by clicking on an eye icon, to reduce login problems.
 - **Confirm password** - A user could make a typing error in the password when creating his account, and then never being able to log in. Having him confirm his password reduces the risk of making a mistake in the password while signing up. 
 - **Recover password** - A user would have to sign up with an e-mail address. If he has forgotten his password, this e-mail address could be used to recover the password.
-- **Delete account** - A user can manage his account by deleting it. 
 - **Like button** - Following platforms such as Facebook, Instagram or Flickr, a like button could be implemented. Registered users could then like images to show appreciation. I would also permit a user to delete his like. A counter could track the number of likes given to an image. This would also give the opportunity to create a sorting option, based on popularity. 
 - **Save button** -  A user could save an image he likes, which would then be shown on his profile under 'favorites'. I had actually started writing code for this option, but had to stop due to the fact that I didn't have enough time. 
 - **Comment section** - Users could comment on each other's images, preferably giving compliments or asking questions. I would prefer a moderator to check the posts before they are shown in the comment sections.  

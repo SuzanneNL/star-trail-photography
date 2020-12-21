@@ -8,7 +8,8 @@
     - [Sign Up](#Sign-up)
     - [Log In](#Log-in)
     - [Log Out](#Log-out)
-    - [Change Password](#Change-password!)
+    - [Change Password](#Change-password)
+    - [Delete Account](#Delete-account)
     - [Gallery](#Gallery)
     - [Profile](#Profile)
     - [Add Image](#Add-image)
@@ -38,7 +39,7 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
     - The star trail images against the black background attract the attention of any user. Buttons are a bit dull, as to highlight the star trail images even more. The Sign Up button stands out more, due to its white color, to attract new members. The use of several Materialize features, allows for a positive user experience. 
 2. **I want my website to have a clear structure, so that it is easy to navigate.**
     - The navigation bar allows a user to browse to the different pages of this website. A user will only be able to see and visit pages that are relevant to him, as explained in the paragraph 'Structure' of the README file. 
-    - Buttons are in place to delete an image or direct a user to pages for adding/editing images and updating the password. 
+    - Buttons are in place to delete an image or the user's account, or direct a user to pages for adding/editing images and updating the password. 
     - Links in content on pages also direct users to other pages, such as 'New here? Join Now!' on the Sign Up page, or the article on the homepage inviting a user to visit the gallery. 
     - Functions in the app.py file ensure that a user, after an action, is directed to a relevant page. For example: after a user logs in, he is directed to his profile page. After logging out, he is directed to the log in page. After adding or editing an image, he can see the result immediately as he is directed to the gallery. 
 3. **I want my website to give feedback to users so that it is easy to navigate.**
@@ -54,14 +55,15 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
 6. **I want to let my registered users manage their own work and their account.**
     - Users can upload their images and as long as they are logged in, they can edit their work by clicking on the edit button. They will be directed to a page with the same form as the one for adding an image, except all the fields will be filled in with the current information of the image. He can change whatever he wants and by clicking on submit. The information is changed and saved in the database and therefore in the gallery and on the profile page. 
     - He can also delete his image by clicking on the bin icon and confirming his decision.
-    - The downside of signing up with nothing more than a username and a password is that without an e-mail address the username and password cannot be retrieved when the user loses his information. A user does have power of his account in the sense that he can change his password through a simple form. 
-7. **I want to protect the work of users by not giving rights to edit and delete images to others than themselves. They should also be the only ones to be able to change their password.** 
+    - The downside of signing up with nothing more than a username and a password is that without an e-mail address the username and password cannot be retrieved when the user loses his information. A user does have power of his account in the sense that he can change his password through a simple form, , or even delete his account. 
+7. **I want to protect the work of users by not giving rights to edit and delete images to others than themselves. They should also be the only ones to be able to change their password or delete their accounts.** 
     - Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is directed to a page with the following URL:
 http://star-trail-photography.herokuapp.com/edit_image/<image_id>.
 Unfortunately, if a malevolent user was to discover the id of someone else's image (they cannot be retrieved from the website itself, but could be found for example by checking the browser history), he could copy this id into the URL and will then have the possibility to change the image. 
     - When a user goes to the form for changing their password, the URL is as follows:
 http://star-trail-photography.herokuapp.com/change_password/<username>
-A malevolent user would perhaps try to type someone else's username, but will then get an error message because the session cookie and the username will not correspond. 
+A malevolent user would perhaps try to type someone else's username, but will not succeed because the session cookie and the username will not correspond. 
+    - On the profile page, a user sees a button that says 'Delete account'. When he clicks on this, a modal pops up to make a user confirm his choice so that the account gets deleted (or he can go back to his profile by clicking on Cancel). 
 8. **I want to prevent random guest users from uploading random images and information, so as not to pollute the gallery.**
     - Adding an image to the gallery can only be done after someone registers with a username and password. 
 9. **I want users that upload their work to fill out the form with details.** 
@@ -98,7 +100,9 @@ A malevolent user would perhaps try to type someone else's username, but will th
     - After logging in, a user is directed to his personal profile page. Profile also appears in the navigation bar. On this profile page, a users sees all his own images. 
 4. **I want to be able to update my password.**
     - On the profile page, a user will see a button 'change password'. When a user clicks on this, he will be directed to a small form. The form contains two fields: username and password. The value for username is already filled in. A new password can be typed and a user can submit to save the new password. 
-5. **I want to be able to log out.**
+5. **I want to be able to delete my profile.**
+    - On the profile page, a user will see a button 'delete account'. When a user clicks on this, a modal pops up asking the user if he is sure he wants to delete his account. A user can then cancel and go back to the profile page, or confirm his choice. He is then logged out, his account is deleted from the database, and he is directed to the sign up page. His images will stay in the gallery under his former account name. 
+6. **I want to be able to log out.**
     - A user logs out by clicking on Log Out in the navigation bar. He will see a green flash message that informs him logging out was successful. His session cookie has been deleted. The website is now shown as it's supposed to, for users who haven't registered or aren't logged in. 
 
 ## Manual testing
@@ -130,6 +134,12 @@ Manual testing was done on different devices (see Responsiveness).
 - Provide a password that doesn't meet requirements. The form will give the field a red color and warn the user that it doesn't meet the requirements. 
 - Provide a password that meets the requirements. The form will give the fields a green color. After submitting, the user is directed to the Profile Page. A green flash message is visible: 'Your password has been updated!' The new password has been hashed and stored in the database.
 - Try again. Now change the username and provide a password that meets the requirements. After submitting, the user is directed to the Profile Page. A green flash message is visible: 'Your password has been updated!'. The username has not been changed, as this form only serves to change the password. The new password has been hashed and stored in the database.
+
+### Delete Account
+- Click on Delete Account on the profile page. A modal pops up asking the user if he is sure he wants to delete his account. 
+- A user can click on Cancel. The modal closes and he is back on the profile page.
+- A user can click on I'm Sure to confirm his choice to delete his account. The user is then logged out, his account is deleted from the database, and he is directed to the sign up page. A green flash message is visible: 'Your account has been removed'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
+- After deleting his account, his images will stay in the gallery under his former account name. 
 
 ### Gallery
 - The gallery renders all images that have been added (and not deleted) by users and exist in the database. 
@@ -283,6 +293,9 @@ Unfortunately, if a malevolent user was to discover the id of someone else's ima
 
 3. **Page not loading correctly**
     - Sometimes, a page will load slowly or even incompletely. I have seen this have an effect on the buttons. When this happens the hover effect that I have written usually doesn't override the Materialize CSS, making buttons green (instead of black, grey and white). 
+
+4. **Regain control of a deleted account**
+    - After a user deletes his account, the user is deleted from the database. This means that someone new can then sign up with the previously used username. There will be no error message, because the username is no longer in use. If this former user had uploaded images to the gallery, and hadn't deleted them before deleting his profile (which is what I want: to keep as much images as possible), a new user gains access to these images. He can then edit and/or delete them. 
 
 ## Browsers
 The final version of the website was tested in different browsers. The website works correctly in Chrome, Opera, Mozilla, Safari, Microsoft Edge and Internet Explorer. 
