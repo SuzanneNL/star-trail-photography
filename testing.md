@@ -63,7 +63,7 @@ Unfortunately, if a malevolent user was to discover the id of someone else's ima
     - When a user goes to the form for changing their password, the URL is as follows:
 http://star-trail-photography.herokuapp.com/change_password/<username>
 A malevolent user would perhaps try to type someone else's username, but will not succeed because the session cookie and the username will not correspond. 
-    - On the profile page, a user sees a button that says 'Delete account'. When he clicks on this, a modal pops up to make a user confirm his choice so that the account gets deleted (or he can go back to his profile by clicking on Cancel). 
+    - On the profile page, a user sees a button that says 'Delete Account'. When he clicks on this, a modal pops up to make a user confirm his choice so that the account gets deleted (or he can go back to his profile by clicking on Cancel). 
 8. **I want to prevent random guest users from uploading random images and information, so as not to pollute the gallery.**
     - Adding an image to the gallery can only be done after someone registers with a username and password. 
 9. **I want users that upload their work to fill out the form with details.** 
@@ -97,11 +97,11 @@ A malevolent user would perhaps try to type someone else's username, but will no
 2. **I want to manage the work that I have uploaded.**
     - Underneath each of their own images, users will see an edit and delete button. They are the only ones to see these (except for the administrator). These buttons allow users to edit and delete their images. 
 3. **I want to have a profile page where I can see only my work.**
-    - After logging in, a user is directed to his personal profile page. Profile also appears in the navigation bar. On this profile page, a users sees all his own images. 
+    - After logging in, a user is directed to his personal profile page. 'Profile' also appears in the navigation bar. On this profile page, a users sees all his own images. 
 4. **I want to be able to update my password.**
-    - On the profile page, a user will see a button 'change password'. When a user clicks on this, he will be directed to a small form. The form contains two fields: username and password. The value for username is already filled in. A new password can be typed and a user can submit to save the new password. 
+    - On the profile page, a user will see a button 'Change Password'. When a user clicks on this, he will be directed to a small form. The form contains two fields: username and password. The value for username is already filled in. A new password can be typed and a user can submit to save the new password. 
 5. **I want to be able to delete my profile.**
-    - On the profile page, a user will see a button 'delete account'. When a user clicks on this, a modal pops up asking the user if he is sure he wants to delete his account. A user can then cancel and go back to the profile page, or confirm his choice. He is then logged out, his account is deleted from the database, and he is directed to the sign up page. His images will stay in the gallery under his former account name. 
+    - On the profile page, a user will see a button 'Delete Account'. When a user clicks on this, a modal pops up asking the user if he is sure he wants to delete his account. A user can then cancel and go back to the profile page, or confirm his choice. He is then logged out, his account is deleted from the database, and he is directed to the sign up page. His images will stay in the gallery under his former account name. 
 6. **I want to be able to log out.**
     - A user logs out by clicking on Log Out in the navigation bar. He will see a green flash message that informs him logging out was successful. His session cookie has been deleted. The website is now shown as it's supposed to, for users who haven't registered or aren't logged in. 
 
@@ -126,19 +126,19 @@ Manual testing was done on different devices (see Responsiveness).
 - Provide a correct username with a correct password and submit the form. The user is directed to the home page. A green flash message is visible: 'Welcome, <username>!' A session cookie is added, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will see the session cookie). The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. In the gallery, a user will see an 'add your image' button. And underneath previously added image, he will see edit and delete buttons.
 
 ### Log Out
-- Click on Log Out in the navigation bar. The user is directed to the Log In page. A green flash message is visible: 'You have been logged out'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
+- Click on 'Log Out' in the navigation bar. The user is directed to the Log In page. A green flash message is visible: 'You have been logged out'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
 
 ### Change Password
-- Click on Change Password on the Profile page. The user is directed to the change password form. His username is filled in, the password field is empty.
+- Click on 'Change Password' on the profile page. The user is directed to the change password form. His username is filled in, the password field is empty.
 - In the form, leave the password field empty and try to submit. The form tells a user that the empty field needs to be filled in (red color, text).
 - Provide a password that doesn't meet requirements. The form will give the field a red color and warn the user that it doesn't meet the requirements. 
-- Provide a password that meets the requirements. The form will give the fields a green color. After submitting, the user is directed to the Profile Page. A green flash message is visible: 'Your password has been updated!' The new password has been hashed and stored in the database.
-- Try again. Now change the username and provide a password that meets the requirements. After submitting, the user is directed to the Profile Page. A green flash message is visible: 'Your password has been updated!'. The username has not been changed, as this form only serves to change the password. The new password has been hashed and stored in the database.
+- Provide a password that meets the requirements. The form will give the fields a green color. After submitting, the user is directed to the profile page. A green flash message is visible: 'Your password has been updated!' The new password has been hashed and stored in the database.
+- Try again. Now change the username and provide a password that meets the requirements. After submitting, the user is directed to the profile page. A green flash message is visible: 'Your password has been updated!'. The username has not been changed, as this form only serves to change the password. The new password has been hashed and stored in the database.
 
 ### Delete Account
-- Click on Delete Account on the profile page. A modal pops up asking the user if he is sure he wants to delete his account. 
-- A user can click on Cancel. The modal closes and he is back on the profile page.
-- A user can click on I'm Sure to confirm his choice to delete his account. The user is then logged out, his account is deleted from the database, and he is directed to the sign up page. A green flash message is visible: 'Your account has been removed'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
+- Click on 'Delete Account' on the profile page. A modal pops up asking the user if he is sure he wants to delete his account. 
+- A user can click on 'Cancel'. The modal closes and he is back on the profile page.
+- A user can click on 'I'm Sure' to confirm his choice to delete his account. The user is then logged out, his account is deleted from the database, and he is directed to the sign up page. A green flash message is visible: 'Your account has been removed'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
 - After deleting his account, his images will stay in the gallery under his former account name. 
 
 ### Gallery
@@ -193,16 +193,16 @@ The displayed number of images in the gallery is updated with one extra. The ima
 - When a user clicks on one of these icons, he is directed to the corresponding website in a new tab.
 
 ## Resolved issues
-1. **A line on the right side of the body**
-    - When I changed the background color of the body, a 10px line appeared on the right, from the top to the bottom of the page. The Chrome DevTool showed that this was because a div called **drag-target** appeared. This is a Materialize class, probably originating from the navigation bar. The following CSS code fixed this bug:
+**1: A line on the right side of the body**<br>
+When I changed the background color of the body, a 10px line appeared on the right, from the top to the bottom of the page. The Chrome DevTool showed that this was because a div called **drag-target** appeared. This is a Materialize class, probably originating from the navigation bar. The following CSS code fixed this bug:
 ```
 .drag-target {
     width: 0 !important;
 }
 ```
 
-2. **Double for loop**
-    - This website has a gallery with images accompanied by photography details. I wanted the structure of the gallery on a small screen to be different from the structure on a desktop. First I wrote a section for the desktop gallery structure and underneath, I added a section for the mobile gallery structure. I explained in the Materialize paragraph in the README file, that this is because Materialize doesn't have order classes. I had to create two structures in my html file. I hid the mobile gallery with **display: none**. Then in the media queries, I set the desktop gallery to **display: none** and the mobile gallery to **display: block**. In desktop view, the gallery appeared. In mobile view however, the gallery was not visible. This is because Jinja already unpacked my list of images for the desktop gallery, even though I had set that to **display: none**. I therefore had to make a change in my get_images function.
+**2: Double for loop**<br>
+This website has a gallery with images accompanied by photography details. I wanted the structure of the gallery on a small screen to be different from the structure on a desktop. First I wrote a section for the desktop gallery structure and underneath, I added a section for the mobile gallery structure. I explained in the Materialize paragraph in the README file, that this is because Materialize doesn't have order classes. I had to create two structures in my html file. I hid the mobile gallery with **display: none**. Then in the media queries, I set the desktop gallery to **display: none** and the mobile gallery to **display: block**. In desktop view, the gallery appeared. In mobile view however, the gallery was not visible. This is because Jinja already unpacked my list of images for the desktop gallery, even though I had set that to **display: none**. I therefore had to make a change in my get_images function.
 My original code for the gallery was:
 ```
 @app.route("/get_images")
@@ -219,21 +219,20 @@ def get_images():
 ```
 This resolved the issue: the mobile gallery appears on smaller screens.  
 
-3. **Misplaced button**
-    - I had accidentally placed the submit button for signing up outside of the form code. Therefore, a new user could not actually sign up. This was fixed of course by placing the button inside the form.
+**3: Misplaced button**<br>
+I had accidentally placed the submit button for signing up outside of the form code. Therefore, a new user could not actually sign up. This was fixed of course by placing the button inside the form.
 
-4. **Defensive programming for registering**
-    - Users were allowed to create an account without filling in both the username and password fields. Also, spaces could be used to create a username or password. The first issue was resolved by adding the required attribute. The second was resolved by specifying that users could use the letters A-Z both in lower and uppercase, the numbers 0-9, an underscore and a period.
+**4: Defensive programming for registering**<br>
+Users were allowed to create an account without filling in both the username and password fields. Also, spaces could be used to create a username or password. The first issue was resolved by adding the required attribute. The second was resolved by specifying that users could use the letters A-Z both in lower and uppercase, the numbers 0-9, an underscore and a period.
 
-5. **Mobile gallery disappeared** 
-    - I had built two galleries, one for the desktop, and one for mobile screens that I made visible on different screen sizes using media queries, **display: none** and **display: block**, as I already explained above. 
+**5: Mobile gallery disappeared**<br> 
+I had built two galleries, one for the desktop, and one for mobile screens that I made visible on different screen sizes using media queries, **display: none** and **display: block**, as I already explained above. 
 However, one day, I discovered that the mobile gallery had disappeared: it was no longer visible. It seemed like I had changed something in my code. I retraced my commit messages, but I couldn't find anything that would have made this change. I used !important to see if this could override, but nothing happened. I deleted all my new code from after creating my two gallery structures, but it didn't help. I used online validators to check if something was wrong with my code, but there were no errors. 
 Then I realized I had recently added an extra image to my database. There were three images now, instead of two. So I deleted the third image from the DB, and my mobile gallery reappeared, with two images! My hypothesis then was that the gallery would only appear if it had to display an even number of images. I therefore added two extra images to the database, and indeed, all images (a total of 4 now) appeared. My hypothesis was correct: the mobile gallery was visible only when it had to display an even number of images, but disappeared when there it had to display an uneven number of images. This was strange, because the desktop gallery worked with both uneven and even numbers. 
 I thought this might be resolved by adding an extra if statement (like the one I use for the desktop gallery), but this didn't resolve the issue. As I was talking to tutor support, who weren't able to help me, I suddenly came up with the idea that probably, the if statement in my desktop gallery was having some sort of power over my mobile gallery and that the order 'desktop gallery - mobile gallery' had something to do with this. So I decided to put the mobile gallery section at the top of my html file, above the desktop gallery section. This resolved the issue! The mobile gallery now is visible, both with an even and uneven number of images.  
 
-
-6. **Datepicker shows future dates** 
-    - Users need to fill in when they took a picture when they want to add an image to the gallery. I used the datepicker from Materialize. As a user cannot take pictures in the future, I wanted the datepicker to only display dates in the past, and today. I did this by adding the following jQuery code:
+**6: Datepicker shows future dates**<br> 
+Users need to fill in when they took a picture when they want to add an image to the gallery. I used the datepicker from Materialize. As a user cannot take pictures in the future, I wanted the datepicker to only display dates in the past, and today. I did this by adding the following jQuery code:
 ```
 maxDate: new Date()
 ```
@@ -248,8 +247,8 @@ maxYear: currentYear
 ```
 Now, users cannot select a future date or browse beyond the current year.
 
-7. **Wrong images were deleted** 
-    - Users have the power to edit or delete their own images. As an administrator, I can delete every image. When testing the delete image function, I found out that the wrong images were getting deleted.
+**7: Wrong images were deleted**<br> 
+Users have the power to edit or delete their own images. As an administrator, I can delete every image. When testing the delete image function, I found out that the wrong images were getting deleted.
 I had used loop.index to retrieve all images from the database and an if statement to make images switch sides in the desktop gallery. 
 Numbers 1, 3, 5, 7 etc. are positioned on the right side of the page. Numbers 2, 4, 6, 8 etc. are positioned on the left side. 
 In desktop view, when I tried to delete number 3, 5, 7 or another uneven number, image 1 was getting deleted. When I tried to delete number 2, 4, 6 or another even number, image 2 was deleted. In mobile view (no if statement was used for the mobile gallery), it was always number 1 that was getting deleted.
@@ -263,11 +262,11 @@ Then they suggested I write **( loop.index - 1)**. But this also did not resolve
 Then another tutor came online and figured out that at that moment, one generic modal seemed to pop up (or actually two, one for even and one for uneven images), but of course we wanted each image to open its own relevant modal. Looking at the page source in the DevTool, we could see that a modal was in fact created for every single image, but that every modal took the id of numbers one and two. 
 It became clear that when a modal (and a delete button inside that) is placed inside a for loop, it does generate a modal for every item in the loop, but that I needed to give each modal and button inside a unique id. The solution was to add **{{loop.index}}** to the modal ID and the data-target of the confirmation button, for each modal (also inside the mobile gallery). This resolved the issue. 
 
-8. **Text input without spaces**
-    - When adding an image to the gallery, a user can fill in the description field with text that doesn't contain any spaces. This turned the input into one long line that runs behind the image and outside of the card-panel, all the way to the end of the screen. One way to prevent this from happening is having a moderator check added images before they are added to the gallery. I thought I would have to traverse the input string to check the length of every word and compare those lengths to a max length of a word, in order to allow or disallow it. But an easy way to resolve the issue was hiding the overflow of the card-panel. 
+**8: Text input without spaces**<br>
+When adding an image to the gallery, a user can fill in the description field with text that doesn't contain any spaces. This turned the input into one long line that runs behind the image and outside of the card-panel, all the way to the end of the screen. One way to prevent this from happening is having a moderator check added images before they are added to the gallery. I thought I would have to traverse the input string to check the length of every word and compare those lengths to a max length of a word, in order to allow or disallow it. But an easy way to resolve the issue was hiding the overflow of the card-panel. 
 
-9. **Being directed to the wrong page after deleting an image**
-    - A user sees buttons for deleting images on both his profile page and in the gallery under his own images. When a user is in the gallery and deletes an image from there, he is directed back to the gallery (that has been refreshed, and now no longer has this specific image). However, when the user was on his profile and he deleted an image, he was then directed to the gallery instead of his profile page. Of course, it makes more sense if the user is directed to the profile page if that is where he was before. I tried to resolve this using 'request.path' but with a bit of help, I was able to resolve the issue with the following code:
+**9: Being directed to the wrong page after deleting an image**<br>
+A user sees buttons for deleting images on both his profile page and in the gallery under his own images. When a user is in the gallery and deletes an image from there, he is directed back to the gallery (that has been refreshed, and now no longer has this specific image). However, when the user was on his profile and he deleted an image, he was then directed to the gallery instead of his profile page. Of course, it makes more sense if the user is directed to the profile page if that is where he was before. I tried to resolve this using 'request.path' but with a bit of help, I was able to resolve the issue with the following code:
 ```
 url = request.referrer
     url_split = url.split('/')
@@ -281,21 +280,65 @@ return redirect(url_for("get_images"))
 ```
 This resolved the issue. 
 
+**10: Being directed to the wrong page after editing an image**<br>
+There is not only a delete button under each image, there is also an edit button. The same issue presented itself:
+When a user is in the gallery and edits an image from there, he is directed back to the gallery (that has been refreshed, and now shows the updated image). However, when the user was on his profile and he edited an image, he was then directed to the gallery instead of his profile page.
+I thought that the redirecting issue could be solved in the exact same way as I had for the delete function. The code worked just fine with a simple route, in the Delete Image function. So I wrote the following code:
+```python
+@app.route("/edit_image/<image_id>", methods=["GET", "POST"])
+def edit_image(image_id):
+    url = request.referrer
+    url_split = url.split('/')
+    current_page = url_split[-1]
+    is_from_profile = False
+    if current_page == "profile_page":
+        is_from_profile = True
+    if request.method == "POST":
+        submit = {
+            "url": request.form.get("url"),
+            "image_title": request.form.get("image_title"),
+            "camera": request.form.get("camera"),
+            "focal_length": request.form.get("focal_length"),
+            "iso": request.form.get("iso"),
+            "aperture": request.form.get("aperture"),
+            "exposure": request.form.get("exposure"),
+            "location": request.form.get("location"),
+            "date": request.form.get("date"),
+            "description": request.form.get("description"),
+            "created_by": session["user"]
+        }
+        mongo.db.images.update({"_id": ObjectId(image_id)}, submit)
+        flash("Your image has successfully been updated!", "success")
+        if is_from_profile:
+            return redirect(url_for("profile_page"))
+        return redirect(url_for("get_images"))
+
+    image = mongo.db.images.find_one({"_id": ObjectId(image_id)})
+    return render_template("edit_image.html", image=image)
+```
+(Remark: I chose a bad variable name, 'current_page', I should have chosen 'previous_page'). But as you can see, in the Edit Image function, the route is called twice: first on GET and then on POST. This means that the URL changes between the first and the second call, so my original method (like the one for the Delete function) didn't work. I got the advice to use a hidden input field in my Edit Image Form to save the previous URL.
+So what I had to do is:
+- On the first call, get the previous URL.
+- Pass that URL into the hidden input field in the form. This way, it is intact by the second route call.
+- Retrieve the URL from the form on the POST request. 
+- Then redirect to it. <br>
+This way, the user gets directed back to the page where he was coming from. 
+
 ## Unresolved issues
-1. **Mobile menu stays open in desktop view**
-    - When a user opens the Chrome DevTool and switches from desktop view to mobile view, he can click on the mobile menu. When switching to desktop view with an open mobile menu, the menu stays visible on the screen.
+**1: Mobile menu stays open in desktop view**<br>
+When a user opens the Chrome DevTool and switches from desktop view to mobile view, he can click on the mobile menu. When switching to desktop view with an open mobile menu, the menu stays visible on the screen.
 For now, it doesn't seem to impact user experience, but this might be something to address in the future. 
 
-2. **Other users can edit your image** 
-    - Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is directed to a page with the following url:
+**2: Other users can edit your image**<br> 
+Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is directed to a page with the following url:
 http://star-trail-photography.herokuapp.com/edit_image/<image_id>.
 Unfortunately, if a malevolent user was to discover the id of someone else's image (for example by checking the browser history), he could copy this id into the URL and will then have the possibility to change this image. 
 
-3. **Page not loading correctly**
-    - Sometimes, a page will load slowly or even incompletely. I have seen this have an effect on the buttons. When this happens the hover effect that I have written usually doesn't override the Materialize CSS, making buttons green (instead of black, grey and white). 
+**3: Page not loading correctly**<br>
+Sometimes, a page will load slowly or even incompletely. I have seen this have an effect on the buttons. When this happens the hover effect that I have written usually doesn't override the Materialize CSS, making buttons green (instead of black, grey and white). 
 
-4. **Regain control of a deleted account**
-    - After a user deletes his account, the user is deleted from the database. This means that someone new can then sign up with the previously used username. There will be no error message, because the username is no longer in use. If this former user had uploaded images to the gallery, and hadn't deleted them before deleting his profile (which is what I want: to keep as much images as possible), a new user gains access to these images. He can then edit and/or delete them. 
+**4: Regain control of a deleted account**<br>
+After a user deletes his account, the user is deleted from the database. This means that someone new can then sign up with the previously used username. There will be no error message, because the username is no longer in use. If this former user had uploaded images to the gallery, and hadn't deleted them before deleting his profile (which is what I want: to keep as much images as possible), a new user gains access to these images. He can then edit and/or delete them. 
 
 ## Browsers
 The final version of the website was tested in different browsers. The website works correctly in Chrome, Opera, Mozilla, Safari, Microsoft Edge and Internet Explorer. 
