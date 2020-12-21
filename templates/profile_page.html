@@ -8,10 +8,22 @@
             <br>
             <div class="center-align">
                 <a href="{{ url_for('change_password', username=session['user']) }}" class="btn change-password">Change Password</a>
+                <button data-target="modal-delete-account" class="btn change-password modal-trigger">Delete account</button>
             </div>
         </div>
     </div>
 </div>
+<!----------------------------------------DELETE MODAL---------------------------------------->
+<div id="modal-delete-account" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure you want to delete your account?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close btn-flat">Cancel</a>
+        <a href="{{ url_for('delete_account', username=session['user']) }}" class="modal-close btn-flat">I'm sure</a>
+    </div>
+</div>
+<!----------------------------------------END DELETE MODAL---------------------------------------->
 <!----------------------------------------MOBILE GALLERY---------------------------------------->
 <h4 class="center-align your-images">Your images</h4>  
 {% for image in images %}

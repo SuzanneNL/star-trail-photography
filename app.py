@@ -145,6 +145,15 @@ def change_password(username):
     return redirect(url_for("log_in"))
 
 
+# Delete account
+@app.route("/delete_account/<username>")
+def delete_account(username):
+    mongo.db.users.remove({"username": username.lower()})
+    session.pop("user")
+    flash("Your account has been removed", "success")
+    return redirect(url_for("sign_up"))
+
+
 # Add image to gallery
 @app.route("/add_image", methods=["GET", "POST"])
 def add_image():
@@ -169,7 +178,7 @@ def add_image():
     return render_template("add_image.html")
 
 
-# Edit image from gallery
+# Edit image from gallery and profile
 @app.route("/edit_image/<image_id>", methods=["GET", "POST"])
 def edit_image(image_id):
     previous_page = request.referrer
@@ -197,6 +206,7 @@ def edit_image(image_id):
                            previous_page=previous_page)
 
 
+# Delete image from gallery and profile
 @app.route("/delete_image/<image_id>")
 def delete_image(image_id):
     url = request.referrer
