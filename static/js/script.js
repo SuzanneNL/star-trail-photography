@@ -9,7 +9,7 @@ $('.scrollspy').scrollSpy({
     });
 $("#year").text( (new Date).getFullYear() );
 $('.datepicker').datepicker({
-    format: "dd mmmm, yyyy",
+    format: "yyyy/mm/dd",
     changeYear: true,
     maxYear: currentYear,
     maxDate: new Date(),
