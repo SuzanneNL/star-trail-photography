@@ -39,9 +39,9 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
     - The star trail images against the black background attract the attention of any user. Buttons are a bit dull, as to highlight the star trail images even more. The Sign Up button stands out more, due to its white color, to attract new members. The use of several Materialize features, allows for a positive user experience. 
 2. **I want my website to have a clear structure, so that it is easy to navigate.**
     - The navigation bar allows a user to browse to the different pages of this website. A user will only be able to see and visit pages that are relevant to him, as explained in the paragraph 'Structure' of the README file. 
-    - Buttons are in place to delete an image or the user's account, or direct a user to pages for adding/editing images and updating the password. 
-    - Links in content on pages also direct users to other pages, such as 'New here? Join Now!' on the Sign Up page, or the article on the homepage inviting a user to visit the gallery. 
-    - Functions in the app.py file ensure that a user, after an action, is directed to a relevant page. For example: after a user logs in, he is directed to his profile page. After logging out, he is directed to the log in page. After adding or editing an image, he can see the result immediately as he is directed to the gallery. 
+    - Buttons are in place to delete an image or the user's account, or redirect a user to pages for adding/editing images and updating the password. 
+    - Links in content on pages also redirect users to other pages, such as 'New here? Join Now!' on the Sign Up page, or the article on the homepage inviting a user to visit the gallery. 
+    - Functions in the app.py file ensure that a user, after an action, is redirected to a relevant page. For example: after a user logs in, he is redirected to his profile page. After logging out, he is redirected to the log in page. After adding or editing an image, he can see the result immediately as he is redirected to the gallery. 
 3. **I want my website to give feedback to users so that it is easy to navigate.**
     - The Materialize forms for signing up, logging in, adding images, editing images and updating a password give feedback in the form of colors (red for error and green for success) and text when fields are filled in correctly and incorrectly, or left blank. 
     - Flash messages give feedback after user actions with color and text (again red for error and green for success). For example, when logging in with an incorrect username or password, the flash messages points out that an incorrect username or password was given. Or when a user tries to sign up and the username is already taken, he will receive a flash message pointing this out. Another example is when a user logs in or signs up, he is welcomed by a flash message. 
@@ -53,11 +53,11 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
     - The Sign Up button in the navigation bar stands out from the other buttons because of its white color. Signing up is easy and simple, and with only two required fields, little private information is needed to register.        
     - Adding an image is simple as well, through a Materialize form. Taking your first star trail image feels like quite an achievement. I like to believe that new photographers are inspired by the images in the gallery and will feel a wish to share their own work as well, if they're proud of it (they will be!). 
 6. **I want to let my registered users manage their own work and their account.**
-    - Users can upload their images and as long as they are logged in, they can edit their work by clicking on the edit button. They will be directed to a page with the same form as the one for adding an image, except all the fields will be filled in with the current information of the image. He can change whatever he wants and by clicking on submit. The information is changed and saved in the database and therefore in the gallery and on the profile page. 
+    - Users can upload their images and as long as they are logged in, they can edit their work by clicking on the edit button. They will be redirected to a page with the same form as the one for adding an image, except all the fields will be filled in with the current information of the image. He can change whatever he wants and by clicking on submit. The information is changed and saved in the database and therefore in the gallery and on the profile page. 
     - He can also delete his image by clicking on the bin icon and confirming his decision.
     - The downside of signing up with nothing more than a username and a password is that without an e-mail address the username and password cannot be retrieved when the user loses his information. A user does have power of his account in the sense that he can change his password through a simple form, , or even delete his account. 
 7. **I want to protect the work of users by not giving rights to edit and delete images to others than themselves. They should also be the only ones to be able to change their password or delete their accounts.** 
-    - Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is directed to a page with the following URL:
+    - Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is redirected to a page with the following URL:
 http://star-trail-photography.herokuapp.com/edit_image/<image_id>.
 Unfortunately, if a malevolent user was to discover the id of someone else's image (they cannot be retrieved from the website itself, but could be found for example by checking the browser history), he could copy this id into the URL and will then have the possibility to change the image. 
     - When a user goes to the form for changing their password, the URL is as follows:
@@ -83,7 +83,7 @@ A malevolent user would perhaps try to type someone else's username, but will no
 4. **I want to search through the gallery.**
     - At the top of the gallery is a search bar. It can search the fields title, user and description. 
 5. **I want to be able to easily navigate the website.**
-    - Navigation is easy, as already explained above. This is made possible with a navigation bar, buttons and links in the content. Also, users are directed to logical pages after actions such as logging in and out. 
+    - Navigation is easy, as already explained above. This is made possible with a navigation bar, buttons and links in the content. Also, users are redirected to logical pages after actions such as logging in and out. 
 6. **I want to be able to contact the creator of the website.**
     - Users can click on the icons at the bottom of the page to be referred to the creators' personal pages.
 
@@ -93,15 +93,15 @@ A malevolent user would perhaps try to type someone else's username, but will no
 
 ### As a logged in user...
 1. **I want to upload my work to the gallery, providing details about my images.**
-    - After clicking on the 'add your image' button, a user is directed to a form with different fields, such as a title, the camera that was used, settings such as ISO and focal length, location, date and a description. The description field is the only one that isn't required. All answers will be stored as strings in the database, even if some values are integers. This is because I want to allow users to write '?' for example, when they don't know their settings. 
+    - After clicking on the 'add your image' button, a user is redirected to a form with different fields, such as a title, the camera that was used, settings such as ISO and focal length, location, date and a description. The description field is the only one that isn't required. All answers will be stored as strings in the database, even if some values are integers. This is because I want to allow users to write '?' for example, when they don't know their settings. 
 2. **I want to manage the work that I have uploaded.**
     - Underneath each of their own images, users will see an edit and delete button. They are the only ones to see these (except for the administrator). These buttons allow users to edit and delete their images. 
 3. **I want to have a profile page where I can see only my work.**
-    - After logging in, a user is directed to his personal profile page. 'Profile' also appears in the navigation bar. On this profile page, a users sees all his own images. 
+    - After logging in, a user is redirected to his personal profile page. 'Profile' also appears in the navigation bar. On this profile page, a users sees all his own images. 
 4. **I want to be able to update my password.**
-    - On the profile page, a user will see a button 'Change Password'. When a user clicks on this, he will be directed to a small form. The form contains two fields: username and password. The value for username is already filled in. A new password can be typed and a user can submit to save the new password. 
+    - On the profile page, a user will see a button 'Change Password'. When a user clicks on this, he will be redirected to a small form. The form contains two fields: username and password. The value for username is already filled in. A new password can be typed and a user can submit to save the new password. 
 5. **I want to be able to delete my profile.**
-    - On the profile page, a user will see a button 'Delete Account'. When a user clicks on this, a modal pops up asking the user if he is sure he wants to delete his account. A user can then cancel and go back to the profile page, or confirm his choice. He is then logged out, his account is deleted from the database, and he is directed to the sign up page. His images will stay in the gallery under his former account name. 
+    - On the profile page, a user will see a button 'Delete Account'. When a user clicks on this, a modal pops up asking the user if he is sure he wants to delete his account. A user can then cancel and go back to the profile page, or confirm his choice. He is then logged out, his account is deleted from the database, and he is redirected to the sign up page. His images will stay in the gallery under his former account name. 
 6. **I want to be able to log out.**
     - A user logs out by clicking on Log Out in the navigation bar. He will see a green flash message that informs him logging out was successful. His session cookie has been deleted. The website is now shown as it's supposed to, for users who haven't registered or aren't logged in. 
 
@@ -114,31 +114,31 @@ Manual testing was done on different devices (see Responsiveness).
 - Leave one of two fields empty. The form tells a user that the empty field needs to be filled in (red color, text).
 - Provide username or password containing forbidden characters. The form tells a user that the username or password don't meet the criteria (red color, text).
 - Provide username and password that meet requirements. The form will give the fields a green color. 
-- Provide a username that already exists and submit the form. The user is directed back to the sign up page. A red flash message is visible: 'That username is taken. Please try another.'
-- Provide a username that doesn't already exist and submit the form. The user is directed to the home page. A green flash message is visible: 'Thank you for signing up! Welcome!' In the database, a new user is added with an id, username and hashed password. The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. 
+- Provide a username that already exists and submit the form. The user is redirected back to the sign up page. A red flash message is visible: 'That username is taken. Please try another.'
+- Provide a username that doesn't already exist and submit the form. The user is redirected to the home page. A green flash message is visible: 'Thank you for signing up! Welcome!' In the database, a new user is added with an id, username and hashed password. The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. 
 
 ### Log In
 - Before logging in, users see the options Home, Gallery, Log In and Sign Up in the navigation bar.
 - In the Log In form: leave one of two fields empty, or both, and try to log in. The form tells a user that the empty fields need to be filled in (red color, text).
 - Provide both username and password. The form will give the fields a green color. 
-- Provide a false username with a false or correct password and submit the form. The user is directed back to the log in page. A red flash message is visible: 'Incorrect username and/or password. Please try again.'
-- Provide a correct username with a false password and submit the form. The user is directed back to the log in page. A red flash message is visible: 'Incorrect username and/or password. Please try again.'
-- Provide a correct username with a correct password and submit the form. The user is directed to the home page. A green flash message is visible: 'Welcome, <username>!' A session cookie is added, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will see the session cookie). The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. In the gallery, a user will see an 'add your image' button. And underneath previously added image, he will see edit and delete buttons.
+- Provide a false username with a false or correct password and submit the form. The user is redirected back to the log in page. A red flash message is visible: 'Incorrect username and/or password. Please try again.'
+- Provide a correct username with a false password and submit the form. The user is redirected back to the log in page. A red flash message is visible: 'Incorrect username and/or password. Please try again.'
+- Provide a correct username with a correct password and submit the form. The user is redirected to the home page. A green flash message is visible: 'Welcome, <username>!' A session cookie is added, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will see the session cookie). The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. In the gallery, a user will see an 'add your image' button. And underneath previously added image, he will see edit and delete buttons.
 
 ### Log Out
-- Click on 'Log Out' in the navigation bar. The user is directed to the Log In page. A green flash message is visible: 'You have been logged out'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
+- Click on 'Log Out' in the navigation bar. The user is redirected to the Log In page. A green flash message is visible: 'You have been logged out'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
 
 ### Change Password
-- Click on 'Change Password' on the profile page. The user is directed to the change password form. His username is filled in, the password field is empty.
+- Click on 'Change Password' on the profile page. The user is redirected to the change password form. His username is filled in, the password field is empty.
 - In the form, leave the password field empty and try to submit. The form tells a user that the empty field needs to be filled in (red color, text).
 - Provide a password that doesn't meet requirements. The form will give the field a red color and warn the user that it doesn't meet the requirements. 
-- Provide a password that meets the requirements. The form will give the fields a green color. After submitting, the user is directed to the profile page. A green flash message is visible: 'Your password has been updated!' The new password has been hashed and stored in the database.
-- Try again. Now change the username and provide a password that meets the requirements. After submitting, the user is directed to the profile page. A green flash message is visible: 'Your password has been updated!'. The username has not been changed, as this form only serves to change the password. The new password has been hashed and stored in the database.
+- Provide a password that meets the requirements. The form will give the fields a green color. After submitting, the user is redirected to the profile page. A green flash message is visible: 'Your password has been updated!' The new password has been hashed and stored in the database.
+- Try again. Now change the username and provide a password that meets the requirements. After submitting, the user is redirected to the profile page. A green flash message is visible: 'Your password has been updated!'. The username has not been changed, as this form only serves to change the password. The new password has been hashed and stored in the database.
 
 ### Delete Account
 - Click on 'Delete Account' on the profile page. A modal pops up asking the user if he is sure he wants to delete his account. 
 - A user can click on 'Cancel'. The modal closes and he is back on the profile page.
-- A user can click on 'I'm Sure' to confirm his choice to delete his account. The user is then logged out, his account is deleted from the database, and he is directed to the sign up page. A green flash message is visible: 'Your account has been removed'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
+- A user can click on 'I'm Sure' to confirm his choice to delete his account. The user is then logged out, his account is deleted from the database, and he is redirected to the sign up page. A green flash message is visible: 'Your account has been removed'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
 - After deleting his account, his images will stay in the gallery under his former account name. 
 
 ### Gallery
@@ -154,22 +154,22 @@ Manual testing was done on different devices (see Responsiveness).
 
 ### Add Image
 - After logging in or signing up, go to the gallery. An 'add your image' button is visible. Click on the button.
-- A user is directed to the add image page. 
+- A user is redirected to the add image page. 
 - All fields need to meet requirements, or the form will give a warning as in the log in and sign up forms. 
 - All fields except the descriptions need to be filled in. Otherwise the form cannot be submitted. 
-- After submitting a correctly filled out form, the user is directed to the gallery. A green flash message is visible: 'Thank you. Your image has been added to the gallery!'. In the database, a new image has been added. 
+- After submitting a correctly filled out form, the user is redirected to the gallery. A green flash message is visible: 'Thank you. Your image has been added to the gallery!'. In the database, a new image has been added. 
 The displayed number of images in the gallery is updated with one extra. The image has been added to the gallery, at the bottom. It will also have been added to the profile page.
 
 ### Edit Image
-- A user can see an edit button under his own images. After clicking on this, a user is directed to the edit image page. 
+- A user can see an edit button under his own images. After clicking on this, a user is redirected to the edit image page. 
 - All fields are filled in with the current value. When updating fields, they need to meet requirements, or the form will give a warning as in the log in and sign up forms. 
 - All fields except the descriptions need to be filled in. Otherwise the form cannot be submitted. 
-- After submitting a correctly filled out form, he is directed back to the gallery or the profile page, depending on where he clicked on the edit button. A green flash message is visible: 'Your image has successfully been updated!'. In the database, the information has been updated. When looking in the gallery and profile page, one sees that the image has been updated. 
+- After submitting a correctly filled out form, he is redirected back to the gallery or the profile page, depending on where he clicked on the edit button. A green flash message is visible: 'Your image has successfully been updated!'. In the database, the information has been updated. When looking in the gallery and profile page, one sees that the image has been updated. 
 
 ### Delete Image
 - A user can see a delete button under his own image. After clicking on this, a modal pops up: 'Are you sure you want to delete this image?'
 - After clicking on cancel, the modal closes. 
-- After confirming his decision to delete the image, he is directed to the gallery or the profile page, depending on where he clicked on the delete button. A green flash message is visible: 'Your image has been removed'. In the database, the image has been deleted. Therefore, the image has been deleted from the gallery and from the profile page.
+- After confirming his decision to delete the image, he is redirected to the gallery or the profile page, depending on where he clicked on the delete button. A green flash message is visible: 'Your image has been removed'. In the database, the image has been deleted. Therefore, the image has been deleted from the gallery and from the profile page.
 
 ### Search Image
 - At the top of the gallery is a search bar. It can search the fields title, user and description.
@@ -190,7 +190,7 @@ The displayed number of images in the gallery is updated with one extra. The ima
  
 ### Footer
 - The icons in the footer have a hover effect: the mouse turns into a pointer and the color of the icons change.
-- When a user clicks on one of these icons, he is directed to the corresponding website in a new tab.
+- When a user clicks on one of these icons, he is redirected to the corresponding website in a new tab.
 
 ## Resolved issues
 **1: A line on the right side of the body**<br>
@@ -265,14 +265,14 @@ It became clear that when a modal (and a delete button inside that) is placed in
 **8: Text input without spaces**<br>
 When adding an image to the gallery, a user can fill in the description field with text that doesn't contain any spaces. This turned the input into one long line that runs behind the image and outside of the card-panel, all the way to the end of the screen. One way to prevent this from happening is having a moderator check added images before they are added to the gallery. I thought I would have to traverse the input string to check the length of every word and compare those lengths to a max length of a word, in order to allow or disallow it. But an easy way to resolve the issue was hiding the overflow of the card-panel. 
 
-**9: Being directed to the wrong page after deleting an image**<br>
-A user sees buttons for deleting images on both his profile page and in the gallery under his own images. When a user is in the gallery and deletes an image from there, he is directed back to the gallery (that has been refreshed, and now no longer has this specific image). However, when the user was on his profile and he deleted an image, he was then directed to the gallery instead of his profile page. Of course, it makes more sense if the user is directed to the profile page if that is where he was before. I tried to resolve this using 'request.path' but with a bit of help, I was able to resolve the issue with the following code:
+**9: Being redirected to the wrong page after deleting an image**<br>
+A user sees buttons for deleting images on both his profile page and in the gallery under his own images. When a user is in the gallery and deletes an image from there, he is redirected back to the gallery (that has been refreshed, and now no longer has this specific image). However, when the user was on his profile and he deleted an image, he was then redirected to the gallery instead of his profile page. Of course, it makes more sense if the user is redirected to the profile page if that is where he was before. I tried to resolve this using 'request.path' but with a bit of help, I was able to resolve the issue with the following code:
 ```
 url = request.referrer
     url_split = url.split('/')
     current_page = url_split[-1]
 ```
-This checks the page where the user is coming from. I then split the URL at the slash, and have the function check if the part behind the slash corresponds with the profile page. If so, the user is directed to the profile page. If not, this means that he was coming from the gallery, and is directed to the gallery:
+This checks the page where the user is coming from. I then split the URL at the slash, and have the function check if the part behind the slash corresponds with the profile page. If so, the user is redirected to the profile page. If not, this means that he was coming from the gallery, and is redirected to the gallery:
 ```
 if current_page == "profile_page":
     return redirect(url_for("profile_page"))
@@ -280,9 +280,9 @@ return redirect(url_for("get_images"))
 ```
 This resolved the issue. 
 
-**10: Being directed to the wrong page after editing an image**<br>
+**10: Being redirected to the wrong page after editing an image**<br>
 There is not only a delete button under each image, there is also an edit button. The same issue presented itself:
-When a user is in the gallery and edits an image from there, he is directed back to the gallery (that has been refreshed, and now shows the updated image). However, when the user was on his profile and he edited an image, he was then directed to the gallery instead of his profile page.
+When a user is in the gallery and edits an image from there, he is redirected back to the gallery (that has been refreshed, and now shows the updated image). However, when the user was on his profile and he edited an image, he was then redirected to the gallery instead of his profile page.
 I thought that the redirecting issue could be solved in the exact same way as I had for the delete function. The code worked just fine with a simple route, in the Delete Image function. So I wrote the following code:
 ```python
 @app.route("/edit_image/<image_id>", methods=["GET", "POST"])
@@ -322,7 +322,7 @@ So what I had to do is:
 - Pass that URL into the hidden input field in the form. This way, it is intact by the second route call.
 - Retrieve the URL from the form on the POST request. 
 - Then redirect to it. <br>
-This way, the user gets directed back to the page where he was coming from. 
+This way, the user gets redirected back to the page where he was coming from. 
 
 ## Unresolved issues
 **1: Mobile menu stays open in desktop view**<br>
@@ -330,7 +330,7 @@ When a user opens the Chrome DevTool and switches from desktop view to mobile vi
 For now, it doesn't seem to impact user experience, but this might be something to address in the future. 
 
 **2: Other users can edit your image**<br> 
-Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is directed to a page with the following url:
+Users can only see the edit and delete buttons under their own images. When a user chooses to edit an image he is redirected to a page with the following url:
 http://star-trail-photography.herokuapp.com/edit_image/<image_id>.
 Unfortunately, if a malevolent user was to discover the id of someone else's image (for example by checking the browser history), he could copy this id into the URL and will then have the possibility to change this image. 
 
@@ -346,3 +346,5 @@ The final version of the website was tested in different browsers. The website w
 ## Responsiveness
 - Whilst building this website, testing to see if the website adjusts itself to the size of the device was mostly done with the Chrome DevTool. Media queries are in place to adapt elements to different screen sizes. 
 - At the final stage, the website was tested on my personal devices (Lenovo Ideapad 110, HP Pavilion P6330NL with Lenco Monitor (1920px x 1080px), Huawei P30, Samsung Galaxy S4 mini), and my family's and friends' devices. The website was displayed as intended. 
+
+
