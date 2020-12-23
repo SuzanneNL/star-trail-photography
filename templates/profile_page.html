@@ -7,8 +7,8 @@
             <p class="center-align"><em>You are logged in as {{ username }}</em></p>
             <br>
             <div class="center-align">
-                <a href="{{ url_for('change_password', username=session['user']) }}" class="btn change-password">Change Password</a>
-                <button data-target="modal-delete-account" class="btn change-password modal-trigger">Delete account</button>
+                <a href="{{ url_for('change_password', username=session['user']) }}" class="btn-small" id="change-password">Change Password</a>
+                <button data-target="modal-delete-account" class="btn-small modal-trigger" id="delete-account">Delete account</button>
             </div>
         </div>
     </div>

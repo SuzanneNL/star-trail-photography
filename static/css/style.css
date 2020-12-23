@@ -17,25 +17,25 @@
     width: 95%;
 }
 
-/* ---------------------------------------------------------------- OPEN SANS*/
+/* ---------------------------------------------------------------- BUTTONS*/
 
-.image-submit, .add-image, .add-image-submit, .edit-image-submit, .edit-image-cancel,
-.log-in-submit, .sign-up-submit, .modal-close, a.brand-logo, #mobile-demo a, .menu-items a, .change-password {
+.white-black-grey-btn {
     font-family: 'Open Sans Condensed', sans-serif;
-}
-
-/* ---------------------------------------------------------------- END OPEN SANS*/
-
-/* ---------------------------------------------------------------- NAVIGATION BAR */
-
-.sign-up, .add-image, .change-password {
     background-color: #fff;
     color: #000000;
 }
 
-.sign-up:hover, .add-image:hover, .change-password:hover {
+.white-black-grey-btn:hover {
     background-color: #A2A2A0;
     color: #fff;
+}
+
+/* ---------------------------------------------------------------- END BUTTONS*/
+
+/* ---------------------------------------------------------------- NAVIGATION BAR */
+
+a.brand-logo, #mobile-demo a, .menu-items a {
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 nav li a {
@@ -205,17 +205,6 @@ nav li a:hover {
     padding: 15px;
 }
 
-.sign-up-submit, .log-in-submit, .add-image-submit, .edit-image-submit, .edit-image-cancel {
-    background-color: #fff;
-    color: #000000;
-    font-family: 'Open Sans Condensed', sans-serif;
-}
-
-.sign-up-submit:hover, .log-in-submit:hover, .add-image-submit:hover, .edit-image-submit:hover, .edit-image-cancel:hover {
-    background-color: #A2A2A0;
-    color: #fff;
-}
-
 /* ---------------------------------------------------------------- END LOG IN & SIGN UP*/
 
 /* ---------------------------------------------------------------- ADD IMAGE*/
@@ -236,11 +225,30 @@ nav li a:hover {
 
 /* ---------------------------------------------------------------- PROFILE*/
 
+#change-password, #delete-account {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #A2A2A0;
+    color: #000000;
+}
+
+#change-password:hover, #delete-account:hover {
+    background-color: #A2A2A0;
+    color: #fff;
+}
+
 .your-images {
     padding-top: 40px;
 }
 
 /* ---------------------------------------------------------------- END PROFILE*/
+
+/* ---------------------------------------------------------------- MODAL*/
+
+.modal-close {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* ---------------------------------------------------------------- END MODAL*/
 
 /*----------------------------------------------------------------- FOOTER*/
 
