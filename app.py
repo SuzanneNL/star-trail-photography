@@ -32,7 +32,7 @@ def get_images():
     This function displays all images that exist in the database. It renders
     the gallery page.
     """
-    images = list(mongo.db.images.find())
+    images = list(mongo.db.images.find().sort('_id', -1))
     return render_template("gallery.html", images=images)
 
 
@@ -149,7 +149,7 @@ def profile_page():
     This function renders the profile page. It displays the images uploaded by
     the currently logged in user. This page is only visible for the user.
     """
-    images = list(mongo.db.images.find())
+    images = list(mongo.db.images.find().sort('_id', -1))
     if session["user"]:
         return render_template(
             "profile_page.html", username=session["user"], images=images)
