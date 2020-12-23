@@ -14,6 +14,21 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="input-field col s12 m3 offset-m9">
+            <form action="{{ url_for('get_images_sorted') }}" method="POST" >
+                <select id="get_images_sorted" name="get_images_sorted" onchange="this.form.submit()">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
+                    <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
+                    <option value="takendateascending">Date taken (newest to oldest)</option>
+                    <option value="takendatedescending">Date taken (oldest to newest)</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</div>
 <!----------------------------------------MOBILE SEARCH BAR---------------------------------------->
 <div class="container mobile-search">
     <div class="row">

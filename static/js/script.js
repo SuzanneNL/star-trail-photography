@@ -3,6 +3,7 @@ var currentYear = (new Date).getFullYear();
 $(document).ready(function(){
 $('.sidenav').sidenav({edge: "right"});
 $('.modal').modal();
+$('select').formSelect();
 $('.scrollspy').scrollSpy({
     scrollOffset: 0
     });

@@ -36,6 +36,24 @@ def get_images():
     return render_template("gallery.html", images=images)
 
 
+@app.route('/get_images_sorted', methods=['GET', 'POST'])
+def get_images_sorted():
+    """
+    This function sorts all images that exist in the database, based on the
+    users' selected choice. It renders the gallery page.
+    """
+    sort_by = request.form.get('sort_by')
+    if sort_by == 'uploaddateascending':
+        images = list(mongo.db.images.find().sort('_id', -1))
+    elif sort_by == 'uploaddatedescending':
+        images = list(mongo.db.images.find())
+    elif sort_by == 'takendateascending':
+        images = list(mongo.db.images.find().sort("date", -1))
+    else:
+        images = list(mongo.db.images.find().sort("date", 1))
+    return render_template("gallery.html", images=images)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
