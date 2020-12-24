@@ -166,8 +166,8 @@ was used for the structure of the website.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 was used to add style to the website.
 
-- [jQuery]( https://jquery.com/)
-was used as an application controller and to initialize Materialize components.
+- [jQuery](https://jquery.com/)
+is a JavaScript library, used as an application controller and to initialize Materialize components.
 
 - [Materialize]( https://materializecss.com/)
 was used for making the website responsive. 
@@ -211,7 +211,7 @@ was used to prefix my CSS.
 - [Font Awesome](https://fontawesome.com/)
 was used for different icons.
 
-- [Material Icons]( https://material.io/resources/icons/?style=baseline) 
+- [Material Icons](https://material.io/resources/icons/?style=baseline) 
 was used for different icons.
 
 - [Figma](https://www.figma.com/)
