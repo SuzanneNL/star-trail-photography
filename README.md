@@ -36,7 +36,7 @@ This was website was built using HTML, CSS (Materialize), Javascript (jQuery), P
 - [**Technologies used**](#Technologies-used)
 - [**Testing**](https://github.com/mkthewlis/Milestone-Project-3/blob/master/testing.md)
 - [**Deployment**](#Deployment)
-    - [Local deployment](#Local-deployment)
+    - [Clone from GitHub](#Clone-from-github)
     - [Deployment to Heroku](#Deployment-to-Heroku)
 - [**Credits**](#Credits)
     - [Media](#Media)
@@ -225,23 +225,29 @@ The testing process can be found in this separate document [here](
 https://github.com/SuzanneNL/star-trail-photography/blob/master/testing.md).
 
 ## DEPLOYMENT
-### Local deployment:
-To run this website on your personal device, you can follow these steps: 
+### Clone from GitHub:
+To run the application locally, you can follow these steps: 
 1. Go to the repository [SuzanneNL/ star-trail-photography]( https://github.com/SuzanneNL/star-trail-photography).
 2. Click on **code** (next to the green gitpod button).
-3. From the dropdown menu select **download zip**.
-4. Unzip the downloaded file.
-5. Open the **app.py** file and install **requirements.txt** by running the command **pip3 install -r requirements.txt**.
-6. Create a database in MongoDB with two collections: 
+3. In the dropdown menu, copy the clone link (which is https://github.com/SuzanneNL/star-trail-photography.git).
+4. Open your working directory. In the terminal, clone the repository by running the following command:
+```
+git clone https://github.com/SuzanneNL/star-trail-photography.git
+```
+5. Install all required modules with the following command:
+```
+pip3 install -r requirements.txt
+```
+6. Create a database in MongoDB. Add the first collection, called `users`: 
 
-**users**
 **Key**|**Data Type**
 :-----:|:-----:
 _id|ObjectId()
 username|string
 password|string
 
-**images**
+7. Add the second collection, called `images`:
+
 **Key**|**Data Type**
 :-----:|:-----:
 _id|ObjectId()
@@ -257,7 +263,7 @@ date|string
 description|string
 created_by|string
 
-7. Create the **env.py** file and add the following keys and values:
+8. Create the `env.py` file for environment variables, and add the following:
 ```
 import os
 os.environ.setdefault("IP", "0.0.0.0")
@@ -267,14 +273,23 @@ os.environ.setdefault("MONGO_URI", "<your Mongo URI>")
 os.environ.setdefault("MONGO_DBNAME", "<name of your database>") 
 ```
 Make sure to fill in your own values for the Secret Key, Mongo URI and Database Name.<br>
-8. Add your env.py file to **.gitignore**, before pushing your changes.<br>
-9. Run the command **python3 app.py**. 
+9. Add your env.py file to `.gitignore`, before pushing your changes.<br>
+10. To run the application locally, run the following command:
+```
+python3 app.py
+```
 
 ### Deployment to Heroku
 Steps to deploy this project are as follows:
-1. Create the **requirements.txt** file by running the command **pip3 freeze --local > requirements.txt** in the terminal. 
-2. Create the **Procfile** by running the command **echo web: python app.py > Procfile** 
-3. Open the **Procfile** and delete the empty line. Save the file.
+1. Create the `requirements.txt` file by running the following command:
+```
+pip3 freeze --local > requirements.txt
+``` 
+2. Create the `Procfile` by running the following command:
+```
+echo web: python app.py > Procfile
+```
+3. Open the `Procfile` and delete the empty line. Save the file.
 4. Add, commit and push these two files to Github.
 5. Go to **[Heroku](https://www.heroku.com/)** and log in.
 6. At the top right of the page, click on **New**. 
@@ -296,7 +311,7 @@ MONGO_DBNAME|name of your database
 
 14. Go back to the **Deploy** tab and click on **Enable Automatic Deploys**.
 15. In the section **Manual deploy**, click on **Deploy Branch**.
-16. Building the app will take a few minutes. When successful, you will see a message saying **Your app was successfully deployed**.
+16. Building the app will take a few minutes. When successful, you will see a message saying "Your app was successfully deployed".
 17. Click on **View** to launch the app.
 
 ## CREDITS
