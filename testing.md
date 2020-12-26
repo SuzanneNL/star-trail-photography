@@ -40,8 +40,10 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
 2. **I want my website to have a clear structure, so that it is easy to navigate.**
     - The navigation bar allows a user to browse to the different pages of this website. A user will only be able to see and visit pages that are relevant to him, as explained in the paragraph 'Structure' of the README file. 
     - Buttons are in place to delete an image or the user's account, or redirect a user to pages for adding/editing images and updating the password. 
+    - A 'go to the top' button in the gallery and on the profile page allows users to go to the top of the page. 
+    - A scrollspy on the homepage makes it easy for a user to skip to interesting parts of the article.
     - Links in content on pages also redirect users to other pages, such as 'New here? Join Now!' on the Sign Up page, or the article on the homepage inviting a user to visit the gallery. 
-    - Functions in the app.py file ensure that a user, after an action, is redirected to a relevant page. For example: after a user logs in, he is redirected to his profile page. After logging out, he is redirected to the log in page. After adding or editing an image, he can see the result immediately as he is redirected to the gallery. 
+    - Functions in the app.py file ensure that a user, after an action, is redirected to a relevant page. For example: after a user logs in, he is redirected to his profile page. After logging out, he is redirected to the log in page. After adding or editing an image, he can see the result immediately as he is redirected to the gallery.
 3. **I want my website to give feedback to users so that it is easy to navigate.**
     - The Materialize forms for signing up, logging in, adding images, editing images and updating a password give feedback in the form of colors (red for error and green for success) and text when fields are filled in correctly and incorrectly, or left blank. 
     - Flash messages give feedback after user actions with color and text (again red for error and green for success). For example, when logging in with an incorrect username or password, the flash messages points out that an incorrect username or password was given. Or when a user tries to sign up and the username is already taken, he will receive a flash message pointing this out. Another example is when a user logs in or signs up, he is welcomed by a flash message. 
@@ -82,9 +84,11 @@ A malevolent user would perhaps try to type someone else's username, but will no
     - Users can learn how to take these pictures through reading the article on the homepage, and looking at other people's images and the settings they chose. 
 4. **I want to search through the gallery.**
     - At the top of the gallery is a search bar. It can search the fields title, user and description. 
-5. **I want to be able to easily navigate the website.**
-    - Navigation is easy, as already explained above. This is made possible with a navigation bar, buttons and links in the content. Also, users are redirected to logical pages after actions such as logging in and out. 
-6. **I want to be able to contact the creator of the website.**
+5. **I want to sort images in the gallery.**
+    - Users have the option to sort the images in the gallery by selecting one of the options in the 'sort by' menu. There are four options: date uploaded ascending, date uploaded descending, date taken ascending and date taken descending. 
+6. **I want to be able to easily navigate the website.**
+    - Navigation is easy, as already explained above. This is made possible with a navigation bar, buttons, the scrollspy and links in the content. Also, users are redirected to logical pages after actions such as logging in and out. 
+7. **I want to be able to contact the creator of the website.**
     - Users can click on the icons at the bottom of the page to be referred to the creators' personal pages.
 
 ### As a guest user...

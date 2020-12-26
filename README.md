@@ -90,6 +90,7 @@ As a user in general...
 - I enjoy looking at beautiful images of star trails.
 - I want to learn about how to create star trail images myself. 
 - I want to search through the gallery.
+- I want to sort images in the gallery.
 - I want to be able to easily navigate the website. 
 - I want to be able to contact the creator of the website. 
 
@@ -110,14 +111,14 @@ Star trail photography takes place during the night. It made sense to make my we
 This is also why the buttons are fairly dull. Most of them are grey or white with a white or black hover effect, and don't stand out that much. The sign up button attracts more attention because of its white color in the navigation bar. This is intentional, because as the creator of this website, I want my website to become a platform with many users that want to share their work.
 The flash messages give feedback to the user about whether his actions have worked and are therefore quite important. At first, the text was just in white, like the rest of the content on the website. But I chose for green and red colors instead (and icons) to make it immediately clear if something has worked or gone wrong. 
 In total, 8 colors are used:
-- ![# 171717](https://placehold.it/15/171717/000000?text=+) #171717 Nero
-- ![# A2A2A0](https://placehold.it/15/A2A2A0/000000?text=+) #A2A2A0 Mountain Mist
+- ![#171717](https://placehold.it/15/171717/000000?text=+) #171717 Nero
+- ![#A2A2A0](https://placehold.it/15/A2A2A0/000000?text=+) #A2A2A0 Mountain Mist
 - ![#000000](https://placehold.it/15/000000/000000?text=+) #000000 Black
 - ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) #FFFFFF White
-- ![# b2cb91](https://placehold.it/15/b2cb91/000000?text=+) #B2CB91 Sprout
-- ![# 4e6f43](https://placehold.it/15/4e6f43/000000?text=+) #4E6E43 Fern Green
-- ![# ff9b9b](https://placehold.it/15/ff9b9b/000000?text=+) #FF9B9B Rose Bud 
-- ![# 8b0000](https://placehold.it/15/8b0000/000000?text=+) #8B0000 Dark Red 
+- ![#b2cb91](https://placehold.it/15/b2cb91/000000?text=+) #B2CB91 Sprout
+- ![#4e6f43](https://placehold.it/15/4e6f43/000000?text=+) #4E6E43 Fern Green
+- ![#ff9b9b](https://placehold.it/15/ff9b9b/000000?text=+) #FF9B9B Rose Bud 
+- ![#8b0000](https://placehold.it/15/8b0000/000000?text=+) #8B0000 Dark Red 
 
 #### Font families
 I used the following font-families:
@@ -142,7 +143,9 @@ Mock-ups for this website were created using Figma.
 - **Instructions on star trail photography** - Instructions are present in the form of an article on the homepage. 
 - **Materialize scrollspy** - On the right side of the article, users see a scrollspy that can redirect them to relevant paragraphs. The scrollspy is not visible on small screens. 
 - **Gallery with images and a search bar** - All users can search the gallery (search covers the fields title, user and description). The gallery is filled with images uploaded by registered users. 
+- **Sort images option** - In the gallery, users can sort images in 4 ways: by date uploaded, both ascending and descending, and by date taken, also both ascending and descending. 
 - **Profile page** - This shows the user his username, a button for editing his password, a button for deleting his profile and the images that he has uploaded with buttons for deleting and editing the images.
+- **Go to top button** - In the gallery and on the profile page, users can go to the top of the page by clicking on a small arrow on the right side of the bottom of the page.
 - **Materialize forms** - These forms are used for signing up, logging in, updating a password, adding an image and editing an image. The forms give feedback to the user. It can remind a user that a field is left empty or filled out incorrectly with a message and a red color, based on the requirements in the code. Green means the field has been filled out correctly. The forms also don't let a user use more characters than allowed, typing is disabled in that case. 
 - **Materialize datepicker** - In the forms for adding and editing an image, a datepicker appears when a user goes to the date field. A user can only select today and past dates (it goes back ten years). 
 - **Flash messages** - Flash messages give feedback to the user about his activity and appear right under the banner image after actions such as signing up, logging in or adding an image. Green flash messages mean the action was successful, red messages mean the action was unsuccessful. Flash messages will stay on the page until a user refreshes it or goes to a different page. 
