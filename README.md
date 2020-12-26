@@ -355,6 +355,8 @@ I learned a lot from CI's Task Manager Application, and I have applied much from
 	- https://github.com/gaspar91/FeedMe
 - Redirect a user back to the page where he was, after deleting an image:
 	- https://stackoverflow.com/questions/28593235/get-referring-url-for-flask-request/28593313#28593313
+- Go to top of the page button:
+    - https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 
 ### Acknowledgements
 I looked up different black websites and chose some color codes and fonts from [Avocode Enterprise](https://avocode.com/enterprise). 
