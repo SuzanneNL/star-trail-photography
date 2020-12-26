@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="container page-title add-image-button">
     <div class="row">
         <div class="col s12 m12">
@@ -11,21 +10,6 @@
                 <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn">Add Your Image!</a>
             </div>
             {% endif %}
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="input-field col s12 m3 offset-m9">
-            <form action="{{ url_for('get_images_sorted') }}" method="POST" >
-                <select id="get_images_sorted" name="get_images_sorted" onchange="this.form.submit()">
-                    <option value="" disabled selected>Sort By</option>
-                    <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
-                    <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
-                    <option value="takendateascending">Date taken (newest to oldest)</option>
-                    <option value="takendatedescending">Date taken (oldest to newest)</option>
-                </select>
-            </form>
         </div>
     </div>
 </div>
@@ -62,6 +46,23 @@
     </div>
 </div>
 <!----------------------------------------END SEARCH BAR---------------------------------------->
+<!----------------------------------------SORT MENU---------------------------------------->
+<div class="container sort-menu">
+    <div class="row">
+        <div class="input-field col s8 offset-s4 m3 offset-m9">
+            <form action="{{ url_for('get_images_sorted') }}" method="POST" >
+                <select id="get_images_sorted" name="get_images_sorted" onchange="this.form.submit()">
+                    <option class="disabled" value="" disabled selected>Sort By</option>
+                    <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
+                    <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
+                    <option value="takendateascending">Date taken (newest to oldest)</option>
+                    <option value="takendatedescending">Date taken (oldest to newest)</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</div>
+<!----------------------------------------END SORT MENU---------------------------------------->
 <!----------------------------------------MOBILE GALLERY---------------------------------------->
 {% if images|length > 0 %}
 {% for image in images %} 

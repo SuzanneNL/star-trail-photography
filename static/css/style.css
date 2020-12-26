@@ -198,6 +198,35 @@ nav li a:hover {
   border-radius: 4px;
 }
 
+.sort-menu .row {
+    margin-bottom: 0;
+}
+
+.select-wrapper input.select-dropdown {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.dropdown-content li>span {
+    color: #fff;
+    font-size: 12px;
+}
+
+.dropdown-content li>span:hover {
+    color: #000000;
+    background-color: #A2A2A0;
+}
+
+.show-active {
+    color: #000000;
+    background-color: #A2A2A0;
+}
+
+.dropdown-content .disabled span:hover {
+    background-color: #fff;
+    color: rgba(0,0,0,0.3);
+}
+
 /* ---------------------------------------------------------------- END GALLERY */
 
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
@@ -334,7 +363,10 @@ footer {
     #lock, #new-user {
     font-size: 30px;
     padding: 8px;
-    }  
+    }
+    .dropdown-content li>span {
+    font-size: 11px;
+    }
 }
 
 @media screen and (max-width: 992px) {
