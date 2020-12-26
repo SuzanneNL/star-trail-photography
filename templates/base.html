@@ -23,23 +23,25 @@
   <body>
     <header>
         <!----------------------------------------DESKTOP NAVIGATION BAR---------------------------------------->
-        <nav class="nav-extended black">
-            <div class="nav-wrapper">
-            <a href="{{ url_for('index') }}" class="brand-logo"><span class="material-icons shutter-logo">camera</span>Star Trail Photography</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa fa-bars" aria-hidden="true"></i></a>
-            <ul class="right hide-on-med-and-down menu-items">
-                <li><a href="/">Home</a></li>
-                <li><a href="{{ url_for('get_images') }}">Gallery</a></li>
-                {% if session.user %}
-                    <li><a href="{{ url_for('profile_page') }}">Profile</a></li>
-                    <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('log_in') }}">Log In</a></li>
-                    <li><a href="{{ url_for('sign_up') }}" class="btn white-black-grey-btn">Sign Up</a></li>
-                {% endif %}
-            </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav class="nav-extended black">
+                <div class="nav-wrapper">
+                <a href="{{ url_for('index') }}" class="brand-logo"><span class="material-icons shutter-logo">camera</span>Star Trail Photography</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                <ul class="right hide-on-med-and-down menu-items">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ url_for('get_images') }}">Gallery</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile_page') }}">Profile</a></li>
+                        <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('log_in') }}">Log In</a></li>
+                        <li><a href="{{ url_for('sign_up') }}" class="btn white-black-grey-btn">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+                </div>
+            </nav>
+        </div>
         <!----------------------------------------END DESKTOP NAVIGATION BAR---------------------------------------->
         <!----------------------------------------MOBILE NAVIGATION BAR---------------------------------------->
         <ul class="sidenav" id="mobile-demo">
