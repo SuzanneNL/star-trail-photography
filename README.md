@@ -130,9 +130,15 @@ I have used Materialize instead of Bootstrap for this website. I thought it woul
 The downside of using Materialize instead of Bootstrap was that Materialize doesn't have order-classes. Since the gallery juxtaposes image and text, where uneven images are on the right and even images are on the left, the order for mobile screens (with stacked images and text) turned into 'text - image - image - text' etc. With Bootstrap, this could have been solved with order classes. I further talk about this in the testing file. 
 
 ### Mock-ups
-Mock-ups for this website were created using Figma.
-![Figma - desktop version](https://github.com/SuzanneNL/star-trail-photography/blob/master/documentation/figma-desktop.png)
-![Figma - mobile version](https://github.com/SuzanneNL/ star-trail-photography/blob/master/documentation/figma-mobile.png)
+Mock-ups for this website were created using Figma.<br>
+Creating mock-ups in Figma takes quite a bit of time, because I focus mainly on the frontend. Next time, I would like to use Balsamiq for my wireframes, in order to focus more on the structure of the website and the features that I can build.<br>
+My first plan was to create a responsive website about star trail photography with simple CRUD functionality, and with Materialize as a framework. The website would include a homepage with an article and a gallery. The features I was planning to use were functionalities to sign up, log in, log out, add images, edit images and delete images. This is visible in the Figma mock-ups. As I was working on the project, however, I realized that I could do more. By doing more, I was going to learn more. So instead of completing the project in 3 weeks, I decided to spend more time on it and added features such as a scrollspy, sorting and search functionality, a profile page and the options to edit a password and to delete an account were added. 
+#### The desktop version of the homepage:
+![Figma - desktop version of the home page](documentation/figma-home-desktop.png)
+#### The desktop version of the gallery:
+![Figma - desktop version of the gallery](documentation/figma-gallery-desktop.png)
+#### The mobile version of the gallery:
+![Figma - mobile version of the gallery](documentation/figma-gallery-mobile.png)
 
 ## FEATURES
 ### Existing features
