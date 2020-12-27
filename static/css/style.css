@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Roboto&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +33,9 @@
 
 /* ---------------------------------------------------------------- NAVIGATION BAR */
 
-a.brand-logo, #mobile-demo a, .menu-items a {
+a.brand-logo,
+#mobile-demo a,
+.menu-items a {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -75,19 +76,22 @@ nav li a:hover {
     line-height: 2;
 }
 
-.alert-success p, .success-icon {
+.alert-success p,
+.success-icon {
     background-color: #b2cb91;
-    color: 	#4e6f43;
+    color: #4e6f43;
     padding: 5px;
 }
 
-.alert-error p, .error-icon {
+.alert-error p,
+.error-icon {
     background-color: #ff9b9b;
     color: #8b0000;
     padding: 5px;
 }
 
-.error-icon, .success-icon {
+.error-icon,
+.success-icon {
     font-size: 1rem;
 }
 
@@ -103,21 +107,22 @@ nav li a:hover {
 /* ---------------------------------------------------------------- END PAGE TITLES */
 
 /* ---------------------------------------------------------------- HOME */
+
 .home-page p {
     text-align: justify
 }
 
 #bullet-points {
-  list-style: none;
+    list-style: none;
 }
 
 #bullet-points li::before {
-  content: "\2022";
-  color: #fff; 
-  font-weight: bold; 
-  display: inline-block; 
-  width: 1em; 
-  margin-left: -1em;
+    content: "\2022";
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 
 #bullet-points li {
@@ -126,7 +131,7 @@ nav li a:hover {
 
 .img-homepage {
     max-width: 80%;
-    margin-top: 45px;  
+    margin-top: 45px;
 }
 
 /* ---------------------------------------------------------------- END HOME */
@@ -137,27 +142,44 @@ nav li a:hover {
     max-width: 100%;
     height: auto;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
 }
 
-.mobile-gallery, .mobile-search {
+.mobile-gallery,
+.mobile-search {
     display: none;
 }
 
-#backtotop, .edit, .delete {
+#backtotop,
+.edit,
+.delete {
     background-color: #A2A2A0;
 }
 
-#backtotop:hover, .edit:hover, .delete:hover {
+#backtotop:hover,
+.edit:hover,
+.delete:hover {
     background-color: #A2A2A0;
 }
 
-.icon-backtotop, .icon-edit, .icon-delete, .reset, .search, .icon-reset, .icon-search, #reset, #search {
+.icon-backtotop,
+.icon-edit,
+.icon-delete,
+.reset,
+.search,
+.icon-reset,
+.icon-search,
+#reset,
+#search {
     background-color: #A2A2A0;
     color: #fff;
 }
 
-.icon-backtotop:hover, .icon-edit:hover, .icon-delete:hover, .reset:hover, .search:hover {
+.icon-backtotop:hover,
+.icon-edit:hover,
+.icon-delete:hover,
+.reset:hover,
+.search:hover {
     background-color: #A2A2A0;
     color: #000000;
 }
@@ -181,7 +203,8 @@ nav li a:hover {
     margin-bottom: 10px;
 }
 
-.no-results, .fa-exclamation-circle {
+.no-results,
+.fa-exclamation-circle {
     color: #ff9b9b;
 }
 
@@ -193,17 +216,21 @@ nav li a:hover {
     cursor: pointer;
 }
 
+.modal-close {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
 #backtotop {
-  display: none; 
-  position: fixed; 
-  bottom: 20px; 
-  right: 20px; 
-  z-index: 99; 
-  border: none; 
-  outline: none; 
-  cursor: pointer; 
-  padding: 5px; 
-  border-radius: 4px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
 }
 
 .sort-menu .row {
@@ -232,18 +259,20 @@ nav li a:hover {
 
 .dropdown-content .disabled span:hover {
     background-color: #fff;
-    color: rgba(0,0,0,0.3);
+    color: rgba(0, 0, 0, 0.3);
 }
 
 /* ---------------------------------------------------------------- END GALLERY */
 
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
 
-.sign-up-head, .log-in-head {
+.sign-up-head,
+.log-in-head {
     margin-top: 25px;
 }
 
-#lock, #new-user {
+#lock,
+#new-user {
     font-size: 40px;
     background-color: white;
     color: #171717;
@@ -254,6 +283,7 @@ nav li a:hover {
 .join-now {
     padding: 15px;
 }
+
 
 /* ---------------------------------------------------------------- END LOG IN & SIGN UP*/
 
@@ -267,7 +297,8 @@ nav li a:hover {
     width: 80px;
 }
 
-.add-image-form, .edit-image-form {
+.add-image-form,
+.edit-image-form {
     width: 80%;
 }
 
@@ -275,13 +306,15 @@ nav li a:hover {
 
 /* ---------------------------------------------------------------- PROFILE*/
 
-#change-password, #delete-account {
+#change-password,
+#delete-account {
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: #A2A2A0;
     color: #000000;
 }
 
-#change-password:hover, #delete-account:hover {
+#change-password:hover,
+#delete-account:hover {
     background-color: #A2A2A0;
     color: #fff;
 }
@@ -291,14 +324,6 @@ nav li a:hover {
 }
 
 /* ---------------------------------------------------------------- END PROFILE*/
-
-/* ---------------------------------------------------------------- MODAL*/
-
-.modal-close {
-    font-family: 'Open Sans Condensed', sans-serif;
-}
-
-/* ---------------------------------------------------------------- END MODAL*/
 
 /*----------------------------------------------------------------- FOOTER*/
 
@@ -328,7 +353,7 @@ footer {
     font-size: 1.2rem;
     color: #171717;
     display: inline-block;
-    background-color:  #A2A2A0;;
+    background-color: #A2A2A0;
     border-radius: 60px;
     padding: 0.3em 0.4em;
     margin: 0.4rem;
@@ -340,7 +365,7 @@ footer {
 
 .social-links li a i:hover {
     text-decoration: none;
-    color: #fff; 
+    color: #fff;
 }
 
 .footer-hr {
@@ -357,23 +382,26 @@ footer {
 
 @media screen and (max-width: 1024px) {
     .banner-image {
-    height: 30vh;
+        height: 30vh;
     }
-    .mobile-gallery, .mobile-search {
-    display: block;
+    .mobile-gallery,
+    .mobile-search {
+        display: block;
     }
-    .desktop-gallery, .desktop-search {
-    display: none;
+    .desktop-gallery,
+    .desktop-search {
+        display: none;
     }
     .modal {
         width: 400px;
     }
-    #lock, #new-user {
-    font-size: 30px;
-    padding: 8px;
+    #lock,
+    #new-user {
+        font-size: 30px;
+        padding: 8px;
     }
     .dropdown-content li>span {
-    font-size: 11px;
+        font-size: 11px;
     }
 }
 
@@ -388,12 +416,13 @@ footer {
         background-color: #171717;
     }
     .sidenav li>a {
-    color: #fff;
+        color: #fff;
     }
     .sidenav li>a:hover {
-    background-color: #A2A2A0;
+        background-color: #A2A2A0;
     }
-    .btn-small .icon-reset, .btn-small .icon-search {
+    .btn-small .icon-reset,
+    .btn-small .icon-search {
         font-size: 0.9rem;
     }
 }
@@ -410,12 +439,13 @@ footer {
         width: 270px;
     }
     .modal-content h4 {
-        font-size: 12px;        
+        font-size: 12px;
     }
     #footer-text {
-    font-size: 0.8rem;
+        font-size: 0.8rem;
     }
-    .page-title h1, #home-page-title {
+    .page-title h1,
+    #home-page-title {
         font-size: 1.8rem;
         margin-top: 1.8rem;
     }
@@ -423,18 +453,20 @@ footer {
 
 @media screen and (max-width: 360px) {
     #footer-text {
-    font-size: 0.6rem;
+        font-size: 0.6rem;
     }
-    .page-title h1, #home-page-title {
+    .page-title h1,
+    #home-page-title {
         font-size: 1.7rem;
         margin-top: 1.7rem;
     }
 }
 
 @media screen and (max-width: 280px) {
-    .page-title h1, #home-page-title {
-    font-size: 1.4rem;
-    margin-top: 1.4rem;
+    .page-title h1,
+    #home-page-title {
+        font-size: 1.4rem;
+        margin-top: 1.4rem;
     }
 }
 
