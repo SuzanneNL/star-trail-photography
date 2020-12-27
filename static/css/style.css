@@ -406,6 +406,7 @@ footer {
     }
     .img-responsive {
     max-height: 600px;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -430,6 +431,7 @@ footer {
     }
     .img-responsive {
     max-height: 570px;
+    }
 }
 
 @media screen and (max-width: 417px) {
@@ -456,6 +458,7 @@ footer {
     }
     .img-responsive {
     max-height: 260px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -469,6 +472,7 @@ footer {
     }
     .img-responsive {
     max-height: 210px;
+    }
 }
 
 @media screen and (max-width: 280px) {
@@ -479,6 +483,7 @@ footer {
     }
     .img-responsive {
     max-height: 150px;
+    }
 }
 
 /* ---------------------------------------------------------------- END MEDIA QUERIES */
