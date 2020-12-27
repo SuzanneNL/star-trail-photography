@@ -42,12 +42,12 @@ def get_images_sorted():
     This function sorts all images that exist in the database, based on the
     users' selected choice. It renders the gallery page.
     """
-    sort_by = request.form.get('sort_by')
-    if sort_by == 'uploaddateascending':
+    sort_selection = request.form.get('sort-selection')
+    if sort_selection == 'uploaddateascending':
         images = list(mongo.db.images.find().sort('_id', -1))
-    elif sort_by == 'uploaddatedescending':
+    elif sort_selection == 'uploaddatedescending':
         images = list(mongo.db.images.find())
-    elif sort_by == 'takendateascending':
+    elif sort_selection == 'takendateascending':
         images = list(mongo.db.images.find().sort("date", -1))
     else:
         images = list(mongo.db.images.find().sort("date", 1))
