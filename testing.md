@@ -328,6 +328,9 @@ So what I had to do is:
 - Then redirect to it. <br>
 This way, the user gets redirected back to the page where he was coming from. 
 
+**11: The scrollspy didn't entirely display on all screen sizes**<br>
+I created the website on a large screen. But when I tested the website on other devices, I noticed that on certain medium sized screens, such as my laptop, the scrollspy didn't fit completely. The last two list items fell off the screen. I had several options: either make the height of the banner image smaller, remove certain list items, or stick the scrollspy to the bottom of the page, as low as possible. I chose a combination of the last two. I don't really like how it looks on my larger screen, but at least it now fits on the screens I tested. 
+
 ## Unresolved issues
 **1: Mobile menu stays open in desktop view**<br>
 When a user opens the Chrome DevTool and switches from desktop view to mobile view, he can click on the mobile menu. When switching to desktop view with an open mobile menu, the menu stays visible on the screen.
