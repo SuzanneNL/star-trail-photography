@@ -140,6 +140,7 @@ nav li a:hover {
 
 .img-responsive {
     max-width: 100%;
+    max-height: 400px;
     height: auto;
     -o-object-fit: cover;
     object-fit: cover;
@@ -403,6 +404,8 @@ footer {
     .dropdown-content li>span {
         font-size: 11px;
     }
+    .img-responsive {
+    max-height: 600px;
 }
 
 @media screen and (max-width: 992px) {
@@ -425,6 +428,8 @@ footer {
     .btn-small .icon-search {
         font-size: 0.9rem;
     }
+    .img-responsive {
+    max-height: 570px;
 }
 
 @media screen and (max-width: 417px) {
@@ -449,6 +454,8 @@ footer {
         font-size: 1.8rem;
         margin-top: 1.8rem;
     }
+    .img-responsive {
+    max-height: 260px;
 }
 
 @media screen and (max-width: 360px) {
@@ -460,6 +467,8 @@ footer {
         font-size: 1.7rem;
         margin-top: 1.7rem;
     }
+    .img-responsive {
+    max-height: 210px;
 }
 
 @media screen and (max-width: 280px) {
@@ -468,6 +477,8 @@ footer {
         font-size: 1.4rem;
         margin-top: 1.4rem;
     }
+    .img-responsive {
+    max-height: 150px;
 }
 
 /* ---------------------------------------------------------------- END MEDIA QUERIES */
