@@ -103,6 +103,9 @@ nav li a:hover {
 /* ---------------------------------------------------------------- END PAGE TITLES */
 
 /* ---------------------------------------------------------------- HOME */
+.home-page p {
+    text-align: justify
+}
 
 #bullet-points {
   list-style: none;
@@ -119,6 +122,11 @@ nav li a:hover {
 
 #bullet-points li {
     padding-left: 20px;
+}
+
+.img-homepage {
+    max-width: 80%;
+    margin-top: 45px;  
 }
 
 /* ---------------------------------------------------------------- END HOME */

@@ -15,7 +15,7 @@ $('select').formSelect();
 
 //Initializes Scrollspy, with an offset of 200px
 $('.scrollspy').scrollSpy({
-    scrollOffset: 200
+    scrollOffset: 50
     });
 
 /*Initializes Datepicker. 
