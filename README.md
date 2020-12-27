@@ -55,11 +55,11 @@ An easy to navigate and responsive website that is informative and allows users 
 The website consists of a number of pages. Thanks to templating language Jinja, they all share the same base. This base consists of a navigation bar, a banner image, a section for flash images, a content block and a footer. 
 1. Visible for all users:
 - The home page, where the content block contains an article about star trail photography. It is accompanied by a 'scrollspy' on the right side, that helps the user jump to relevant sections of the article. The scrollspy is not visible on smaller screens.
-- The gallery with images that are uploaded by signed up members of this website. Each image has details (title, the photographer/user, camera, settings, location, date and a description) next to it. There is also a search bar at the top. A user can search the fields title, user and description. 
-2. Visible for guest users:**
+- The gallery with images that are uploaded by signed up members of this website. Each image has details (title, the photographer/user, camera, settings, location, date and a description) next to it. There is also a search bar at the top. A user can search the fields title, user and description. Finally, a user can sort images by date taken and date uploaded (both ascending and descending).
+2. Visible for guest users:
 - A log in page.
 - A sign up page. 
-3. Visible for logged in users:**
+3. Visible for logged in users:
 - A log out option in the navigation bar.
 - A profile page, where a user can click on a button that redirects him to a page where he can then update his password. From here, he can also delete his account. Finally, the profile page shows all the images that were uploaded by the user. 
 - In the gallery, a logged in user sees an 'add your image' button, that redirects the user to a form for uploading an image. 
@@ -69,7 +69,7 @@ The website consists of a number of pages. Thanks to templating language Jinja, 
 Wireframes were created using Figma. Images of these wireframes are available under 'wireframes'. Responsiveness consists mostly of adapting the size of the content to different sizes of screens. Also, the gallery doesn't juxtapose images and their details, but positions images and text on top of each other. The design is consistent. 
 
 ### Target audiences
-The website targets those who are interested in star trail photography, for example amateur/beginning photographers, but also more advanced photographers that want to show their work to others as an example.   
+The website targets those who are interested in star trail photography, for example amateur/beginning photographers, but also more advanced photographers who want to show their work to others as an example.   
 
 ### User stories
 As the creator of this website...
@@ -174,6 +174,9 @@ was used for the structure of the website.
 
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 was used to add style to the website.
+
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/Javascript)
+was used as an application controller.
 
 - [jQuery](https://jquery.com/)
 is a JavaScript library, used as an application controller and to initialize Materialize components.
