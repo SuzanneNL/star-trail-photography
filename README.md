@@ -337,6 +337,10 @@ All the images used on this website were taken from flickr accounts. The details
 - achrntatrps
 	- https://flic.kr/p/22rib6W
 	- https://flic.kr/p/Jv7rRM
+- Joel Tonyan
+    - https://flic.kr/p/NnqKyo
+- Beau Rogers
+    - https://flic.kr/p/EMkGDh
 
 ### Content
 The article on the homepage was for the most part written by Don Komarechka, who gave permission to copy the text. The text was taken from [digital photography school](https://digital-photography-school.com/tips-photographing-star-trails/). 
