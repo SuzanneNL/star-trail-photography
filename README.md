@@ -1,7 +1,7 @@
 # STAR TRAIL PHOTOGRAPHY
 ## Milestone project no.3
 ### Data Centric Development Milestone Project
-![Responsive views of website](documentation/responsive.PNG)
+![Responsive views of website](documentation/responsive.png)
 #### Click [HERE]( http://star-trail-photography.herokuapp.com/) for a link to the live website.
 This website was created for educational purposes only.
 
