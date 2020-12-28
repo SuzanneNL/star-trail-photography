@@ -60,6 +60,7 @@ def search():
     This function allows users to search the fields title, user and
     description. It displays the images that contain the searched word and the
     number of images that contain this word.
+    Source: https://github.com/gaspar91/FeedMe
     """
     query = request.form.get("query")
     images = list(mongo.db.images.find({"$text": {"$search": query}}))
@@ -164,6 +165,7 @@ def change_password(username):
     currently logged in user. The password provided by the user is hashed and
     then updated in the database. After that, the user is directed to the
     profile page. A success flash message is displayed.
+    Source: https://github.com/gaspar91/FeedMe
     """
     if request.method == "POST":
         submit = {
@@ -263,6 +265,7 @@ def delete_image(image_id):
     URL, which is split at the slash. It checks if the final part matches
     profile_page. If so, the user is redirected back to the profile page. If
     not, he is redirected to the gallery. A success flash message is visible.
+    Source: Stack Overflow, see README file.
     """
     url = request.referrer
     url_split = url.split('/')

@@ -22,7 +22,8 @@ $(document).ready(function() {
     
 	/*Initializes Datepicker. 
 	It prevents a user from selecting a date in the future, 
-	and navigating to a future year in the dropdown menu*/
+    and navigating to a future year in the dropdown menu.
+    Sources: Stack Overflow and eppand.com, see README file*/
 	$("#year").text((new Date()).getFullYear());
 	$('.datepicker').datepicker({
 		format: "yyyy/mm/dd",
