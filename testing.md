@@ -16,6 +16,7 @@
     - [Edit Image](#Edit-image)
     - [Delete Image](#Delete-image)
     - [Search Image](#Search-image)
+    - [Sort Images](#Sort-images)
     - [Flash Messages](#Flash-messages)
     - [Buttons](#Buttons)
     - [Footer](#Footer)
@@ -182,6 +183,14 @@ The displayed number of images in the gallery is updated with one extra. The ima
 - If a user searches a word that exists in the image information but outside of the fields title, user or description, a message is shown: 'Sorry, your search returned no results'. The total number of images is 0.
 - Clicking on the cancel button will reset the page to show all images and empty the search field. The total number of images on the page is shown.
 
+### Sort Images
+- By default, images in the gallery are sorted by date uploaded (newest to oldest). So when a user uploads an image, his image is displayed at the top. Underneath the search bar is a sorting menu. Users can select one of four options in this menu.
+- When a user selects 'date uploaded (newest to oldest)', the page is refreshed and the images are sorted by date uploaded, with the newest image at the top and the oldest at the bottom.
+- When a user selects 'date uploaded (oldest to newest)', the page is refreshed and the images are sorted by date uploaded, with the oldest image at the top and the newest at the bottom.
+- When a user selects 'date taken (newest to oldest)', the page is refreshed and the images are sorted by date taken, with the newest image at the top and the oldest at the bottom.
+- When a user selects 'date taken (oldest to newest)', the page is refreshed and the images are sorted by date taken, with the oldest image at the top and the newest at the bottom.
+- When a user tries to sort images that are displayed as a result of a search query, unfortunately all images in the database are displayed in the sorted manner.
+
 ### Flash Messages
 - Successful actions give dark green flash messages in a light green field.
 - Successful actions have a dark green checkbox icon at the left of the text.
@@ -346,6 +355,9 @@ Sometimes, a page will load slowly or even incompletely. I have seen this have a
 
 **4: Regain control of a deleted account**<br>
 After a user deletes his account, the user is deleted from the database. This means that someone new can then sign up with the previously used username. There will be no error message, because the username is no longer in use. If this former user had uploaded images to the gallery, and hadn't deleted them before deleting his profile (which is what I want: to keep as much images as possible), a new user gains access to these images. He can then edit and/or delete them. 
+
+**5: Not possible to sort images from a search query**<br>
+It is not possible to sort sort images that are displayed as a result of a search query. Clicking on an option in de sort by menu refreshed the page and then all images in the database are displayed in the sorted manner.
 
 ## Browsers
 The final version of the website was tested in different browsers. The website works correctly in Chrome, Opera, Mozilla, Safari, Microsoft Edge and Internet Explorer. 
