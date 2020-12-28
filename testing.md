@@ -1,3 +1,4 @@
+To return to the README file, click [here]( https://github.com/SuzanneNL/star-trail-photography/blob/master/README.md).
 # TESTING 
 ## Table of contents
 
@@ -24,8 +25,6 @@
 - [**Unresolved issues**](#Unresolved-issues)
 - [**Browsers**](#Browsers)
 - [**Responsiveness**](#Responsiveness)
-
-To return to the README file, click [here]( https://github.com/SuzanneNL/star-trail-photography/blob/master/README.md).
 
 ## Automated testing
 ### Validating
