@@ -70,26 +70,24 @@
         </div>
         <!----------------------------------------END BANNER---------------------------------------->
         <!----------------------------------------FLASH MESSAGES---------------------------------------->
-        <section>
-            <div class="row">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                {% for category, message in messages %}
-                {% if category == 'error' %}
-                <div class="col s12 m6 offset-m3 alert alert-error center-align">
-                    <p><i class="material-icons prefix error-icon">priority_high</i> {{ message }}</p>
-                </div>
-                {% endif %}
-                {% if category == 'success' %}
-                <div class="col s12 m6 offset-m3 alert alert-success center-align">
-                    <p><i class="material-icons prefix success-icon">check</i> {{ message }}</p>
-                </div>
-                {% endif %}
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
+        <div class="row">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            {% if category == 'error' %}
+            <div class="col s12 m6 offset-m3 alert alert-error center-align">
+                <p><i class="material-icons prefix error-icon">priority_high</i> {{ message }}</p>
             </div>
-        </section>
+            {% endif %}
+            {% if category == 'success' %}
+            <div class="col s12 m6 offset-m3 alert alert-success center-align">
+                <p><i class="material-icons prefix success-icon">check</i> {{ message }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
         <!----------------------------------------END FLASH MESSAGES---------------------------------------->
         <!----------------------------------------BLOCK CONTENT---------------------------------------->
         <main class="container">
