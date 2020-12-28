@@ -19,7 +19,7 @@
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <form action="{{ url_for('search') }}" method="post" >
-                    <div class="row valign-wrapper center-align">
+                    <div class="row valign-wrapper center-align" id="search-bar">
                         <div class="input-field col s12 m8">
                             <i class="material-icons prefix" id="icon-search">search</i>
                             <input type="text" name="query" id="query" minlength="3" class="validate" required>
@@ -138,7 +138,7 @@
     {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
     <div class="row">
         <div class="col m12">
-            <div class="center-align">
+            <div class="center-align edit-delete-buttons-desktop">
                 <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
                 <button data-target="desktop-modal{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
@@ -178,7 +178,7 @@
     {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
     <div class="row">
         <div class="col m12">
-            <div class="center-align">
+            <div class="center-align edit-delete-buttons-desktop">
                 <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
                 <button data-target="desktop-modal2{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
             </div>
