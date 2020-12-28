@@ -265,7 +265,7 @@ def delete_image(image_id):
     URL, which is split at the slash. It checks if the final part matches
     profile_page. If so, the user is redirected back to the profile page. If
     not, he is redirected to the gallery. A success flash message is visible.
-    Source: Stack Overflow, see README file.
+    Source: Stack Overflow, see README file under 'Sources'.
     """
     url = request.referrer
     url_split = url.split('/')
