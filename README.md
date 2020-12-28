@@ -246,11 +246,15 @@ To run the application locally, you can follow these steps:
 ```
 git clone https://github.com/SuzanneNL/star-trail-photography.git
 ```
-5. Install all required modules with the following command:
+5. 'cd' into star-trail-photography with the following command:
+```
+git cd star-trail-photography
+```
+6. Install all required modules with the following command:
 ```
 pip3 install -r requirements.txt
 ```
-6. Create a database in MongoDB. Add the first collection, called `users`: 
+7. Create a database in MongoDB. Add the first collection, called `users`: 
 
 **Key**|**Data Type**
 :-----:|:-----:
@@ -258,7 +262,7 @@ _id|ObjectId()
 username|string
 password|string
 
-7. Add the second collection, called `images`:
+8. Add the second collection, called `images`:
 
 **Key**|**Data Type**
 :-----:|:-----:
@@ -275,7 +279,7 @@ date|string
 description|string
 created_by|string
 
-8. Create the `env.py` file for environment variables, and add the following:
+9. Create the `env.py` file for environment variables, and add the following:
 ```
 import os
 os.environ.setdefault("IP", "0.0.0.0")
@@ -285,8 +289,8 @@ os.environ.setdefault("MONGO_URI", "<your Mongo URI>")
 os.environ.setdefault("MONGO_DBNAME", "<name of your database>") 
 ```
 Make sure to fill in your own values for the Secret Key, Mongo URI and Database Name.<br>
-9. Add your env.py file to `.gitignore`, before pushing your changes.<br>
-10. To run the application locally, run the following command:
+10. Add your env.py file to `.gitignore`, before pushing your changes.<br>
+11. To run the application locally, run the following command:
 ```
 python3 app.py
 ```
