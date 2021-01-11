@@ -7,7 +7,7 @@
             <hr>
             {% if session.user %}
             <div class="center-align">
-                <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn">Add Your Image!</a>
+                <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn" aria-label="Add your image">Add Your Image!</a>
             </div>
             {% endif %}
         </div>
@@ -21,18 +21,22 @@
                 <form action="{{ url_for('search') }}" method="post" >
                     <div class="row valign-wrapper center-align" id="search-bar">
                         <div class="input-field col s8 m8">
-                            <i class="material-icons prefix" id="icon-search">search</i>
+                            <i class="material-icons prefix" id="icon-search" aria-hidden="true">search</i>
                             <input type="text" name="query" id="query" minlength="3" class="validate" required>
                             <label class="desktop-search" for="query">Search Images</label>
                             <label class="mobile-search" for="query">Search</label>
                         </div>
                         <div class="col m4 desktop-search">
-                            <a href="{{ url_for('get_images') }}" class="btn-small reset">Reset</a>
-                            <button type="submit" class="btn-small search">Search</button>
+                            <a href="{{ url_for('get_images') }}" class="btn-small reset" aria-label="Cancel search and reset">Reset</a>
+                            <button type="submit" class="btn-small search" aria-label="Search">Search</button>
                         </div>
                         <div class="col s4 mobile-search">
-                            <a href="{{ url_for('get_images') }}" class="btn-small" id="reset"><i class="material-icons prefix icon-reset">cancel</i></a>
-                            <button type="submit" class="btn-small" id="search"><i class="material-icons prefix icon-search">search</i></button>
+                            <a href="{{ url_for('get_images') }}" class="btn-small" id="reset" aria-label="Cancel search and reset">
+                                <i class="material-icons prefix icon-reset" aria-hidden="true">cancel</i>
+                            </a>
+                            <button type="submit" class="btn-small" id="search" aria-label="Search">
+                                <i class="material-icons prefix icon-search" aria-hidden="true">search</i>
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -90,8 +94,12 @@
         <div class="row">
             <div class="col s12" id="edit-delete-buttons">
                 <div class="center-align">
-                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                    <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" aria-label="Edit this image">
+                        <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                    </a>
+                    <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete" aria-label="Delete this image">
+                        <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -101,8 +109,8 @@
                 <h4>Are you sure you want to delete this image?</h4>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close btn-flat">Cancel</a>
-                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+                <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
             </div>
         </div>
         <!----------------------------------------END MOBILE MODAL---------------------------------------->
@@ -139,8 +147,12 @@
     <div class="row">
         <div class="col m12">
             <div class="center-align edit-delete-buttons-desktop">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                <button data-target="desktop-modal{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
+                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                </a>
+                <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
+                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                </button>
             </div>
         </div>
         <!----------------------------------------DESKTOP MODAL 1---------------------------------------->
@@ -149,8 +161,8 @@
                 <h4>Are you sure you want to delete this image?</h4>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close btn-flat">Cancel</a>
-                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+                <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
             </div>
         </div>
         <!----------------------------------------END DESKTOP MODAL 1---------------------------------------->
@@ -179,8 +191,12 @@
     <div class="row">
         <div class="col m12">
             <div class="center-align edit-delete-buttons-desktop">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                <button data-target="desktop-modal2{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
+                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                </a>
+                <button data-target="desktop-modal2{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
+                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                </button>
             </div>
         </div>
     </div>
@@ -190,8 +206,8 @@
             <h4>Are you sure you want to delete this image?</h4>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close btn-flat">Cancel</a>
-            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+            <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
         </div>
     </div>
     <!----------------------------------------END DESKTOP MODAL 2---------------------------------------->
@@ -203,5 +219,7 @@
 <h6 class="center-align no-results"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sorry, your search returned no results</h6>
 {% endif %}
 <!----------------------------------------END DESKTOP GALLERY---------------------------------------->
-<button title="Back to top" onclick="topFunction()" id="backtotop"><i class="material-icons icon-backtotop">keyboard_arrow_up</i></button>
+<button onclick="topFunction()" id="backtotop" title="Back to top" aria-label="Go back to top">
+    <i class="material-icons icon-backtotop" aria-hidden="true">keyboard_arrow_up</i>
+</button>
 {% endblock %}

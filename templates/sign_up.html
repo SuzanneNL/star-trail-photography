@@ -12,12 +12,12 @@
         <form class="col m6 s12 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix" aria-hidden="true">account_circle</i>
                     <input id="username" name="username" type="text" minlength="4" maxlength="20" pattern="^[a-zA-Z0-9_.]{4,20}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">lock</i>
+                    <i class="material-icons prefix" aria-hidden="true">lock</i>
                     <input id="password" name="password" type="password" minlength="4" maxlength="20" pattern="^[a-zA-Z0-9_.]{4,20}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
@@ -30,7 +30,7 @@
     <div class="row join-now">
         <div class="col s12">
             <div class="center-align">
-                <p>Already a member? <a href="{{ url_for('log_in') }}">Sign In</a>.</p>
+                <p>Already a member? <a href="{{ url_for('log_in') }}" aria-label="Sign in">Sign In</a>.</p>
             </div>
         </div>
     </div>

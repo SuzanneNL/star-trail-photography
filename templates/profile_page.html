@@ -7,8 +7,8 @@
             <p class="center-align"><em>You are logged in as {{ username }}</em></p>
             <br>
             <div class="center-align">
-                <a href="{{ url_for('change_password', username=session['user']) }}" class="btn-small" id="change-password">Change Password</a>
-                <button data-target="modal-delete-account" class="btn-small modal-trigger" id="delete-account">Delete account</button>
+                <a href="{{ url_for('change_password', username=session['user']) }}" class="btn-small" id="change-password" aria-label="Change your password">Change Password</a>
+                <button data-target="modal-delete-account" class="btn-small modal-trigger" id="delete-account" aria-label="Delete your account">Delete account</button>
             </div>
         </div>
     </div>
@@ -19,8 +19,8 @@
         <h4>Are you sure you want to delete your account?</h4>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close btn-flat">Cancel</a>
-        <a href="{{ url_for('delete_account', username=session['user']) }}" class="modal-close btn-flat">I'm sure</a>
+        <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+        <a href="{{ url_for('delete_account', username=session['user']) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
     </div>
 </div>
 <!----------------------------------------END DELETE MODAL---------------------------------------->
@@ -51,8 +51,12 @@
         <div class="row">
             <div class="col s12" id="edit-delete-buttons">
                 <div class="center-align">
-                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                    <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" aria-label="Edit this image">
+                        <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                    </a>
+                    <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete" aria-label="Delete this image">
+                        <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -62,8 +66,8 @@
                 <h4>Are you sure you want to delete this image?</h4>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close btn-flat">Cancel</a>
-                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+                <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
             </div>
         </div>
         <!----------------------------------------END MOBILE MODAL---------------------------------------->
@@ -98,8 +102,12 @@
     <div class="row">
         <div class="col m12">
             <div class="center-align">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                <button data-target="desktop-modal{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                <a href="{{ url_for('edit_image', image_id=image._id) }}"  class="btn-small edit" title="Edit image" aria-label="Edit this image">
+                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                </a>
+                <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
+                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                </button>
             </div>
         </div>
         <!----------------------------------------DESKTOP MODAL 1---------------------------------------->
@@ -108,8 +116,8 @@
                 <h4>Are you sure you want to delete this image?</h4>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close btn-flat">Cancel</a>
-                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+                <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
             </div>
         </div>
         <!----------------------------------------END DESKTOP MODAL 1---------------------------------------->
@@ -136,8 +144,12 @@
     <div class="row">
         <div class="col m12">
             <div class="center-align">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" title="Edit image" class="btn-small edit"><i class="material-icons prefix icon-edit">create</i></a>
-                <button data-target="desktop-modal2{{loop.index}}" title="Delete image" class="btn-small modal-trigger delete"><i class="material-icons prefix icon-delete">delete_forever</i></button>
+                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
+                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                </a>
+                <button data-target="desktop-modal2{{loop.index}}"  class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
+                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                </button>
             </div>
         </div>
     </div>
@@ -147,8 +159,8 @@
             <h4>Are you sure you want to delete this image?</h4>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close btn-flat">Cancel</a>
-            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat">I'm sure</a>
+            <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
         </div>
     </div>
     <!----------------------------------------END DESKTOP MODAL 2---------------------------------------->
@@ -157,5 +169,7 @@
 {% endif %}
 {% endfor %}
 <!----------------------------------------END DESKTOP GALLERY---------------------------------------->
-<button title="Back to top" onclick="topFunction()" id="backtotop"><i class="material-icons icon-backtotop">keyboard_arrow_up</i></button>
+<button onclick="topFunction()" id="backtotop" title="Back to top" aria-label="Go back to top">
+    <i class="material-icons icon-backtotop" aria-hidden="true">keyboard_arrow_up</i>
+</button>
 {% endblock %}

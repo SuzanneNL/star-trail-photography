@@ -3,7 +3,7 @@
 <div class="container log-in-head">
     <div class="row">
         <div class="col s12 m12 center align">
-            <i class="material-icons" id="lock">lock</i>
+            <i class="material-icons" id="lock" aria-hidden="true">lock</i>
         </div>
     </div>
 </div>
@@ -12,25 +12,25 @@
         <form class="col m6 s12 offset-m3" method="POST" action="{{ url_for('log_in') }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix" aria-hidden="true">account_circle</i>
                     <input id="username" name="username" type="text" class="validate" required>
                     <label for="username">Username</label>
                 </div>
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">lock</i>
+                    <i class="material-icons prefix" aria-hidden="true">lock</i>
                     <input id="password" name="password" type="password" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
             <div class="center-align">
-                <button type="submit" class="btn-large white-black-grey-btn">Log In</button>
+                <button type="submit" class="btn-large white-black-grey-btn" aria-label="Log in">Log In</button>
             </div>
         </form>
     </div>
     <div class="row join-now">
         <div class="col s12">
             <div class="center-align">
-                <p>New here? <a href="{{ url_for('sign_up') }}">Join Now</a>.</p>
+                <p>New here? <a href="{{ url_for('sign_up') }}" aria-label="Sign up">Join Now</a>.</p>
             </div>
         </div>
     </div>
