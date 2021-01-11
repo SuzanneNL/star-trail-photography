@@ -53,7 +53,7 @@
 <!----------------------------------------SORT MENU---------------------------------------->
 <div class="container sort-menu">
     <div class="row">
-        <div class="input-field col s8 offset-s4 m3 offset-m9">
+        <div class="input-field col s8 offset-s4 m3 offset-m9" id="form-normal" >
             <form action="{{ url_for('get_images_sorted') }}" method="POST" >
                 <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
                     <option value="" disabled selected>Sort by {{ sort_order }}</option>
@@ -64,6 +64,19 @@
                 </select>
             </form>
         </div>
+        <!--EXCEPTION: SORT MENU FOR SCREENS BETWEEN 600 AND 750PX WIDE-->
+        <div class="input-field col s8 offset-s4 m3 offset-m9" id="form-exception" >
+            <form action="{{ url_for('get_images_sorted') }}" method="POST">
+                <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
+                    <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
+                    <option value="takendateascending">Date taken (newest to oldest)</option>
+                    <option value="takendatedescending">Date taken (oldest to newest)</option>
+                </select>
+            </form>
+        </div>
+        <!--END EXCEPTION-->
     </div>
 </div>
 <!----------------------------------------END SORT MENU---------------------------------------->

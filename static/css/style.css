@@ -299,6 +299,10 @@ nav li a:hover {
     background-color: #EF5350;
 }
 
+#form-exception {
+    display: none;
+}
+
 /* ---------------------------------------------------------------- END GALLERY */
 
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
@@ -485,9 +489,15 @@ footer {
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 750px) and (min-width: 600px){
+    #form-exception {
+        display: block
+    }
+    #form-normal {
+        display: none
+    }
     .select-wrapper input.select-dropdown {
-    font-size: 5px;
+    font-size: 11px;
     }
 }
 
