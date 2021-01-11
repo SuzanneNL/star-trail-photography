@@ -52,7 +52,7 @@
         <div class="input-field col s8 offset-s4 m3 offset-m9">
             <form action="{{ url_for('get_images_sorted') }}" method="POST" >
                 <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
-                    <option value="" disabled selected>Sort By</option>
+                    <option value="" disabled selected>Sort by {{ sort_order }}</option>
                     <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
                     <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
                     <option value="takendateascending">Date taken (newest to oldest)</option>

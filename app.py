@@ -33,7 +33,9 @@ def get_images():
     the gallery page.
     """
     images = list(mongo.db.images.find().sort('_id', -1))
-    return render_template("gallery.html", images=images)
+    sort_order = "date uploaded (newest to oldest)"
+    return render_template("gallery.html", images=images,
+                           sort_order=sort_order)
 
 
 @app.route('/get_images_sorted', methods=['GET', 'POST'])
@@ -45,13 +47,18 @@ def get_images_sorted():
     sort_selection = request.form.get('sort-selection')
     if sort_selection == 'uploaddateascending':
         images = list(mongo.db.images.find().sort('_id', -1))
+        sort_order = "date uploaded (newest to oldest)"
     elif sort_selection == 'uploaddatedescending':
         images = list(mongo.db.images.find())
+        sort_order = "date uploaded (oldest to newest)"
     elif sort_selection == 'takendateascending':
         images = list(mongo.db.images.find().sort("date", -1))
+        sort_order = "date taken (newest to oldest)"
     else:
         images = list(mongo.db.images.find().sort("date", 1))
-    return render_template("gallery.html", images=images)
+        sort_order = "date taken (oldest to newest)"
+    return render_template("gallery.html", images=images,
+                           sort_order=sort_order)
 
 
 @app.route("/search", methods=["GET", "POST"])
