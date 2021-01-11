@@ -294,6 +294,11 @@ nav li a:hover {
     margin-bottom: 20px;
 }
 
+.modal-content,
+.modal-content h4 {
+    background-color: #EF5350;
+}
+
 /* ---------------------------------------------------------------- END GALLERY */
 
 /* ---------------------------------------------------------------- LOG IN & SIGN UP */
