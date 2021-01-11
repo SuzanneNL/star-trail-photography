@@ -525,6 +525,13 @@ footer {
     }
 }
 
+@media screen and (max-width: 375px) {
+    #reset,
+    #search {
+    padding: 0 10px;
+    }
+}
+
 @media screen and (max-width: 360px) {
     #footer-text {
         font-size: 0.6rem;
@@ -538,6 +545,10 @@ footer {
     }
     .select-wrapper input.select-dropdown {
     font-size: 8px;
+    }
+    #reset,
+    #search {
+    padding: 0 8px;
     }
 }
 

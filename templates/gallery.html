@@ -20,7 +20,7 @@
             <div class="card-panel">
                 <form action="{{ url_for('search') }}" method="post" >
                     <div class="row valign-wrapper center-align" id="search-bar">
-                        <div class="input-field col s12 m8">
+                        <div class="input-field col s8 m8">
                             <i class="material-icons prefix" id="icon-search">search</i>
                             <input type="text" name="query" id="query" minlength="3" class="validate" required>
                             <label class="desktop-search" for="query">Search Images</label>
@@ -30,7 +30,7 @@
                             <a href="{{ url_for('get_images') }}" class="btn-small reset">Reset</a>
                             <button type="submit" class="btn-small search">Search</button>
                         </div>
-                        <div class="col s12 mobile-search">
+                        <div class="col s4 mobile-search">
                             <a href="{{ url_for('get_images') }}" class="btn-small" id="reset"><i class="material-icons prefix icon-reset">cancel</i></a>
                             <button type="submit" class="btn-small" id="search"><i class="material-icons prefix icon-search">search</i></button>
                         </div>
