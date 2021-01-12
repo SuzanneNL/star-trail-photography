@@ -66,13 +66,24 @@ def search():
     """
     This function allows users to search the fields title, user and
     description. It displays the images that contain the searched word and the
-    number of images that contain this word.
+    number of images that contain this word. The order that was selected before
+    the search is kept.
     Source: https://github.com/gaspar91/FeedMe
     """
     query = request.form.get("query")
-    images = list(mongo.db.images.find({"$text": {"$search": query}}))
+    sort_order = request.form.get("sort_order")
+    searched_images = mongo.db.images.find({"$text": {"$search": query}})
     result = mongo.db.images.count({"$text": {"$search": query}})
-    return render_template("gallery.html", images=images, result=result)
+    if sort_order == "date uploaded (newest to oldest)":
+        images = list(searched_images.sort('_id', -1))
+    elif sort_order == "date uploaded (oldest to newest)":
+        images = searched_images
+    elif sort_order == "date taken (newest to oldest)":
+        images = list(searched_images.sort("date", -1))
+    else:
+        images = list(searched_images.sort("date", 1))
+    return render_template("gallery.html",
+                           images=images, result=result, sort_order=sort_order)
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
