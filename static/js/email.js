@@ -13,4 +13,3 @@ function sendMail(contactForm) {
 function messageSent(){
     document.querySelector('#after-submit').classList.remove('hide');
 }
-

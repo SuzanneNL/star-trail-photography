@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!----------------------------------------CDNS/SCRIPTS---------------------------------------->
         <!----------------------------------------Material Design Icons---------------------------------------->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <!----------------------------------------FontAwesome CDN---------------------------------------->
@@ -15,15 +16,9 @@
             />
         <!----------------------------------------Custom CSS---------------------------------------->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
-        <!----------------------------------------Email with emailjs---------------------------------------->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-        <script type="text/javascript">
-        (function(){
-            emailjs.init("user_nYg4rcwpiYt7ZrOb6O0xw");
-        })();
-        </script>
         {% block styles %} 
         {% endblock %}
+        <!----------------------------------------END CDNS/SCRIPTS---------------------------------------->
         <title>Star Trail Photography</title>
     </head>
     <body>
@@ -138,6 +133,7 @@
             <p id="footer-text">Website created for educational purposes only. © SuzanneNL</p>
         </footer>
         <!----------------------------------------END FOOTER---------------------------------------->
+        <!----------------------------------------CDNS/SCRIPTS---------------------------------------->
         <!----------------------------------------jQuery CDN---------------------------------------->
         <script
             src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -147,10 +143,9 @@
         <!----------------------------------------Materialize CDN for JS---------------------------------------->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!----------------------------------------Custom JS---------------------------------------->
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/gototop.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/email.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/initialize-materialize.js') }}"></script>
         {% block scripts %} 
         {% endblock %}
+        <!----------------------------------------END CDNS/SCRIPTS---------------------------------------->
     </body>
 </html>
