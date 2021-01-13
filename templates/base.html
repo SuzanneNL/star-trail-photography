@@ -15,6 +15,13 @@
             />
         <!----------------------------------------Custom CSS---------------------------------------->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
+        <!----------------------------------------Email with emailjs---------------------------------------->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init("user_nYg4rcwpiYt7ZrOb6O0xw");
+        })();
+        </script>
         {% block styles %} 
         {% endblock %}
         <title>Star Trail Photography</title>
@@ -32,8 +39,10 @@
                             <li><a href="{{ url_for('get_images') }}" aria-label="Go to the gallery">Gallery</a></li>
                             {% if session.user %}
                             <li><a href="{{ url_for('profile_page') }}" aria-label="Go to your profile page">Profile</a></li>
+                            <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
                             <li><a href="{{ url_for('log_out') }}" aria-label="Log out">Log Out</a></li>
                             {% else %}
+                            <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
                             <li><a href="{{ url_for('log_in') }}" aria-label="Log in">Log In</a></li>
                             <li><a href="{{ url_for('sign_up') }}" class="btn white-black-grey-btn" aria-label="Sign up">Sign Up</a></li>
                             {% endif %}
@@ -51,8 +60,10 @@
                 <li><a href="{{ url_for('get_images') }}" aria-label="Go to the gallery">Gallery</a></li>
                 {% if session.user %}
                 <li><a href="{{ url_for('profile_page') }}" aria-label="Go to your profile page">Profile</a></li>
+                <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
                 <li><a href="{{ url_for('log_out') }}" aria-label="Log out">Log Out</a></li>
                 {% else %}
+                <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
                 <li><a href="{{ url_for('log_in') }}" aria-label="Log in">Log In</a></li>
                 <li><a href="{{ url_for('sign_up') }}" aria-label="Sign up">Sign Up</a></li>
                 {% endif %}
@@ -138,6 +149,7 @@
         <!----------------------------------------Custom JS---------------------------------------->
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         <script src="{{ url_for('static', filename='js/gototop.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/email.js') }}"></script>
         {% block scripts %} 
         {% endblock %}
     </body>

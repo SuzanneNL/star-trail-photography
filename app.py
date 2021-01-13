@@ -295,6 +295,14 @@ def delete_image(image_id):
     return redirect(url_for("get_images"))
 
 
+@app.route("/contact")
+def contact():
+    """
+    This function renders the contact page.
+    """
+    return render_template("contact.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

@@ -305,7 +305,7 @@ nav li a:hover {
 
 /* ---------------------------------------------------------------- END GALLERY */
 
-/* ---------------------------------------------------------------- LOG IN & SIGN UP */
+/* ---------------------------------------------------------------- LOG IN & SIGN UP & CONTACT */
 
 .sign-up-head,
 .log-in-head {
@@ -313,7 +313,8 @@ nav li a:hover {
 }
 
 #lock,
-#new-user {
+#new-user,
+#envelope {
     font-size: 40px;
     background-color: white;
     color: #171717;
@@ -325,7 +326,15 @@ nav li a:hover {
     padding: 15px;
 }
 
-/* ---------------------------------------------------------------- END LOG IN & SIGN UP*/
+#send {
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+/* ---------------------------------------------------------------- END LOG IN & SIGN UP & CONTACT*/
 
 /* ---------------------------------------------------------------- ADD IMAGE*/
 

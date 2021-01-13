@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container hide" id="after-submit">
+    <div class="row">
+            <div class="col s12 m6 offset-m3 alert alert-success center-align">
+                <p><i class="material-icons prefix success-icon" aria-label="Success">check</i>Your message has been sent</p>
+            </div>
+        </div>
+    </div>
+<div class="container log-in-head">
+    <div class="row">
+        <div class="col s12 m12 center align">
+            <i class="fa fa-envelope" id="envelope" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+<div class="container " id="contact">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <p class="center-align light">If you have any comments or questions, please fill out the following form:</p>
+            </div>
+        </div>
+        <div class="row">
+            <form class="col s12 m8 offset-m2 card-panel" onsubmit="return sendMail(this);">
+                <div class="row" id="input-fields">
+                    <div class="input-field col s12 m8 offset-m2">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" name="name" class="form-control validate" id="name" required/>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col s12 m8 offset-m2">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" name="emailaddress" class="form-control validate" id="emailaddress" minlength="7" maxlength="254" required/>
+                        <label for="emailaddress">E-mail Address</label>
+                    </div>
+                    <div class="input-field col s12 m8 offset-m2">
+                        <i class="material-icons prefix">create</i>
+                        <textarea id="message" name="message" class="form-control materialize-textarea validate" maxlength="650" required></textarea>
+                        <label for="message">Your message</label>
+                    </div>
+                </div>
+                <div class="center-align">
+                    <button type="submit" class="btn-large white-black-grey-btn" id="send" aria-label="Send contact form">Send</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
