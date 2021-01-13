@@ -22,6 +22,8 @@ This was website was built using HTML, CSS (Materialize), Javascript (jQuery), P
     - [Goal/Strategy](#Goal/Strategy)
     - [Scope](#Scope)
     - [Structure](#Structure)
+        - [Structure of the website](#Structure-of-the-website)
+        - [Structure of the database](#Structure-of-the-database)
     - [Skeleton](#Skeleton)
     - [Target audiences](#Target-audiences)
     - [User Stories](#User-Stories)
@@ -52,6 +54,7 @@ The goal of this website is to inform those who are interested, about star trail
 An easy to navigate and responsive website that is informative and allows users to perform CRUD operations. Users can sign up and, once logged in, share their own photography. These users manage their own images, meaning they can edit and delete them when they want. Also, they can update their password and even delete their account. All users can view and search images in the gallery.  
 
 ### Structure
+#### Structure of the website
 The website consists of a number of pages. Thanks to templating language Jinja, they all share the same base. This base consists of a navigation bar, a banner image, a section for flash images, a content block and a footer. 
 1. Visible for all users:
 - The home page, where the content block contains an article about star trail photography. It is accompanied by a 'scrollspy' on the right side, that helps the user jump to relevant sections of the article. The scrollspy is not visible on smaller screens.
@@ -64,6 +67,11 @@ The website consists of a number of pages. Thanks to templating language Jinja, 
 - A profile page, where a user can click on a button that redirects him to a page where he can then update his password. From here, he can also delete his account. Finally, the profile page shows all the images that were uploaded by the user. 
 - In the gallery, a logged in user sees an 'add your image' button, that redirects the user to a form for uploading an image. 
 - Also in the gallery, the user sees two buttons under each of his own images. These buttons are also visible on the profile page. The pen button redirects a user to a form where he can edit his image and save the changes (or cancel and go back to the previous page). The bin button makes a modal pop up, asking the user whether he really wants to delete this image. A user can cancel and go back to the page, or he can confirm, which results in the deletion of the image from the database and therefore from the gallery (and of course from his profile).  
+
+#### Structure of the database
+MongoDB Atlas was used as a database. It contains two collections: 'users' and 'images'. When a logged in user adds a picture through the website, his username is added as a value for the key 'created_by' in the images collection.<br>
+See the image below for the structure of the database.<br>
+![Database structure](documentation/database-structure.png)
 
 ### Skeleton
 Wireframes were created using Figma. Images of these wireframes are available under 'wireframes'. Responsiveness consists mostly of adapting the size of the content to different sizes of screens. Also, the gallery doesn't juxtapose images and their details, but positions images and text on top of each other. The design is consistent. 
