@@ -259,6 +259,7 @@ nav li a:hover {
 .select-wrapper input.select-dropdown {
     margin-bottom: 0;
     font-size: 12px;
+    height: 1.5rem;
 }
 
 .dropdown-content li>span {
