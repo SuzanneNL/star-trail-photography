@@ -36,7 +36,7 @@ This was website was built using HTML, CSS (Materialize), Javascript (jQuery), P
     - [Existing features](#Existing-features)
     - [Features left to implement](#Features-left-to-implement)
 - [**Technologies used**](#Technologies-used)
-- [**Testing**](https://github.com/mkthewlis/Milestone-Project-3/blob/master/testing.md)
+- [**Testing**](#Testing)
 - [**Deployment**](#Deployment)
     - [Clone from GitHub](#Clone-from-github)
     - [Deployment to Heroku](#Deployment-to-Heroku)
