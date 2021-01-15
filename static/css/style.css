@@ -155,7 +155,7 @@ nav li a:hover {
 
 .table-of-contents {
     bottom: 1px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
 }
 
 
@@ -441,7 +441,7 @@ footer {
 
 @media screen and (max-width: 1162px) {
     .select-wrapper input.select-dropdown {
-    font-size: 10px;
+        font-size: 10px;
     }
 }
 
@@ -469,10 +469,10 @@ footer {
         font-size: 11px;
     }
     .img-responsive {
-    max-height: 600px;
+        max-height: 600px;
     }
     .select-wrapper input.select-dropdown {
-    font-size: 9px;
+        font-size: 9px;
     }
 }
 
@@ -497,17 +497,17 @@ footer {
         font-size: 0.9rem;
     }
     .img-responsive {
-    max-height: 570px;
+        max-height: 570px;
     }
 }
 
 @media screen and (max-width: 916px) {
     .select-wrapper input.select-dropdown {
-    font-size: 7px;
+        font-size: 7px;
     }
 }
 
-@media screen and (max-width: 750px) and (min-width: 600px){
+@media screen and (max-width: 750px) and (min-width: 600px) {
     #form-exception {
         display: block
     }
@@ -515,7 +515,7 @@ footer {
         display: none
     }
     .select-wrapper input.select-dropdown {
-    font-size: 11px;
+        font-size: 11px;
     }
 }
 
@@ -524,7 +524,7 @@ footer {
         padding: 0;
     }
     .select-wrapper input.select-dropdown {
-    font-size: 9px;
+        font-size: 9px;
     }
 }
 
@@ -551,17 +551,17 @@ footer {
         margin-top: 0.2rem;
     }
     .img-responsive {
-    max-height: 260px;
+        max-height: 260px;
     }
     .select-wrapper input.select-dropdown {
-    font-size: 9px;
+        font-size: 9px;
     }
 }
 
 @media screen and (max-width: 375px) {
     #reset,
     #search {
-    padding: 0 10px;
+        padding: 0 10px;
     }
 }
 
@@ -574,14 +574,14 @@ footer {
         font-size: 1.7rem;
     }
     .img-responsive {
-    max-height: 210px;
+        max-height: 210px;
     }
     .select-wrapper input.select-dropdown {
-    font-size: 8px;
+        font-size: 8px;
     }
     #reset,
     #search {
-    padding: 0 8px;
+        padding: 0 8px;
     }
 }
 
@@ -591,10 +591,10 @@ footer {
         font-size: 1.4rem;
     }
     .img-responsive {
-    max-height: 150px;
+        max-height: 150px;
     }
     .select-wrapper input.select-dropdown {
-    font-size: 7px;
+        font-size: 7px;
     }
 }
 
