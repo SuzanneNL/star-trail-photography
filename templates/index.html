@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container home-page">
+<article class="container home-page">
     <div class="row">
+        <!----------------------------------------ARTICLE---------------------------------------->
         <div class="col s12 m9 l10">
             <div id="title" class="section scrollspy">
                 <h3 class="center-align" id="home-page-title">Photographing Star Trails</h3>
@@ -66,6 +67,8 @@
                 <p>Even though you now have enough tips on how to get started and take your first star trail photographs, it might help if you take a look at a few examples of pictures with their settings, made by other photographers. Check out our <a href="{{ url_for('get_images') }}">GALLERY</a> of images created by our users. Check out the compositions and camera settings they chose, and get inspired! And finally, when you've taken your first pictures and are happy with the result, feel free to create an account here and add your own images to the gallery, so others can be inspired by your star trail photography.</p>
             </div>
         </div>
+        <!----------------------------------------END ARTICLE---------------------------------------->
+        <!----------------------------------------SCROLLSPY---------------------------------------->
         <div class="col hide-on-small-only m3 l2">
             <ul class="section table-of-contents fixed">
                 <li><a href="#title" aria-label="Go to the top of the article">Top of the article</a></li>
@@ -77,6 +80,7 @@
                 <li><a href="#gallery" aria-label="Go to paragraph Check out the gallery">Check out the gallery!</a></li>
             </ul>
         </div>
+        <!----------------------------------------END SCROLLSPY---------------------------------------->
     </div>
-</div>
+</article>
 {% endblock %}

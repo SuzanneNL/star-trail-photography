@@ -42,7 +42,7 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
 2. **I want my website to have a clear structure, so that it is easy to navigate.**
     - The navigation bar allows a user to browse to the different pages of this website. A user will only be able to see and visit pages that are relevant to him, as explained in the paragraph 'Structure' of the README file. 
     - Buttons are in place to delete an image or the user's account, or redirect a user to pages for adding/editing images and updating the password. 
-    - A 'go to the top' button in the gallery and on the profile page allows users to go to the top of the page. 
+    - A 'back to top' button in the gallery and on the profile page allows users to go back to the top of the page. 
     - A scrollspy on the homepage makes it easy for a user to skip to interesting parts of the article.
     - Links in content on pages also redirect users to other pages, such as 'New here? Join Now!' on the Sign Up page, or the article on the homepage inviting a user to visit the gallery. 
     - Functions in the app.py file ensure that a user, after an action, is redirected to a relevant page. For example: after a user logs in, he is redirected to his profile page. After logging out, he is redirected to the log in page. After adding or editing an image, he can see the result immediately as he is redirected to the gallery.
@@ -158,14 +158,14 @@ Manual testing was done on different devices (see Responsiveness).
 - Logged in users see an 'add your image' button at the top of the gallery.
 - Logged in users see edit and delete buttons under their own images.
 - Images are sorted according to date uploaded (newest to oldest) by default. 
-- Users see a go to top button when scrolling down, that -when clicked- redirects them to the top of the page.
+- Users see a back to top button when scrolling down, that -when clicked- redirects them to the top of the page.
 
 ### Profile
 - The profile page renders all images that have been added (and not deleted) by the currently logged in user and exist in the database. 
 - Images that have been deleted by the user, are not shown on the profile page.
 - Users see edit and delete buttons under all their images.
 - Images are sorted according to date uploaded (newest to oldest) by default. 
-- Users see a go to top button when scrolling down, that -when clicked- redirects them to the top of the page.
+- Users see a back to top button when scrolling down, that -when clicked- redirects them to the top of the page.
 
 ### Add Image
 - After logging in or signing up, go to the gallery. An 'add your image' button is visible. Click on the button.

@@ -172,7 +172,7 @@ My first plan was to create a responsive website about star trail photography wi
 
 - **Search bar** - All users can search the gallery. Searches cover the fields title, user and description ('or' method). "Stop" words such as 'a', 'the', 'about' (and about 200 others) are ignored. The results are ordered according to the last selected sorting order, or the default mode (date uploaded - new to old) if none was chosen. 
 
-- **Go to top button** - Users can go to the top of the page by clicking on a small arrow on the right side of the bottom of the screen, that appears when a user scrolls down.
+- **Back to top button** - Users can go back to the top of the page by clicking on a small arrow on the right side of the bottom of the screen, that appears when a user scrolls down.
 
 
 #### Add Image
@@ -190,7 +190,7 @@ My first plan was to create a responsive website about star trail photography wi
 
 - **The user's images only** - The profile page shows the user the images that he has uploaded, with buttons for deleting and editing the images. Images are sorted based on date uploaded (new to old). 
 
-- **Go to top button** - Users can go to the top of the page by clicking on a small arrow on the right side of the bottom of the screen, that appears when a user scrolls down.
+- **Back to top button** - Users can go back to the top of the page by clicking on a small arrow on the right side of the bottom of the screen, that appears when a user scrolls down.
 
 #### Change Password
 - **Change password functionality** - On this page a user can change his password. The password field is empty and required for submitting. The password needs to meet the same requirements as for signing up. A user can also cancel and go back to the profile page. 
@@ -426,7 +426,7 @@ I learned a lot from CI's Task Manager Application, and I have applied much from
 	- https://github.com/gaspar91/FeedMe
 - Redirect a user back to the page where he was, after deleting an image:
 	- https://stackoverflow.com/questions/28593235/get-referring-url-for-flask-request/28593313#28593313
-- Go to top of the page button:
+- Back to top of the page button:
     - https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 
 ### Acknowledgements

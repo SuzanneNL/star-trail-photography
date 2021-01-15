@@ -1,97 +1,195 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container page-title add-image-button">
-    <div class="row">
-        <div class="col s12 m12">
-            <h1 class="center-align">Gallery</h1>
-            <hr>
-            {% if session.user %}
-            <div class="center-align">
-                <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn" aria-label="Add your image">Add Your Image!</a>
+<section>
+    <div class="container page-title add-image-button">
+        <div class="row">
+            <div class="col s12 m12">
+                <h1 class="center-align">Gallery</h1>
+                <hr>
+                {% if session.user %}
+                <div class="center-align">
+                    <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn" aria-label="Add your image">Add Your Image!</a>
+                </div>
+                {% endif %}
             </div>
+        </div>
+    </div>
+    <!----------------------------------------SEARCH BAR---------------------------------------->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="card-panel">
+                    <form action="{{ url_for('search') }}" method="post" >
+                        <div class="row valign-wrapper center-align" id="search-bar">
+                            <div class="input-field col s8 m8">
+                                <i class="material-icons prefix" id="icon-search" aria-hidden="true">search</i>
+                                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                                <label class="desktop-search" for="query">Search Images</label>
+                                <label class="mobile-search" for="query">Search</label>
+                                <input type="hidden" id="sort_order" name="sort_order" value="{{ sort_order }}">
+                            </div>
+                            <div class="col m4 desktop-search">
+                                <a href="{{ url_for('get_images') }}" class="btn-small reset" aria-label="Cancel search and reset">Reset</a>
+                                <button type="submit" class="btn-small search" aria-label="Search">Search</button>
+                            </div>
+                            <div class="col s4 mobile-search">
+                                <a href="{{ url_for('get_images') }}" class="btn-small" id="reset" aria-label="Cancel search and reset">
+                                <i class="material-icons prefix icon-reset" aria-hidden="true">cancel</i>
+                                </a>
+                                <button type="submit" class="btn-small" id="search" aria-label="Search">
+                                <i class="material-icons prefix icon-search" aria-hidden="true">search</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row valign-wrapper center-align" >
+            <div class="col s12 m8 offset-m2 results">
+                Total images: {{images|length}}
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------END SEARCH BAR---------------------------------------->
+    <!----------------------------------------SORT MENU---------------------------------------->
+    <div class="container sort-menu">
+        <div class="row">
+            <div class="input-field col s8 offset-s4 m3 offset-m9" id="form-normal" >
+                <form action="{{ url_for('get_images_sorted') }}" method="POST" >
+                    <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
+                        <option value="" disabled selected>Sort by {{ sort_order }}</option>
+                        <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
+                        <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
+                        <option value="takendateascending">Date taken (newest to oldest)</option>
+                        <option value="takendatedescending">Date taken (oldest to newest)</option>
+                    </select>
+                </form>
+            </div>
+            <!--EXCEPTION: SORT MENU FOR SCREENS BETWEEN 600 AND 750PX WIDE-->
+            <div class="input-field col s8 offset-s4 m3 offset-m9" id="form-exception" >
+                <form action="{{ url_for('get_images_sorted') }}" method="POST">
+                    <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
+                        <option value="" disabled selected>Sort By</option>
+                        <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
+                        <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
+                        <option value="takendateascending">Date taken (newest to oldest)</option>
+                        <option value="takendatedescending">Date taken (oldest to newest)</option>
+                    </select>
+                </form>
+            </div>
+            <!--END EXCEPTION-->
+        </div>
+    </div>
+    <!----------------------------------------END SORT MENU---------------------------------------->
+    <!----------------------------------------MOBILE GALLERY---------------------------------------->
+    {% if images|length > 0 %}
+    {% for image in images %} 
+    <div class="card-panel mobile-gallery image-text-card">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
+                </div>
+                <div class="col s12">
+                    <h6>{{ image.image_title }}</h6>
+                    <p><i>By: {{ image.created_by }}</i></p>
+                    <br>
+                    <p>Camera: {{ image.camera }}</p>
+                    <p>Focal length: {{ image.focal_length }}</p>
+                    <p>ISO: {{ image.iso }}</p>
+                    <p>Aperture: {{ image.aperture }}</p>
+                    <p>Exposure: {{ image.exposure }}</p>
+                    <p>Location: {{ image.location }}</p>
+                    <p>Date: {{ image.date }}</p>
+                    <p>Description: {{ image.description }}</p>
+                </div>
+            </div>
+            {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+            <div class="row">
+                <div class="col s12" id="edit-delete-buttons">
+                    <div class="center-align">
+                        <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" aria-label="Edit this image">
+                        <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                        </a>
+                        <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete" aria-label="Delete this image">
+                        <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------MOBILE MODAL---------------------------------------->
+            <div id="mobile-modal{{loop.index}}" class="modal">
+                <div class="modal-content">
+                    <h4>Are you sure you want to delete this image?</h4>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+                    <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
+                </div>
+            </div>
+            <!----------------------------------------END MOBILE MODAL---------------------------------------->
             {% endif %}
         </div>
     </div>
-</div>
-<!----------------------------------------SEARCH BAR---------------------------------------->
-<div class="container">
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <form action="{{ url_for('search') }}" method="post" >
-                    <div class="row valign-wrapper center-align" id="search-bar">
-                        <div class="input-field col s8 m8">
-                            <i class="material-icons prefix" id="icon-search" aria-hidden="true">search</i>
-                            <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                            <label class="desktop-search" for="query">Search Images</label>
-                            <label class="mobile-search" for="query">Search</label>
-                            <input type="hidden" id="sort_order" name="sort_order" value="{{ sort_order }}">
-                        </div>
-                        <div class="col m4 desktop-search">
-                            <a href="{{ url_for('get_images') }}" class="btn-small reset" aria-label="Cancel search and reset">Reset</a>
-                            <button type="submit" class="btn-small search" aria-label="Search">Search</button>
-                        </div>
-                        <div class="col s4 mobile-search">
-                            <a href="{{ url_for('get_images') }}" class="btn-small" id="reset" aria-label="Cancel search and reset">
-                                <i class="material-icons prefix icon-reset" aria-hidden="true">cancel</i>
-                            </a>
-                            <button type="submit" class="btn-small" id="search" aria-label="Search">
-                                <i class="material-icons prefix icon-search" aria-hidden="true">search</i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+    {% endfor %}
+    {% endif %}
+    <!----------------------------------------END MOBILE GALLERY---------------------------------------->
+    <!----------------------------------------DESKTOP GALLERY---------------------------------------->
+    {% if images|length > 0 %}
+    {% for image in images %} 
+    {% if loop.index % 2 != 0 %}
+    <div class="container desktop-gallery">
+        <div class="row card-panel image-text-card">
+            <div class="col m6">
+                <h6 class="image-title">{{ image.image_title }}</h6>
+                <p><i>By: {{ image.created_by }}</i></p>
+                <br>
+                <p>Camera: {{ image.camera }}</p>
+                <p>Focal length: {{ image.focal_length }}</p>
+                <p>ISO: {{ image.iso }}</p>
+                <p>Aperture: {{ image.aperture }}</p>
+                <p>Exposure: {{ image.exposure }}</p>
+                <p>Location: {{ image.location }}</p>
+                <p>Date: {{ image.date }}</p>
+                <p>Description: {{ image.description }}</p>
             </div>
-        </div>
-    </div>
-    <div class="row valign-wrapper center-align" >
-        <div class="col s12 m8 offset-m2 results">
-            Total images: {{images|length}}
-        </div>
-    </div>
-</div>
-<!----------------------------------------END SEARCH BAR---------------------------------------->
-<!----------------------------------------SORT MENU---------------------------------------->
-<div class="container sort-menu">
-    <div class="row">
-        <div class="input-field col s8 offset-s4 m3 offset-m9" id="form-normal" >
-            <form action="{{ url_for('get_images_sorted') }}" method="POST" >
-                <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
-                    <option value="" disabled selected>Sort by {{ sort_order }}</option>
-                    <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
-                    <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
-                    <option value="takendateascending">Date taken (newest to oldest)</option>
-                    <option value="takendatedescending">Date taken (oldest to newest)</option>
-                </select>
-            </form>
-        </div>
-        <!--EXCEPTION: SORT MENU FOR SCREENS BETWEEN 600 AND 750PX WIDE-->
-        <div class="input-field col s8 offset-s4 m3 offset-m9" id="form-exception" >
-            <form action="{{ url_for('get_images_sorted') }}" method="POST">
-                <select id="sort-selection" name="sort-selection" onchange="this.form.submit()">
-                    <option value="" disabled selected>Sort By</option>
-                    <option value="uploaddateascending">Date uploaded (newest to oldest)</option>
-                    <option value="uploaddatedescending">Date uploaded (oldest to newest)</option>
-                    <option value="takendateascending">Date taken (newest to oldest)</option>
-                    <option value="takendatedescending">Date taken (oldest to newest)</option>
-                </select>
-            </form>
-        </div>
-        <!--END EXCEPTION-->
-    </div>
-</div>
-<!----------------------------------------END SORT MENU---------------------------------------->
-<!----------------------------------------MOBILE GALLERY---------------------------------------->
-{% if images|length > 0 %}
-{% for image in images %} 
-<div class="card-panel mobile-gallery image-text-card">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 center-align">
+            <div class="col m6 center-align">
                 <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
             </div>
-            <div class="col s12">
-                <h6>{{ image.image_title }}</h6>
+        </div>
+        {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+        <div class="row">
+            <div class="col m12">
+                <div class="center-align edit-delete-buttons-desktop">
+                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
+                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+                    </a>
+                    <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
+                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                    </button>
+                </div>
+            </div>
+            <!----------------------------------------DESKTOP MODAL 1---------------------------------------->
+            <div id="desktop-modal{{loop.index}}" class="modal">
+                <div class="modal-content">
+                    <h4>Are you sure you want to delete this image?</h4>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
+                    <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
+                </div>
+            </div>
+            <!----------------------------------------END DESKTOP MODAL 1---------------------------------------->
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="row card-panel image-text-card">
+            <div class="col m6 center-align">
+                <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
+            </div>
+            <div class="col m6">
+                <h6 class="image-title">{{ image.image_title }}</h6>
                 <p><i>By: {{ image.created_by }}</i></p>
                 <br>
                 <p>Camera: {{ image.camera }}</p>
@@ -106,19 +204,19 @@
         </div>
         {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
         <div class="row">
-            <div class="col s12" id="edit-delete-buttons">
-                <div class="center-align">
-                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" aria-label="Edit this image">
-                        <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
+            <div class="col m12">
+                <div class="center-align edit-delete-buttons-desktop">
+                    <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
+                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
                     </a>
-                    <button data-target="mobile-modal{{loop.index}}" class="btn-small modal-trigger delete" aria-label="Delete this image">
-                        <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
+                    <button data-target="desktop-modal2{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
+                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
                     </button>
                 </div>
             </div>
         </div>
-        <!----------------------------------------MOBILE MODAL---------------------------------------->
-        <div id="mobile-modal{{loop.index}}" class="modal">
+        <!----------------------------------------DESKTOP MODAL 2---------------------------------------->
+        <div id="desktop-modal2{{loop.index}}" class="modal">
             <div class="modal-content">
                 <h4>Are you sure you want to delete this image?</h4>
             </div>
@@ -127,116 +225,20 @@
                 <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
             </div>
         </div>
-        <!----------------------------------------END MOBILE MODAL---------------------------------------->
+        <!----------------------------------------END DESKTOP MODAL 2---------------------------------------->
         {% endif %}
     </div>
-</div>
-{% endfor %}
-{% endif %}
-<!----------------------------------------END MOBILE GALLERY---------------------------------------->
-<!----------------------------------------DESKTOP GALLERY---------------------------------------->
-{% if images|length > 0 %}
-{% for image in images %} 
-{% if loop.index % 2 != 0 %}
-<div class="container desktop-gallery">
-    <div class="row card-panel image-text-card">
-        <div class="col m6">
-            <h6 class="image-title">{{ image.image_title }}</h6>
-            <p><i>By: {{ image.created_by }}</i></p>
-            <br>
-            <p>Camera: {{ image.camera }}</p>
-            <p>Focal length: {{ image.focal_length }}</p>
-            <p>ISO: {{ image.iso }}</p>
-            <p>Aperture: {{ image.aperture }}</p>
-            <p>Exposure: {{ image.exposure }}</p>
-            <p>Location: {{ image.location }}</p>
-            <p>Date: {{ image.date }}</p>
-            <p>Description: {{ image.description }}</p>
-        </div>
-        <div class="col m6 center-align">
-            <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
-        </div>
-    </div>
-    {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
-    <div class="row">
-        <div class="col m12">
-            <div class="center-align edit-delete-buttons-desktop">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
-                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
-                </a>
-                <button data-target="desktop-modal{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
-                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
-                </button>
-            </div>
-        </div>
-        <!----------------------------------------DESKTOP MODAL 1---------------------------------------->
-        <div id="desktop-modal{{loop.index}}" class="modal">
-            <div class="modal-content">
-                <h4>Are you sure you want to delete this image?</h4>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
-                <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
-            </div>
-        </div>
-        <!----------------------------------------END DESKTOP MODAL 1---------------------------------------->
-    </div>
     {% endif %}
+    {% endfor %}
     {% else %}
-    <div class="row card-panel image-text-card">
-        <div class="col m6 center-align">
-            <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
-        </div>
-        <div class="col m6">
-            <h6 class="image-title">{{ image.image_title }}</h6>
-            <p><i>By: {{ image.created_by }}</i></p>
-            <br>
-            <p>Camera: {{ image.camera }}</p>
-            <p>Focal length: {{ image.focal_length }}</p>
-            <p>ISO: {{ image.iso }}</p>
-            <p>Aperture: {{ image.aperture }}</p>
-            <p>Exposure: {{ image.exposure }}</p>
-            <p>Location: {{ image.location }}</p>
-            <p>Date: {{ image.date }}</p>
-            <p>Description: {{ image.description }}</p>
-        </div>
-    </div>
-    {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
-    <div class="row">
-        <div class="col m12">
-            <div class="center-align edit-delete-buttons-desktop">
-                <a href="{{ url_for('edit_image', image_id=image._id) }}" class="btn-small edit" title="Edit image" aria-label="Edit this image">
-                    <i class="material-icons prefix icon-edit" aria-hidden="true">create</i>
-                </a>
-                <button data-target="desktop-modal2{{loop.index}}" class="btn-small modal-trigger delete" title="Delete image" aria-label="Delete this image">
-                    <i class="material-icons prefix icon-delete" aria-hidden="true">delete_forever</i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!----------------------------------------DESKTOP MODAL 2---------------------------------------->
-    <div id="desktop-modal2{{loop.index}}" class="modal">
-        <div class="modal-content">
-            <h4>Are you sure you want to delete this image?</h4>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close btn-flat" aria-label="Cancel">Cancel</a>
-            <a href="{{ url_for('delete_image', image_id=image._id) }}" class="modal-close btn-flat" aria-label="Confirm">I'm sure</a>
-        </div>
-    </div>
-    <!----------------------------------------END DESKTOP MODAL 2---------------------------------------->
+    <h6 class="center-align no-results"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sorry, your search returned no results</h6>
     {% endif %}
-</div>
-{% endif %}
-{% endfor %}
-{% else %}
-<h6 class="center-align no-results"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sorry, your search returned no results</h6>
-{% endif %}
-<!----------------------------------------END DESKTOP GALLERY---------------------------------------->
-<button onclick="topFunction()" id="backtotop" title="Back to top" aria-label="Go back to top">
+    <!----------------------------------------END DESKTOP GALLERY---------------------------------------->
+    <button onclick="topFunction()" id="backtotop" title="Back to top" aria-label="Go back to top">
     <i class="material-icons icon-backtotop" aria-hidden="true">keyboard_arrow_up</i>
-</button>
+    </button>
+</section>
 {% endblock %}
 {% block scripts %} 
-<script src="{{ url_for('static', filename='js/go-to-top.js') }}"></script>
+<script src="{{ url_for('static', filename='js/back-to-top.js') }}"></script>
 {% endblock %}
