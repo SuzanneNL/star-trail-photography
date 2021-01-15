@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!----------------------------------------CDNS/SCRIPTS---------------------------------------->
+        <!----------------------------------------CDNS/SCRIPTS/STYLESHEETS---------------------------------------->
         <!----------------------------------------Material Design Icons---------------------------------------->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <!----------------------------------------FontAwesome CDN---------------------------------------->
@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
         {% block styles %} 
         {% endblock %}
-        <!----------------------------------------END CDNS/SCRIPTS---------------------------------------->
+        <!----------------------------------------END CDNS/SCRIPTS/STYLESHEETS---------------------------------------->
         <title>Star Trail Photography</title>
     </head>
     <body>
@@ -35,9 +35,11 @@
                             {% if session.user %}
                             <li><a href="{{ url_for('profile_page') }}" aria-label="Go to your profile page">Profile</a></li>
                             <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
+                            <li class="divider"></li>
                             <li><a href="{{ url_for('log_out') }}" aria-label="Log out">Log Out</a></li>
                             {% else %}
                             <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
+                            <li class="divider"></li>
                             <li><a href="{{ url_for('log_in') }}" aria-label="Log in">Log In</a></li>
                             <li><a href="{{ url_for('sign_up') }}" class="btn white-black-grey-btn" aria-label="Sign up">Sign Up</a></li>
                             {% endif %}
