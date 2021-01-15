@@ -6,6 +6,7 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
     - [Validating](#Validating)
 - [**Testing user stories**](#Testing-user-stories)
 - [**Manual testing**](#Manual-testing)
+    - [Home](#Home)
     - [Sign Up](#Sign-up)
     - [Log In](#Log-in)
     - [Log Out](#Log-out)
@@ -18,6 +19,7 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
     - [Delete Image](#Delete-image)
     - [Search Image](#Search-image)
     - [Sort Images](#Sort-images)
+    - [Contact](#Contact)
     - [Flash Messages](#Flash-messages)
     - [Buttons](#Buttons)
     - [Footer](#Footer)
@@ -83,13 +85,14 @@ A malevolent user would perhaps try to type someone else's username, but will no
 3. **I want to learn about how to create star trail images myself.**
     - Users can learn how to take these pictures through reading the article on the homepage, and looking at other people's images and the settings they chose. 
 4. **I want to search through the gallery.**
-    - At the top of the gallery is a search bar. It can search the fields title, user and description. 
+    - At the top of the gallery is a search bar. It can search the fields title, user and description. When using multiple search words, the method is 'or', not 'and'. Using a minus character in front of a word excludes images that contain that word. Putting multiple words between quotation marks searches images for that exact combination of words.  
 5. **I want to sort images in the gallery.**
-    - Users have the option to sort the images in the gallery by selecting one of the options in the 'sort by' menu. There are four options: date uploaded ascending, date uploaded descending, date taken ascending and date taken descending. 
+    - Users have the option to sort the images in the gallery by selecting one of the options in the 'sort by' menu. There are four options: date uploaded ascending, date uploaded descending, date taken ascending and date taken descending. A user cannot sort search results. However, search results are sorted according to the way images were sorted before the search.
 6. **I want to be able to easily navigate the website.**
     - Navigation is easy, as already explained above. This is made possible with a navigation bar, buttons, the scrollspy and links in the content. Also, users are redirected to logical pages after actions such as logging in and out. 
 7. **I want to be able to contact the creator of the website.**
-    - Users can click on the icons at the bottom of the page to be referred to the creators' personal pages.
+    - Users can go to the Contact page and fill out the contact form. After submitting it, the administrator receives an e-mail with the name, e-mail address and message. Also, the user receives an automated e-mail from SuzanneNL, thanking for the message and informing that SuzanneNL will be in touch soon.
+    - Users can click on the icons at the bottom of the page to be referred to the creator's personal pages (and the contact form by clicking on the envelope).
 
 ### As a guest user...
 1. **I want to be able to sign up, so that I can share my own work.**
@@ -111,23 +114,27 @@ A malevolent user would perhaps try to type someone else's username, but will no
 
 ## Manual testing
 Manual testing was done on different devices (see Responsiveness).
+### Home
+- On the right side of the article, a scrollspy is visible. It scrolls the page to the clicked paragraph. 
+
 ### Sign Up
-- Before signing up, users see the options Home, Gallery, Log In and Sign Up in the navigation bar. 
+- Before signing up, users see the options Home, Gallery, Contact, Log In and Sign Up in the navigation bar. 
 - In the Sign Up form: provide username of less than 4 characters. The form tells a user that the username doesn't meet the criteria (red color, text).
 - Provide password of less than 4 characters. The form tells a user that the password doesn't meet the criteria (red color, text).
 - Leave one of two fields empty. The form tells a user that the empty field needs to be filled in (red color, text).
-- Provide username or password containing forbidden characters. The form tells a user that the username or password don't meet the criteria (red color, text).
+- Provide username or password containing forbidden characters. Only a-z, A-Z, 0-9, dots and underscores are allowed. The form tells a user that the username or password don't meet the criteria (red color, text).
+- Try to exceed the maximum number of characters for each field (20 characters). The user will not be able to add more characters, typed characters will not be added to the fields.
 - Provide username and password that meet requirements. The form will give the fields a green color. 
 - Provide a username that already exists and submit the form. The user is redirected back to the sign up page. A red flash message is visible: 'That username is taken. Please try another.'
-- Provide a username that doesn't already exist and submit the form. The user is redirected to the home page. A green flash message is visible: 'Thank you for signing up! Welcome!' In the database, a new user is added with an id, username and hashed password. The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. 
+- Provide a username that doesn't already exist and submit the form. The user is redirected to the home page. A green flash message is visible: 'Thank you for signing up! Welcome!' In the database, a new user is added with an id, username and hashed password. The user sees the options Home, Gallery, Profile, Contact and Log Out in the navigation bar. 
 
 ### Log In
-- Before logging in, users see the options Home, Gallery, Log In and Sign Up in the navigation bar.
+- Before logging in, users see the options Home, Gallery, Contact, Log In and Sign Up in the navigation bar.
 - In the Log In form: leave one of two fields empty, or both, and try to log in. The form tells a user that the empty fields need to be filled in (red color, text).
 - Provide both username and password. The form will give the fields a green color. 
 - Provide a false username with a false or correct password and submit the form. The user is redirected back to the log in page. A red flash message is visible: 'Incorrect username and/or password. Please try again.'
 - Provide a correct username with a false password and submit the form. The user is redirected back to the log in page. A red flash message is visible: 'Incorrect username and/or password. Please try again.'
-- Provide a correct username with a correct password and submit the form. The user is redirected to the home page. A green flash message is visible: 'Welcome, <username>!' A session cookie is added, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will see the session cookie). The user sees the options Home, Gallery, Profile and Log Out in the navigation bar. In the gallery, a user will see an 'add your image' button. And underneath previously added image, he will see edit and delete buttons.
+- Provide a correct username with a correct password and submit the form. The user is redirected to the home page. A green flash message is visible: 'Welcome, <username>!' A session cookie is added, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will see the session cookie). The user sees the options Home, Gallery, Profile, Contact and Log Out in the navigation bar. In the gallery, a user will see an 'add your image' button. And underneath previously added image, he will see edit and delete buttons.
 
 ### Log Out
 - Click on 'Log Out' in the navigation bar. The user is redirected to the Log In page. A green flash message is visible: 'You have been logged out'. The session cookie is deleted, as can be seen in the Chrome DevTool (go to Application, Cookies, click on the URL, you will no longer see the session cookie). The website is displayed as it was before logging in. 
@@ -150,24 +157,30 @@ Manual testing was done on different devices (see Responsiveness).
 - Images that have been deleted by users, are not shown in the gallery.
 - Logged in users see an 'add your image' button at the top of the gallery.
 - Logged in users see edit and delete buttons under their own images.
+- Images are sorted according to date uploaded (newest to oldest) by default. 
+- Users see a go to top button when scrolling down, that -when clicked- redirects them to the top of the page.
 
 ### Profile
 - The profile page renders all images that have been added (and not deleted) by the currently logged in user and exist in the database. 
 - Images that have been deleted by the user, are not shown on the profile page.
 - Users see edit and delete buttons under all their images.
+- Images are sorted according to date uploaded (newest to oldest) by default. 
+- Users see a go to top button when scrolling down, that -when clicked- redirects them to the top of the page.
 
 ### Add Image
 - After logging in or signing up, go to the gallery. An 'add your image' button is visible. Click on the button.
 - A user is redirected to the add image page. 
 - All fields need to meet requirements, or the form will give a warning as in the log in and sign up forms. 
-- All fields except the descriptions need to be filled in. Otherwise the form cannot be submitted. 
+- A datepicker pops up when the user goes to the date field.
+- All fields except the description need to be filled in. Otherwise the form cannot be submitted. 
 - After submitting a correctly filled out form, the user is redirected to the gallery. A green flash message is visible: 'Thank you. Your image has been added to the gallery!'. In the database, a new image has been added. 
 The displayed number of images in the gallery is updated with one extra. The image has been added to the gallery, at the bottom. It will also have been added to the profile page.
 
 ### Edit Image
 - A user can see an edit button under his own images. After clicking on this, a user is redirected to the edit image page. 
 - All fields are filled in with the current value. When updating fields, they need to meet requirements, or the form will give a warning as in the log in and sign up forms. 
-- All fields except the descriptions need to be filled in. Otherwise the form cannot be submitted. 
+- A datepicker pops up when the user goes to the date field.
+- All fields except the description need to be filled in. Otherwise the form cannot be submitted. 
 - After submitting a correctly filled out form, he is redirected back to the gallery or the profile page, depending on where he clicked on the edit button. A green flash message is visible: 'Your image has successfully been updated!'. In the database, the information has been updated. When looking in the gallery and profile page, one sees that the image has been updated. 
 
 ### Delete Image
@@ -178,9 +191,11 @@ The displayed number of images in the gallery is updated with one extra. The ima
 ### Search Image
 - At the top of the gallery is a search bar. It can search the fields title, user and description.
 - If a user searches a word that exists in the fields title, user or description, the images containing this word will be shown. Also the user sees the number of images containing this word. 
+- When using multiple search words, the method is 'or', not 'and'. Using a minus character in front of a word excludes images that contain that word. Putting multiple words between quotation marks searches the images collection for that exact combination of words.  
 - If a user searches a word that doesn't exist in the fields title, user or description, a message is shown: 'Sorry, your search returned no results'. The total number of images is 0.
 - If a user searches a word that exists in the image information but outside of the fields title, user or description, a message is shown: 'Sorry, your search returned no results'. The total number of images is 0.
 - Clicking on the cancel button will reset the page to show all images and empty the search field. The total number of images on the page is shown.
+- Images that are the result of a search cannot be sorted by the user. However, search results are sorted according to how all images were sorted in the gallery before the search.
 
 ### Sort Images
 - By default, images in the gallery are sorted by date uploaded (newest to oldest). So when a user uploads an image, his image is displayed at the top. Underneath the search bar is a sorting menu. Users can select one of four options in this menu.
@@ -189,6 +204,17 @@ The displayed number of images in the gallery is updated with one extra. The ima
 - When a user selects 'date taken (newest to oldest)', the page is refreshed and the images are sorted by date taken, with the newest image at the top and the oldest at the bottom.
 - When a user selects 'date taken (oldest to newest)', the page is refreshed and the images are sorted by date taken, with the oldest image at the top and the newest at the bottom.
 - When a user tries to sort images that are displayed as a result of a search query, unfortunately all images in the database are displayed in the sorted manner.
+- The sorting menu trigger tells what sorting order is currently used.
+
+### Contact
+- In the contact form, provide name of less than 2 characters. The form tells a user that the name doesn't meet the criteria (red color, text).
+- Provide e-mail address of less than 7 characters. The form tells a user that the password doesn't meet the criteria (red color, text).
+- Provide text in the e-mail address that doesn't meet the requirements for an e-mail address. The form tells a user that the password doesn't meet the criteria (red color, text).
+- Try to exceed the maximum number of characters for each field (30 for name, 254 for e-mail address, 650 for message). The user will not be able to add more characters, typed characters will not be added to the fields.
+- Leave (a) field(s) empty and try to submit. The form tells a user that the empty field(s) needs to be filled in (red color, text).
+- Provide a name containing forbidden characters. Only a-z, A-Z, 0-9, dots and underscores are allowed. The form tells a user that the name doesn't meet the criteria (red color, text).
+- Provide name, e-mail address and message that meet requirements. The form will give the fields a green color. 
+- Submit the correctly filled in form. A green flash message appears under the header, saying 'Your message has been sent'. The Administrator receives an e-mail containing the name, e-mail address and message. The user receives an e-mail from SuzanneNL, thanking for the message and telling she will be in touch soon. 
 
 ### Flash Messages
 - Successful actions give dark green flash messages in a light green field.
@@ -202,7 +228,7 @@ The displayed number of images in the gallery is updated with one extra. The ima
  
 ### Footer
 - The icons in the footer have a hover effect: the mouse turns into a pointer and the color of the icons change.
-- When a user clicks on one of these icons, he is redirected to the corresponding website in a new tab.
+- When a user clicks on one of these icons, he is redirected to the corresponding website in a new tab. Except for the envelope icon - this redirects the user to the contact form of this website (not in a new tab). 
 
 ## Resolved issues
 **1: A line on the right side of the body**<br>
@@ -356,7 +382,7 @@ Sometimes, a page will load slowly or even incompletely. I have seen this have a
 After a user deletes his account, the user is deleted from the database. This means that someone new can then sign up with the previously used username. There will be no error message, because the username is no longer in use. If this former user had uploaded images to the gallery, and hadn't deleted them before deleting his profile (which is what I want: to keep as much images as possible), a new user gains access to these images. He can then edit and/or delete them. 
 
 **5: Not possible to sort images from a search query**<br>
-It is not possible to sort sort images that are displayed as a result of a search query. Clicking on an option in de sort by menu refreshed the page and then all images in the database are displayed in the sorted manner.
+It is not possible to sort images that are displayed as a result of a search query. Clicking on an option in de sort by menu refreshed the page and then all images in the database are displayed in the sorted manner.
 
 ## Browsers
 The final version of the website was tested in different browsers. The website works correctly in Chrome, Opera, Mozilla, Safari, Microsoft Edge and Internet Explorer. 
@@ -364,5 +390,3 @@ The final version of the website was tested in different browsers. The website w
 ## Responsiveness
 - Whilst building this website, testing to see if the website adjusts itself to the size of the device was mostly done with the Chrome DevTool. Media queries are in place to adapt elements to different screen sizes. 
 - At the final stage, the website was tested on my personal devices (Lenovo Ideapad 110, HP Pavilion P6330NL with Lenco Monitor (1920px x 1080px), Huawei P30, Samsung Galaxy S4 mini), and my family's and friends' devices. The website was displayed as intended. 
-
-
