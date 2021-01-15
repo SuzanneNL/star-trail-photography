@@ -59,6 +59,7 @@ The website consists of a number of pages. Thanks to templating language Jinja, 
 1. Visible for all users:
 - The home page, where the content block contains an article about star trail photography. It is accompanied by a 'scrollspy' on the right side, that helps the user jump to relevant sections of the article. The scrollspy is not visible on smaller screens.
 - The gallery with images that are uploaded by signed up members of this website. Each image has details (title, the photographer/user, camera, settings, location, date and a description) next to it. There is also a search bar at the top. A user can search the fields title, user and description. Finally, a user can sort images by date taken and date uploaded (both ascending and descending).
+- The contact page, with a contact form. Users can contact the administrator through this form.
 2. Visible for guest users:
 - A log in page.
 - A sign up page. 
@@ -149,21 +150,59 @@ My first plan was to create a responsive website about star trail photography wi
 ![Figma - mobile version of the gallery](documentation/figma-gallery-mobile.png)
 
 ## FEATURES
-### Existing features
-- **Sign Up, Change Password and Delete Account functionality** - Signing up is very simple. Only two fields have to be filled in: username and password. The username and password have to meet certain requirements such as a minimum and maximum length and the use of certain characters. Before adding this new account to the database, the signup function checks if the name already exists in the database. If not, a user is registered successfully with a hashed password and logged in. He can change his password at any time. A user can delete his account as well. He is then logged out and redirected to the Sign Up page. The user's account is deleted from the database. 
-- **Login and Logout Functionality** - After logging in with the information that was provided when signing up, the user is redirected to his profile page. A user can log out by clicking on Log Out in the navigation bar. The session cookie is then deleted and the user is redirected to the log in page. 
-- **Complete CRUD functionality for the gallery** - Users can view and search images in the gallery. Registered users can upload an image with details; this is then displayed in the gallery and on the profile page. Buttons for editing/deleting appear under the images he owns. He can change these images/details through a form that displays the current information. While adding or editing, he can always cancel and be redirected back to the gallery/profile page. Also he can decide to delete an image as a whole, by clicking on the bin button. A modal pops up to warn the user he is about to delete his image. He can then confirm or cancel. 
-- **Responsive Materialize navigation bar** - The links in the navigation bar vary, based on whether a user is logged in or not. As a guest user, one sees Home, Gallery, Log In and Sign Up. Once signed up or logged in, Sign Up and Log In disappear. Instead, a user sees Profile and Log Out. 
-- **Instructions on star trail photography** - Instructions are present in the form of an article on the homepage. 
+### Existing features (per page)
+#### Sign Up
+- **Sign up functionality** - Signing up is very simple. Only two fields have to be filled in: username and password. The username and password have to meet certain requirements such as a minimum and maximum length and the use of certain characters. Before adding this new account to the database, the signup function checks if the name already exists in the database. If not, a user is registered successfully with a hashed password and logged in. 
+
+#### Log In
+- **Login functionality** - After logging in with the username and password that were provided when signing up, the user is redirected to his profile page.
+ 
+#### Log Out
+- **Logout functionality** - This isn't technically a page, obviously. A user can log out by clicking on Log Out in the navigation bar. The session cookie is then deleted and the user is redirected to the log in page. 
+
+#### Home
+- **Instructions on star trail photography** - Instructions are present in the form of an article on the homepage, accompanied by two pictures. 
+
 - **Materialize scrollspy** - On the right side of the article, users see a scrollspy that can redirect them to relevant paragraphs. The scrollspy is not visible on small screens. 
-- **Gallery with images and a search bar** - All users can search the gallery (search covers the fields title, user and description). The gallery is filled with images uploaded by registered users. 
-- **Sort images option** - In the gallery, users can sort images in 4 ways: by date uploaded, both ascending and descending, and by date taken, also both ascending and descending. 
-- **Profile page** - This shows the user his username, a button for editing his password, a button for deleting his profile and the images that he has uploaded with buttons for deleting and editing the images.
-- **Go to top button** - In the gallery and on the profile page, users can go to the top of the page by clicking on a small arrow on the right side of the bottom of the page.
-- **Materialize forms** - These forms are used for signing up, logging in, updating a password, adding an image and editing an image. The forms give feedback to the user. It can remind a user that a field is left empty or filled out incorrectly with a message and a red color, based on the requirements in the code. Green means the field has been filled out correctly. The forms also don't let a user use more characters than allowed, typing is disabled in that case. 
-- **Materialize datepicker** - In the forms for adding and editing an image, a datepicker appears when a user goes to the date field. A user can only select today and past dates (it goes back ten years). 
+
+#### Gallery
+- **Complete CRUD functionality for the gallery** - Users can view images in the gallery. Registered users can click on Add Image and from that page upload an image with details; this is then displayed in the gallery (and on the profile page). Buttons for editing/deleting appear under the images he owns. He can change these images/details through the Edit Image form that displays the current information. While adding or editing, he can always cancel and be redirected back to the gallery/profile page. Also he can decide to delete an image as a whole, by clicking on the bin button. A modal pops up to warn the user he is about to delete his image. He can then confirm or cancel. 
+
+- **Sort images** - By default, the images are sorted by date uploaded (new to old). So if a user uploads a new image, his image appears at the top of the gallery. Through the sorting menu on the right above the first image, a user can choose other options. The four options are: sort by date uploaded (new to old), sort by date uploaded (old to new), sort by date taken (new to old) and sort by date taken (old to new). 
+
+- **Search bar** - All users can search the gallery. Searches cover the fields title, user and description ('or' method). "Stop" words such as 'a', 'the', 'about' (and about 200 others) are ignored. The results are ordered according to the last selected sorting order, or the default mode (date uploaded - new to old) if none was chosen. 
+
+- **Go to top button** - Users can go to the top of the page by clicking on a small arrow on the right side of the bottom of the screen, that appears when a user scrolls down.
+
+
+#### Add Image
+- **Add image functionality** - From the gallery a user can go to the Add Image page (if he's a logged in user). Here he can fill out a form. All fields are required, except the description. After clicking on Submit, the information gets added to the images collection in the MongoDB Atlas database. The user is redirected to the Gallery page where he sees his image at the top of the gallery. 
+- **Materialize datepicker** - A datepicker appears when a user goes to the date field. A user can only select today and past dates (it goes back ten years). 
+
+#### Edit Image
+- **Edit image functionality** - In the gallery and on his profile page a logged in user will see an edit button under his own images. Clicking on this redirects a user to the Edit Image page. All fields display the information such as it is saved in the database. Here he can edit one or multiple fields. All fields are still required, except for the description. After clicking on Submit, the information gets updated in the images collection in the MongoDB Atlas database. The user is redirected to the either the gallery or the profile page, based on where he clicked the edit button. His most recent picture is displayed as the first image. 
+- **Materialize datepicker** - A datepicker appears when a user goes to the date field. A user can only select today and past dates (it goes back ten years). 
+
+#### Profile
+- **Delete account functionality** - A user can delete his account from here. A modal pops up to ask for confirmation. When he confirms, the user gets logged out and redirected to the Sign Up page. The user's account gets deleted from the database. 
+
+- **Change password** - A user can click on 'change password' to be sent to the Change Password page where he can change his password.
+
+- **The user's images only** - The profile page shows the user the images that he has uploaded, with buttons for deleting and editing the images. Images are sorted based on date uploaded (new to old). 
+
+- **Go to top button** - Users can go to the top of the page by clicking on a small arrow on the right side of the bottom of the screen, that appears when a user scrolls down.
+
+#### Change Password
+- **Change password functionality** - On this page a user can change his password. The password field is empty and required for submitting. The password needs to meet the same requirements as for signing up. A user can also cancel and go back to the profile page. 
+
+#### Contact
+- **E-mail/contact functionality** - A user can fill out the contact form (all fields are required) and send it to the Administrator's email-address. A pop up shows confirmation of sending the message. EmailJS sends the message effectively to the Administrator but also sends a confirmation to the user's e-mail address. 
+
+#### All/Multiple Pages
+- **Responsive Materialize navigation bar** - The navigation bar is visible on all pages and fixed. The items in the navigation bar vary though, based on whether a user is logged in or not. As a guest user, one sees Home, Gallery, Contact, Log In and Sign Up. Once signed up or logged in, Sign Up and Log In disappear. Instead, a user sees Profile and Log Out. 
+- **Materialize forms** - These forms are used for signing up, logging in, updating a password, adding an image, editing an image and for contacting the Administrator. The forms give feedback to the user. A form can remind a user that a field is left empty or filled out incorrectly with a message and a red color, based on the requirements in the code. Green means the field has been filled out correctly. The forms also don't let a user use more characters than allowed, typing is disabled in that case. If the fields don't meet the requirements, the forms cannot be submitted.
 - **Flash messages** - Flash messages give feedback to the user about his activity and appear right under the banner image after actions such as signing up, logging in or adding an image. Green flash messages mean the action was successful, red messages mean the action was unsuccessful. Flash messages will stay on the page until a user refreshes it or goes to a different page. 
-- In general this website consists of a header, content with images, buttons and icons, and a footer. Users can be redirected to (social) media websites through the footer. The website has a responsive design and was built in GidPod and hosted by Heroku. Documentation is present. 
+- In general this website consists of a navbar, header, content with images, buttons and icons, and a footer. Users can be redirected to (social) media websites through the footer. The website has a responsive design and was built in GidPod and hosted by Heroku. Documentation is present. 
 
 ### Features left to implement
 - **Hide and show password** - Currently, the password is hidden both when signing up and logging in. My preference would be to hide the password by default for security reasons, but to allow a user to make the password visible by clicking on an eye icon, to reduce login problems.
@@ -175,6 +214,7 @@ My first plan was to create a responsive website about star trail photography wi
 - **Share on social media** - This would allow a user to share an image on his personal social media page. It would give publicity to both my website and the photographers.  
 - **Pagination** - To prevent the gallery from becoming a very long page when the number of uploaded images increases, pagination (f.e. 10 images per page) could be used. 
 - **Upload images directly from a phone or a computer** - This way a user no longer needs to store his image online and provide a link. 
+- **Stort search results** - Currently, when a user tries to sort his search result, the search bar is reset and all images in the database are displayed again (in the selected sorted manner).
 
 ## TECHNOLOGIES USED
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -216,8 +256,11 @@ was used for Version Control.
 - [GitHub](https://github.com/)
 is where the repository is hosted.
 
-- [Heroku]( https://www.heroku.com/)
+- [Heroku](https://www.heroku.com/)
 is where the live website is hosted.
+
+- [EmailJS]( https://emailjs.com/) 
+is a service that connects the contact form to the administrators e-mailaddress.
 
 - [Google Chrome](https://www.google.com/chrome/)
 was used for the Chrome DevTools and as a browser.
