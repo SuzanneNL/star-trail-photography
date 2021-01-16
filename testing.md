@@ -115,7 +115,7 @@ A malevolent user would perhaps try to type someone else's username, but will no
 ## Manual testing
 Manual testing was done on different devices (see Responsiveness).
 ### Home
-- On the right side of the article, a scrollspy is visible. It scrolls the page to the clicked paragraph. 
+- On the right side of the article, a scrollspy is visible (not on small screens). It scrolls the page to the clicked paragraph. 
 
 ### Sign Up
 - Before signing up, users see the options Home, Gallery, Contact, Log In and Sign Up in the navigation bar. 
@@ -363,7 +363,7 @@ So what I had to do is:
 This way, the user gets redirected back to the page where he was coming from. 
 
 **11: The scrollspy didn't entirely display on all screen sizes**<br>
-I created the website on a large screen. But when I tested the website on other devices, I noticed that on certain medium sized screens, such as my laptop, the scrollspy didn't fit completely. The last two list items fell off the screen. I had several options: either make the height of the banner image smaller, remove certain list items, or stick the scrollspy to the bottom of the page, as low as possible. I chose a combination of the last two. I don't really like how it looks on my larger screen, but at least it now fits on the screens I tested. 
+I created the website on a large and wide screen. But when I tested the website on other devices, I noticed that on certain medium sized screens, such as my laptop, the scrollspy didn't fit completely. The last two list items fell off the screen. I had several options: either make the height of the banner image smaller, remove certain list items, or stick the scrollspy to the bottom of the page, as low as possible. I chose a combination of the last two options. I don't really like how it looks on my larger screen now, so close to the bottom of the screen, but at least it now fits on the screens I tested. It sticks to the bottom only in landscape mode. Default settings are in place on tablets.
 
 ## Unresolved issues
 **1: Mobile menu stays open in desktop view**<br>
