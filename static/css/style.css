@@ -153,11 +153,6 @@ nav li a:hover {
     margin-top: 45px;
 }
 
-.table-of-contents {
-    bottom: 1px;
-    padding-bottom: 0;
-}
-
 /* ---------------------------------------------------------------- END HOME */
 
 /* ---------------------------------------------------------------- GALLERY */
@@ -437,6 +432,12 @@ footer {
 /*----------------------------------------------------------------- END FOOTER*/
 
 /* ---------------------------------------------------------------- MEDIA QUERIES */
+@media only screen and (orientation: landscape) {
+    .table-of-contents {
+        bottom: 1px;
+        padding-bottom: 0;
+    }
+}
 
 @media screen and (max-width: 1162px) {
     .select-wrapper input.select-dropdown {
