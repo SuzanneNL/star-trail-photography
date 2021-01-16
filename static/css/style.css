@@ -149,7 +149,7 @@ nav li a:hover {
 }
 
 .img-homepage {
-    max-width: 80%;
+    max-width: 95%;
     margin-top: 45px;
 }
 
@@ -157,7 +157,6 @@ nav li a:hover {
     bottom: 1px;
     padding-bottom: 0;
 }
-
 
 /* ---------------------------------------------------------------- END HOME */
 
@@ -447,7 +446,7 @@ footer {
 
 @media screen and (max-width: 1024px) {
     .banner-image {
-        height: 30vh;
+        height: 20vh;
     }
     .mobile-gallery,
     .mobile-search {
