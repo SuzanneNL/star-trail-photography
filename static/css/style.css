@@ -166,6 +166,10 @@ nav li a:hover {
     object-fit: cover;
 }
 
+.mobile-gallery p {
+    text-align: justify;
+}
+
 .mobile-gallery,
 .mobile-search {
     display: none;
