@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+{% if session.user %}
+<section class="container">
+    <div class="row">
+        <div class="col s12 m6 offset-m3 alert alert-error center-align">
+            <p><i class="material-icons prefix error-icon" aria-label="Error">priority_high</i> Oops! You're already logged in.</p>
+            <br>
+            <a class="btn-large white-black-grey-btn error-button" href="{{ url_for('index') }}" aria-label="Back to the homepage">BACK TO HOME</a>
+        </div>
+    </div>
+</section>
+{% else %}
 <section>
     <div class="container sign-up-head">
         <div class="row">
@@ -37,4 +48,5 @@
         </div>
     </div>
 </section>
+{% endif %}
 {% endblock %}
