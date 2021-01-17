@@ -8,6 +8,12 @@
     color: #fff;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .drag-target {
     width: 0 !important;
 }
