@@ -17,59 +17,68 @@
                         <i class="material-icons prefix" aria-hidden="true">link</i>
                         <input id="url" name="url" type="text" class="validate" required>
                         <label for="url">URL to your horizontal image (ratio 3:2)</label>
+                        <span class="helper-text" data-error="Provide a link"></span>
                     </div>
                     <!----------------------------------------TITLE---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">create</i>
                         <input id="image_title" name="image_title" minlength="5" maxlength="100" type="text" class="validate" required>
                         <label for="image_title">Title</label>
+                        <span class="helper-text" data-error="Use 5-100 characters"></span>
                     </div>
                     <!----------------------------------------CAMERA---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">photo_camera</i>
                         <input id="camera" name="camera" minlength="5" maxlength="50" type="text" class="validate" required>
                         <label for="camera">Camera</label>
+                        <span class="helper-text" data-error="Use 5-50 characters"></span>
                     </div>
                     <!----------------------------------------FOCAL LENGTH---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">visibility</i>
                         <input id="focal_length" name="focal_length" minlength="3" maxlength="10" type="text" class="validate" required>
                         <label for="focal_length">Focal Length</label>
+                        <span class="helper-text" data-error="Use 3-10 characters"></span>
                     </div>
                     <!----------------------------------------ISO---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">settings_brightness</i>
                         <input id="iso" name="iso" minlength="2" maxlength="5" type="text" class="validate" required>
                         <label for="iso">ISO</label>
+                        <span class="helper-text" data-error="Use 2-5 characters"></span>
                     </div>
                     <!----------------------------------------APERTURE---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">camera</i>
                         <input id="aperture" name="aperture" minlength="3" maxlength="5" type="text" class="validate" required>
                         <label for="aperture">Aperture</label>
+                        <span class="helper-text" data-error="Use 3-5 characters"></span>
                     </div>
                     <!----------------------------------------EXPOSURE---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">shutter_speed</i>
                         <input id="exposure" name="exposure" minlength="2" maxlength="20" type="text" class="validate" required>
                         <label for="exposure">Exposure</label>
+                        <span class="helper-text" data-error="Use 2-20 characters"></span>
                     </div>
                     <!----------------------------------------LOCATION---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">place</i>
                         <input id="location" name="location" minlength="4" maxlength="100" type="text" class="validate" required>
                         <label for="location">Location</label>
+                        <span class="helper-text" data-error="Use 4-100 characters"></span>
                     </div>
                     <!----------------------------------------DATE PICKER---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">today</i>
                         <input id="date" name="date" type="text" class="datepicker validate" required>
                         <label for="date">Date</label>
+                        <span class="helper-text" data-error="Select a date"></span>
                     </div>
                     <!----------------------------------------DESCRIPTION---------------------------------------->
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">description</i>
-                        <textarea id="description" name="description" maxlength="650" class="materialize-textarea validate"></textarea>
+                        <textarea id="description" name="description" maxlength="650" data-length="650" class="materialize-textarea validate"></textarea>
                         <label for="description">Description</label>
                     </div>
                 </div>

@@ -20,6 +20,9 @@ $(document).ready(function() {
         scrollOffset: 50
     });
 
+    //Initializes Character Counter for text areas
+    $('textarea#message, textarea#description').characterCounter();
+
     /*Initializes Datepicker. 
     It prevents a user from selecting a date in the future, 
     and navigating to a future year in the dropdown menu.

@@ -25,13 +25,15 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">account_circle</i>
-                        <input id="username" name="username" type="text" class="validate" required>
+                        <input id="username" name="username" type="text" minlength="4" maxlength="20" class="validate" required>
                         <label for="username">Username</label>
+                        <span class="helper-text" data-error="Use 4-20 characters"></span>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">lock</i>
-                        <input id="password" name="password" type="password" class="validate" required>
+                        <input id="password" name="password" type="password" minlength="4" maxlength="20" class="validate" required>
                         <label for="password">Password</label>
+                        <span class="helper-text" data-error="Use 4-20 characters"></span>
                     </div>
                 </div>
                 <div class="center-align">

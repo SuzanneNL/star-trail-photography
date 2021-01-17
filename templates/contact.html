@@ -41,6 +41,7 @@
                             <i class="material-icons prefix">account_circle</i>
                             <input type="text" name="name" class="form-control validate" id="name" minlength="2" maxlength="30" pattern="^[a-zA-Z0-9_.]{2,30}$" required/>
                             <label for="name">Name</label>
+                            <span class="helper-text" data-error="Use 2-30 characters. Letters, numbers, dots and underscores only"></span>
                         </div>
                         <div class="input-field col s12 m8 offset-m2">
                             <i class="material-icons prefix">email</i>
@@ -49,7 +50,7 @@
                         </div>
                         <div class="input-field col s12 m8 offset-m2">
                             <i class="material-icons prefix">create</i>
-                            <textarea id="message" name="message" class="form-control materialize-textarea validate" maxlength="650" required></textarea>
+                            <textarea id="message" name="message" class="form-control materialize-textarea validate" maxlength="650" data-length="650" required></textarea>
                             <label for="message">Your message</label>
                         </div>
                     </div>
