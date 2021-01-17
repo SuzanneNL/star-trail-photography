@@ -180,7 +180,7 @@ def profile_page():
         return render_template("profile_page.html", username=session["user"],
                                images=images)
 
-    return redirect(url_for("login"))
+    return redirect(url_for("log_in"))
 
 
 @app.route("/change_password/<username>", methods=["GET", "POST"])
@@ -312,6 +312,24 @@ def contact():
     This function renders the contact page.
     """
     return render_template("contact.html")
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    This function renders the error page in case of a 404 error.
+    """
+    flash("Oops! This page doesn't exist", "error")
+    return render_template("error.html"), 404
+
+
+@app.errorhandler(500)
+def something_went_wrong(error):
+    """
+    This function renders the error page in case of a 500 error.
+    """
+    flash("Oops! Something went wrong", "error")
+    return render_template('error.html'), 500
 
 
 if __name__ == "__main__":
