@@ -10,6 +10,10 @@
                 <div class="center-align">
                     <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn" aria-label="Add your image">Add Your Image!</a>
                 </div>
+                {% else %}
+                <div class="center-align">
+                    <a href="{{ url_for('log_in') }}" class="btn white-black-grey-btn" aria-label="Log In">Log in to add your image</a>
+                </div>
                 {% endif %}
             </div>
         </div>
