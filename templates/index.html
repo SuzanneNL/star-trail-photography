@@ -81,6 +81,14 @@
             </ul>
         </div>
         <!----------------------------------------END SCROLLSPY---------------------------------------->
+        <!----------------------------------------BACK TO TOP BUTTON---------------------------------------->
+        <button class="hide-on-med-and-up" onclick="topFunction()" id="backtotop" title="Back to top" aria-label="Go back to top">
+            <i class="material-icons icon-backtotop" aria-hidden="true">keyboard_arrow_up</i>
+        </button>
+        <!----------------------------------------END BACK TO TOP BUTTON---------------------------------------->
     </div>
 </article>
+{% endblock %}
+{% block scripts %} 
+<script src="{{ url_for('static', filename='js/back-to-top.js') }}"></script>
 {% endblock %}
