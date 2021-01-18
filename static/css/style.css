@@ -28,6 +28,7 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: #fff;
     color: #000000;
+    margin-bottom: 20px;
 }
 
 .white-black-grey-btn:hover {
@@ -67,6 +68,17 @@ nav li a:hover {
     margin-top: 24px;
     margin-right: 15px;
     margin-left: 15px;
+}
+
+#signup {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #fff;
+    color: #000000;
+}
+
+#signup:hover {
+    background-color: #A2A2A0;
+    color: #fff;
 }
 
 /* ---------------------------------------------------------------- END NAVIGATION BAR */
@@ -337,10 +349,6 @@ nav li a:hover {
 
 .join-now {
     padding: 15px;
-}
-
-#send {
-    margin-bottom: 20px;
 }
 
 .hide {

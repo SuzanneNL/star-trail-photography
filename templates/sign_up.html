@@ -21,26 +21,26 @@
     </div>
     <div class="container">
         <div class="row">
-            <form class="col m6 s12 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
+            <form class="col s12 m8 offset-m2 card-panel" method="POST" action="{{ url_for('sign_up') }}">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m8 offset-m2">
                         <i class="material-icons prefix" aria-hidden="true">account_circle</i>
                         <input id="username" name="username" type="text" minlength="4" maxlength="20" pattern="^[a-zA-Z0-9_.]{4,20}$" class="validate" required>
                         <label for="username">Username</label>
                         <span class="helper-text" data-error="Use 4-20 characters. Letters, numbers, dots and underscores only"></span>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m8 offset-m2">
                         <i class="material-icons prefix">email</i>
-                            <input type="email" name="emailaddress" class="form-control validate" id="emailaddress" minlength="3" maxlength="254" required/>
+                            <input type="email" name="emailaddress" class="form-control validate" id="emailaddress" minlength="7" maxlength="254" required/>
                             <label for="emailaddress">E-mail Address</label>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m8 offset-m2">
                         <i class="material-icons prefix" aria-hidden="true">lock</i>
                         <input id="password" name="password" type="password" minlength="4" maxlength="20" pattern="^[a-zA-Z0-9_.]{4,20}$" class="validate" required>
                         <label for="password">Password</label>
                         <span class="helper-text" data-error="Use 4-20 characters. Letters, numbers, dots and underscores only"></span>
                     </div>
-                    <div class="col s12 center-align">
+                    <div class="col s12 m8 offset-m2 center-align">
                         <p>We're planning on writing a monthly newsletter with tips and tricks on star trail photography. Would you like to be added to the mailinglist?</p>
                         <br>
                         <label>
