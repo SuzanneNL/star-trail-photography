@@ -192,7 +192,7 @@ def profile_page():
     """
     images = list(mongo.db.images.find().sort('_id', -1))
 
-    if session["user"]:
+    if session:
         return render_template("profile_page.html", username=session["user"],
                                images=images)
 
