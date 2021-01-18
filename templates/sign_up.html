@@ -30,10 +30,23 @@
                         <span class="helper-text" data-error="Use 4-20 characters. Letters, numbers, dots and underscores only"></span>
                     </div>
                     <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                            <input type="email" name="emailaddress" class="form-control validate" id="emailaddress" minlength="3" maxlength="254" required/>
+                            <label for="emailaddress">E-mail Address</label>
+                    </div>
+                    <div class="input-field col s12">
                         <i class="material-icons prefix" aria-hidden="true">lock</i>
                         <input id="password" name="password" type="password" minlength="4" maxlength="20" pattern="^[a-zA-Z0-9_.]{4,20}$" class="validate" required>
                         <label for="password">Password</label>
                         <span class="helper-text" data-error="Use 4-20 characters. Letters, numbers, dots and underscores only"></span>
+                    </div>
+                    <div class="col s12 center-align">
+                        <p>We're planning on writing a monthly newsletter with tips and tricks on star trail photography. Would you like to be added to the mailinglist?</p>
+                        <br>
+                        <label>
+                        <input id="checkbox" name="checkbox" type="checkbox" />
+                        <span>Sign me up for the newsletter.</span>
+                        </label>
                     </div>
                 </div>
                 <div class="center-align">

@@ -108,11 +108,27 @@ def sign_up():
             flash("That username is taken. Please try another.", "error")
             return redirect(url_for("sign_up"))
 
+        existing_email = mongo.db.users.find_one(
+            {"emailaddress": request.form.get("emailaddress").lower()})
+
+        if existing_email:
+            flash("That e-mailaddress is taken. Please try another.", "error")
+            return redirect(url_for("sign_up"))
+
         sign_up = {
             "username": request.form.get("username").lower(),
+            "emailaddress": request.form.get("emailaddress").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(sign_up)
+
+        newsletter = "on" if request.form.get("checkbox") else "off"
+        if newsletter == "on":
+            subscribe = {
+                "subscriber": request.form.get("username").lower(),
+                "emailaddress": request.form.get("emailaddress").lower(),
+            }
+            mongo.db.subscribers.insert_one(subscribe)
 
         session["user"] = request.form.get("username").lower()
         flash("Thank you for signing up! Welcome!", "success")
