@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-    <div class="container page-title change-password-button">
+    <div class="container change-password-button">
         <div class="row">
             <div class="col s12 m6 offset-m3">
-                <h1 class="center-align">Profile</h1>
+                <h1 class="center-align page-title">Profile</h1>
                     <div class="card-panel">
                         <br>
-                        <p class="center-align"><em>You are logged in as {{ username }}</em></p>
+                        <p class="center-align" id="account-info"><em>You are logged in as {{ username }}</em></p>
                         <br>
                         <div class="center-align">
                             <a href="{{ url_for('change_password', username=session['user']) }}" class="btn-small" id="change-password" aria-label="Change your password">Change Password</a>
                             <button data-target="modal-delete-account" class="btn-small modal-trigger" id="delete-account" aria-label="Delete your account">Delete account</button>
                         </div>
+                        <div class="center-align">
+                            <p><a href="{{ url_for('new_subscriber', username=session['user']) }}">Sign up</a> for the newsletter (coming soon)</p>
+                        </div>
+                    <br>
                 </div>
             </div>
         </div>

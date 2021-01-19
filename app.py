@@ -94,11 +94,16 @@ def search():
 def sign_up():
     """
     This function first checks if the provided username exists in the database.
-    If so, the user is redirected to the sign up page, where an error flash
-    message is shown. If not, a dictionary is created, containing the username
-    and a hashed password. The dictionary is inserted into the collection
-    'users' in the database. A session cookie is added. The user is redirected
-    to the home page and a success flash message is shown.
+    If not, then it checks if the e-mail address is already in use. If the
+    username and/or e-mail address are already taken, then the user is
+    redirected to the sign up page and an error flash message is shown. If the
+    username and e-mail address are unique, a dictionary is created, containing
+    the username, the e-mail address and a hashed password. The dictionary is
+    inserted into the collection 'users' in the database. A session cookie is
+    added. If the user checked the box for the newsletter, then also a
+    dictionary with the subscriber and e-mail address are added to the
+    collection 'subscribers'. The user is redirected to the home page and a
+    success flash message is shown.
     """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -112,7 +117,7 @@ def sign_up():
             {"emailaddress": request.form.get("emailaddress").lower()})
 
         if existing_email:
-            flash("That e-mailaddress is taken. Please try another.", "error")
+            flash("That e-mail address is taken. Please try another.", "error")
             return redirect(url_for("sign_up"))
 
         sign_up = {
@@ -234,6 +239,34 @@ def delete_account(username):
     session.pop("user")
     flash("Your account has been removed", "success")
     return redirect(url_for("sign_up"))
+
+
+@app.route("/subscribe")
+def new_subscriber():
+    """
+    This function adds a user as a subscriber to the subscribers' collection in
+    the database. However it first checks if the user hasn't already been
+    subscribed. If so, it gives an error flash message. When subscription is
+    successful, a success flash message is shown.
+    """
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
+    emailaddress = user["emailaddress"]
+    subscriber = user["username"]
+    existing_subscriber = mongo.db.subscribers.find_one(
+            {"emailaddress": emailaddress})
+
+    if existing_subscriber:
+        flash("You have already subscribed", "error")
+        return redirect(url_for("profile_page"))
+
+    subscribe = {
+        "subscriber": subscriber,
+        "emailaddress": emailaddress
+    }
+    mongo.db.subscribers.insert_one(subscribe)
+    flash("Thank you for subscribing!", "success")
+    return redirect(url_for("profile_page"))
 
 
 @app.route("/add_image", methods=["GET", "POST"])

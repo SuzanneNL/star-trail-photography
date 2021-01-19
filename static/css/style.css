@@ -381,6 +381,7 @@ nav li a:hover {
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: #A2A2A0;
     color: #000000;
+    margin-bottom: 20px;
 }
 
 #change-password:hover,
@@ -395,6 +396,10 @@ nav li a:hover {
 
 input:not([type]):disabled+label {
     color: #A2A2A0;
+}
+
+#account-info {
+    text-transform: uppercase;
 }
 
 /* ---------------------------------------------------------------- END PROFILE*/
