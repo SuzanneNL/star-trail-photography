@@ -296,7 +296,10 @@ def add_image():
               "success")
         return redirect(url_for("get_images"))
 
-    return render_template("add_image.html")
+    if session:
+        return render_template("add_image.html")
+
+    return redirect(url_for("log_in"))
 
 
 @app.route("/edit_image/<image_id>", methods=["GET", "POST"])
