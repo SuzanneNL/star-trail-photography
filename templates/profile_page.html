@@ -176,6 +176,9 @@
     {% endif %}
     {% endif %}
     {% endfor %}
+    <div>
+        <h6 id="no-images" class="center-align hide">You haven't added any images yet. Go to the <a href="{{ url_for('get_images') }}">gallery</a> and add your first image!</h6>
+    </div>
     <!----------------------------------------END DESKTOP GALLERY---------------------------------------->
     <button onclick="topFunction()" id="backtotop" title="Back to top" aria-label="Go back to top">
     <i class="material-icons icon-backtotop" aria-hidden="true">keyboard_arrow_up</i>
@@ -184,4 +187,5 @@
 {% endblock %}
 {% block scripts %} 
 <script src="{{ url_for('static', filename='js/back-to-top.js') }}"></script>
+<script src="{{ url_for('static', filename='js/count-images.js') }}"></script>
 {% endblock %}
