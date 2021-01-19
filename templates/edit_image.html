@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
 <section>
     <div class="container page-title">
         <div class="row">
@@ -93,4 +94,17 @@
         </div>
     </div>
 </section>
+{% else %}
+<section>
+    <div class="container log-in-head">
+        <div class="row">
+            <div class="col s12 m6 offset-m3 alert-error center align">
+                <p><i class="material-icons prefix error-icon" aria-label="Error">priority_high</i> Oops! Something went wrong (forbidden)</p>
+                <br>
+                <a class="btn-large white-black-grey-btn" href="{{ url_for('index') }}" aria-label="Back to the homepage">BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
 {% endblock %}
