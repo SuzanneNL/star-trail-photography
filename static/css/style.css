@@ -70,13 +70,22 @@ nav li a:hover {
     margin-left: 15px;
 }
 
-#signup {
+.signup {
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: #fff;
     color: #000000;
 }
 
-#signup:hover {
+.signup:hover {
+    background-color: #A2A2A0;
+    color: #fff;
+}
+
+.active {
+    color: #A2A2A0;
+}
+
+.active-signup {
     background-color: #A2A2A0;
     color: #fff;
 }

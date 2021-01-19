@@ -30,18 +30,18 @@
                         <a href="{{ url_for('index') }}" class="brand-logo"><span class="material-icons shutter-logo">camera</span>Star Trail Photography</a>
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa fa-bars" aria-hidden="true"></i></a>
                         <ul class="right hide-on-med-and-down menu-items">
-                            <li><a href="/" aria-label="Go to the homepage">Home</a></li>
-                            <li><a href="{{ url_for('get_images') }}" aria-label="Go to the gallery">Gallery</a></li>
+                            <li><a href="/" id="home" aria-label="Go to the homepage">Home</a></li>
+                            <li><a href="{{ url_for('get_images') }}" id="gallery" aria-label="Go to the gallery">Gallery</a></li>
                             {% if session.user %}
-                            <li><a href="{{ url_for('profile_page') }}" aria-label="Go to your profile page">Profile</a></li>
-                            <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
+                            <li><a href="{{ url_for('profile_page') }}" id="profile" aria-label="Go to your profile page">Profile</a></li>
+                            <li><a href="{{ url_for('contact') }}" id="contact" aria-label="Contact">Contact</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url_for('log_out') }}" aria-label="Log out">Log Out</a></li>
                             {% else %}
-                            <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
+                            <li><a href="{{ url_for('contact') }}" id="contact" aria-label="Contact">Contact</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{ url_for('log_in') }}" aria-label="Log in">Log In</a></li>
-                            <li><a href="{{ url_for('sign_up') }}" class="btn" id="signup" aria-label="Sign up">Sign Up</a></li>
+                            <li><a href="{{ url_for('log_in') }}" id="login" aria-label="Log in">Log In</a></li>
+                            <li><a href="{{ url_for('sign_up') }}" id="signup" class="btn signup" aria-label="Sign up">Sign Up</a></li>
                             {% endif %}
                         </ul>
                     </div>
@@ -154,6 +154,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!----------------------------------------Custom JS---------------------------------------->
         <script src="{{ url_for('static', filename='js/initialize-materialize.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/navbar-active.js') }}"></script>
         {% block scripts %} 
         {% endblock %}
         <!----------------------------------------END CDNS/SCRIPTS---------------------------------------->
