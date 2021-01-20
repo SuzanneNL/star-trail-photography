@@ -7,10 +7,12 @@
                 <h1 class="center-align">Gallery</h1>
                 <hr>
                 {% if session.user %}
+                <!--This is only visible for logged in users-->
                 <div class="center-align">
                     <a href="{{ url_for('add_image') }}" class="btn white-black-grey-btn" aria-label="Add your image">Add Your Image!</a>
                 </div>
                 {% else %}
+                <!--This is only visible for guest users-->
                 <div class="center-align">
                     <a href="{{ url_for('log_in') }}" class="btn white-black-grey-btn" aria-label="Log In">Log in to add your image</a>
                 </div>
@@ -88,7 +90,9 @@
     <!----------------------------------------END SORT MENU---------------------------------------->
     <!----------------------------------------MOBILE GALLERY---------------------------------------->
     {% if images|length > 0 %}
-    {% for image in images %} 
+    <!--This is only visible if there are any images-->
+    {% for image in images %}
+    <!--For each image in the database, this card panel is created-->
     <div class="card-panel mobile-gallery image-text-card">
         <div class="container">
             <div class="row">
@@ -110,6 +114,7 @@
                 </div>
             </div>
             {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+            <!--These buttons are only visible for the user who uploaded the picture and the Administrator-->
             <div class="row">
                 <div class="col s12" id="edit-delete-buttons">
                     <div class="center-align">
@@ -142,8 +147,11 @@
     <!----------------------------------------END MOBILE GALLERY---------------------------------------->
     <!----------------------------------------DESKTOP GALLERY---------------------------------------->
     {% if images|length > 0 %}
-    {% for image in images %} 
+    <!--This is only visible if there are any images-->
+    {% for image in images %}
+    <!--For each image in the database, this card panel is created--> 
     {% if loop.index % 2 != 0 %}
+    <!--This places the (uneven) images on the right, and the text on the left side-->
     <div class="container desktop-gallery">
         <div class="row card-panel image-text-card">
             <div class="col m6">
@@ -164,6 +172,7 @@
             </div>
         </div>
         {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+        <!--These buttons are only visible for the user who uploaded the picture and the Administrator-->
         <div class="row">
             <div class="col m12">
                 <div class="center-align edit-delete-buttons-desktop">
@@ -190,6 +199,7 @@
         </div>
         {% endif %}
         {% else %}
+        <!--This places the (even) images on the left, and the text on the right side-->
         <div class="row card-panel image-text-card">
             <div class="col m6 center-align">
                 <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
@@ -209,6 +219,7 @@
             </div>
         </div>
         {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+        <!--These buttons are only visible for the user who uploaded the picture and the Administrator-->
         <div class="row">
             <div class="col m12">
                 <div class="center-align edit-delete-buttons-desktop">
@@ -238,6 +249,7 @@
     {% endif %}
     {% endfor %}
     {% else %}
+    <!--This message is visible if there are no images (= if a search doesn't return any results)-->
     <h6 class="center-align no-results"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sorry, your search returned no results</h6>
     {% endif %}
     <!----------------------------------------END DESKTOP GALLERY---------------------------------------->

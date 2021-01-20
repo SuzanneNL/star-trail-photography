@@ -33,11 +33,13 @@
                             <li><a href="/" id="home" aria-label="Go to the homepage">Home</a></li>
                             <li><a href="{{ url_for('get_images') }}" id="gallery" aria-label="Go to the gallery">Gallery</a></li>
                             {% if session.user %}
+                            <!--This is only visible for logged in users-->
                             <li><a href="{{ url_for('profile_page') }}" id="profile" aria-label="Go to your profile page">Profile</a></li>
                             <li><a href="{{ url_for('contact') }}" id="contact" aria-label="Contact">Contact</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url_for('log_out') }}" aria-label="Log out">Log Out</a></li>
                             {% else %}
+                            <!--This is only visible for guest users-->
                             <li><a href="{{ url_for('contact') }}" id="contact" aria-label="Contact">Contact</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url_for('log_in') }}" id="login" aria-label="Log in">Log In</a></li>
@@ -56,10 +58,12 @@
                 <li><a href="/" aria-label="Go to the homepage">Home</a></li>
                 <li><a href="{{ url_for('get_images') }}" aria-label="Go to the gallery">Gallery</a></li>
                 {% if session.user %}
+                <!--This is only visible for logged in users-->
                 <li><a href="{{ url_for('profile_page') }}" aria-label="Go to your profile page">Profile</a></li>
                 <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
                 <li><a href="{{ url_for('log_out') }}" aria-label="Log out">Log Out</a></li>
                 {% else %}
+                <!--This is only visible for guest users-->
                 <li><a href="{{ url_for('contact') }}" aria-label="Contact">Contact</a></li>
                 <li><a href="{{ url_for('log_in') }}" aria-label="Log in">Log In</a></li>
                 <li><a href="{{ url_for('sign_up') }}" aria-label="Sign up">Sign Up</a></li>
@@ -84,11 +88,13 @@
                 {% if messages %}
                 {% for category, message in messages %}
                 {% if category == 'error' %}
+                <!--This shows error messages, if there are any-->
                 <div class="col s12 m6 offset-m3 alert alert-error center-align">
                     <p><i class="material-icons prefix error-icon" aria-label="Error">priority_high</i> {{ message }}</p>
                 </div>
                 {% endif %}
                 {% if category == 'success' %}
+                <!--This shows success messages, if there are any-->
                 <div class="col s12 m6 offset-m3 alert alert-success center-align">
                     <p><i class="material-icons prefix success-icon" aria-label="Success">check</i> {{ message }}</p>
                 </div>

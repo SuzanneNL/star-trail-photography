@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-{% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
+{% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+<!--This is only visible for the owner of the image and the Administrator--> 
 <section>
     <div class="container page-title">
         <div class="row">
@@ -95,6 +96,7 @@
     </div>
 </section>
 {% else %}
+<!--Other users, who haven't uploaded the picture, see this message-->
 <section>
     <div class="container log-in-head">
         <div class="row">

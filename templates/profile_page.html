@@ -36,7 +36,9 @@
     <!----------------------------------------MOBILE GALLERY---------------------------------------->
     <h4 class="center-align your-images">Your images</h4>
     {% for image in images %}
-    {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
+    <!--For each image in the database, this card panel is created-->
+    {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %}
+    <!--This filters the images. A user only sees images that were created by himself. The administrator sees all images-->
     <div class="card-panel mobile-gallery image-text-card">
         <div class="container">
             <div class="row">
@@ -88,8 +90,11 @@
     <!----------------------------------------END MOBILE GALLERY---------------------------------------->
     <!----------------------------------------DESKTOP GALLERY---------------------------------------->
     {% for image in images %}
+    <!--For each image in the database, this card panel is created-->
     {% if (session.user|lower == image.created_by|lower or session.user|lower == "admin"|lower) %} 
+    <!--This filters the images. A user only sees images that were created by himself. The administrator sees all images-->
     {% if loop.index % 2 != 0 %}
+    <!--This places the (uneven) images on the right, and the text on the left side-->
     <div class="container desktop-gallery">
         <div class="row card-panel image-text-card">
             <div class="col m6">
@@ -134,6 +139,7 @@
             <!----------------------------------------END DESKTOP MODAL 1---------------------------------------->
         </div>
         {% else %}
+        <!--This places the (even) images on the left, and the text on the right side-->
         <div class="row card-panel image-text-card">
             <div class="col m6 center-align">
                 <img class="img-responsive" src="{{ image.url }}" alt="Star trails by {{ image.created_by }}">
@@ -180,6 +186,7 @@
     {% endif %}
     {% endif %}
     {% endfor %}
+    <!--This message is visible if there are no images. The number of images is counted with Javascript-->
     <div>
         <h6 id="no-images" class="center-align hide">You haven't added any images yet. Go to the <a href="{{ url_for('get_images') }}">gallery</a> and add your first image!</h6>
     </div>
