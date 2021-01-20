@@ -388,8 +388,8 @@ nav li a:hover {
     width: 80px;
 }
 
-.add-image-form,
-.edit-image-form {
+#add-image-form,
+#edit-image-form {
     width: 80%;
 }
 
@@ -606,6 +606,10 @@ footer {
     .select-wrapper input.select-dropdown {
         font-size: 9px;
     }
+    #add-image-form,
+    #edit-image-form {
+    width: 100%;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -637,6 +641,13 @@ footer {
     }
 }
 
+@media screen and (max-width: 320px) {
+    #add-image-form label,
+    #edit-image-form label {
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width: 280px) {
     .page-title h1,
     #home-page-title,
@@ -649,6 +660,10 @@ footer {
     }
     .select-wrapper input.select-dropdown {
         font-size: 7px;
+    }
+    #add-image-form label,
+    #edit-image-form label {
+        font-size: 10px;
     }
 }
 
