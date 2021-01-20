@@ -37,6 +37,9 @@ To return to the README file, click [here]( https://github.com/SuzanneNL/star-tr
 - CSS code was validated by the [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/), and beautified using [Freeformatter CSS Beautifier](https://www.freeformatter.com/css-beautifier.html).
 - Javascript code was validated by [JSHint](https://jshint.com/), and beautified using [BeautifyTools Javascript Beautifier](http://beautifytools.com/javascript-beautifier.php). 
 - Python code was validated by [pep8]( http://pep8online.com/). <br>
+I validated several times during this project. The final validation didn't present any real errors. However, there were two issues in the HTML code of my project.<br>
+First, I use a few sections without headings. A heading isn't officially required though. My flash messages section lacks a heading, but I believe that flash messages should be placed in a separate section. Also, I don't use headings in the sections for the log in, sign up and contact forms. Instead, I use a large relevant icon. It is clear to the user however, which page he is on, due to the active class in the navigation bar and the submit buttons stating the actions ('log in', 'sign up', 'send'). <br>
+The second issue is the duplicate id 'contact' in the navigation bar. This is necessary for the querySelector in the navbar-active.js file that adds the active class to the link when a user is on the contact page. Also, thanks to the Jinja template, the first 'contact' link is only visible for guest users, the second for logged in users. I therefore decided to keep the duplicate id. 
 
 ## Testing user stories
 ### As the creator of this website...
