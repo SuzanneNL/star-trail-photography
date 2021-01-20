@@ -11,11 +11,13 @@ How does it work? The earth spins around its axis, but when we look at the sky a
 When I first started with star trail photography, I looked up several websites with instructions. The best way I learned however, was to look at other people's pictures and the settings they had used, because it can be tricky to choose your ISO (light sensitivity), aperture (= width of lens opening), shutter speed (= duration of exposure) etc. Therefore, my website will give a new photographer instructions, but also has a gallery with images accompanied by a description and the settings a photographer has chosen. 
 
 The website performs CRUD operations. CRUD stands for create, read, update and delete records. This means that:
-- Users have the ability to view and search images in the gallery. 
-- Users can create an account and change their password. They can also delete their account.
-- When logged in, users have the ability to upload (create) images to the gallery. They can edit or delete their own images. Other users cannot access these images, except for the Administrator. 
 
-This was website was built using HTML, CSS (Materialize), Javascript (jQuery), Python (Flask, Jinja, PyMongo, Werkzeug) and uses MongoDB Atlas as a database. It can be viewed on pc monitors, laptops, tablets and mobile devices. It is hosted on Heroku and can be viewed [HERE]( http://star-trail-photography.herokuapp.com/).
+- Users have the ability to view and search all images in the gallery. 
+- Users can create an account. They can access their personal profile page. From here they can change their password. They can also delete their account.
+- Users can subscribe to a newsletter.
+- When logged in, users have the ability to upload images, which are then displayed in the gallery and on their profile page. They can edit or delete their own images. Other users cannot access these images, except for the Administrator. 
+
+This was website was built using HTML, CSS, Materialize, Javascript, jQuery, Python, Flask, Jinja and PyMongo and uses MongoDB Atlas as a database. It can be viewed on pc monitors, laptops, tablets and mobile devices. It is hosted on Heroku and can be viewed [HERE]( http://star-trail-photography.herokuapp.com/).
 
 ## Table of contents
 - [**UX**](#UX)
