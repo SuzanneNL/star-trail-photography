@@ -329,8 +329,20 @@ nav li a:hover {
 }
 
 .modal-content,
-.modal-content h4 {
+.modal-content h4,
+.modal-content p,
+.fa-exclamation-triangle {
     background-color: #EF5350;
+}
+
+.confirm {
+    background-color: #EF5350;
+    color: white;
+}
+
+.cancel {
+    background-color: #A2A2A0;
+    color: white;
 }
 
 #form-exception {
@@ -576,13 +588,15 @@ footer {
         width: 270px;
     }
     .modal-content h4 {
-        font-size: 12px;
+        font-size: 18px;
     }
     #footer-text {
         font-size: 0.8rem;
     }
     .page-title h1,
-    #home-page-title {
+    #home-page-title,
+    #profile-title,
+    .your-images {
         font-size: 1.8rem;
         margin-top: 0.2rem;
     }
@@ -606,7 +620,9 @@ footer {
         font-size: 0.6rem;
     }
     .page-title h1,
-    #home-page-title {
+    #home-page-title,
+    #profile-title,
+    .your-images {
         font-size: 1.7rem;
     }
     .img-responsive {
@@ -623,7 +639,9 @@ footer {
 
 @media screen and (max-width: 280px) {
     .page-title h1,
-    #home-page-title {
+    #home-page-title,
+    #profile-title,
+    .your-images {
         font-size: 1.4rem;
     }
     .img-responsive {
