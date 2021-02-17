@@ -424,22 +424,30 @@ All the images used on this website were taken from flickr accounts. The details
 	- https://flic.kr/p/2ifLFh2
 	- https://flic.kr/p/2gYNYoW
 	- https://flic.kr/p/qFKXCX 
+        - No changes were made to these images. Please take note of the [license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode). 
 - Jonathan Ang:
 	- https://flic.kr/p/2jBBQVW
+        - No changes were made to this image. Please take note of the [license](https://creativecommons.org/licenses/by-nc/2.0/legalcode). 
 - RS2Photography
 	- https://flic.kr/p/2gb3ggp
+        - No changes were made to this image. Please take note of the [license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode). 
 - György Soponyai
 	- https://flic.kr/p/2aYaQU4
 	- https://flic.kr/p/T2fNgA (the banner image)
+        - One change was made: the banner image was cropped. Please take note of the [license](https://creativecommons.org/licenses/by-nc/2.0/legalcode). 
 - gerlos
 	- https://flic.kr/p/25s43h2
+        - No changes were made to this image. Please take note of the [license](https://creativecommons.org/licenses/by-nd/2.0/legalcode). 
 - achrntatrps
 	- https://flic.kr/p/22rib6W
 	- https://flic.kr/p/Jv7rRM
+        - No changes were made to these images. Please take note of the [license](https://creativecommons.org/licenses/by-nc-sa/2.0/legalcode). 
 - Joel Tonyan
     - https://flic.kr/p/NnqKyo
+        - No changes were made to this image. Please take note of the [license](https://creativecommons.org/licenses/by-nc-sa/2.0/legalcode). 
 - Beau Rogers
     - https://flic.kr/p/EMkGDh
+        - No changes were made to this image. Please take note of the [license](https://creativecommons.org/licenses/by-nc/2.0/legalcode). 
 
 ### Content
 The article on the homepage was for the most part written by Don Komarechka, who gave permission to copy the text. The text was taken from [digital photography school](https://digital-photography-school.com/tips-photographing-star-trails/). 
